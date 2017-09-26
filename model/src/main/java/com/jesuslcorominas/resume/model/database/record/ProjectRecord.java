@@ -1,22 +1,16 @@
-package com.jesuslcorominas.resume.model.vo;
-
-import java.util.List;
+package com.jesuslcorominas.resume.model.database.record;
 
 /**
  * Created by Jesus Lopez Corominas
  * 22/09/2017.
- * <p>
- * Clase que modela los proyectos del CV.
  */
-public class Project {
+public class ProjectRecord extends AbstractSugarRecord {
 
     private String name;
     private String description;
-    private Platform platform;
-    private List<Library> libraries;
+    private int platform;
     private String icon;
     private String path;
-    private List<ProjectImage> images;
 
     public String getName() {
         return name;
@@ -34,20 +28,12 @@ public class Project {
         this.description = description;
     }
 
-    public Platform getPlatform() {
+    public int getPlatform() {
         return platform;
     }
 
-    public void setPlatform(Platform platform) {
+    public void setPlatform(int platform) {
         this.platform = platform;
-    }
-
-    public List<Library> getLibraries() {
-        return libraries;
-    }
-
-    public void setLibraries(List<Library> libraries) {
-        this.libraries = libraries;
     }
 
     public String getIcon() {
@@ -64,13 +50,5 @@ public class Project {
 
     public void setPath(String path) {
         this.path = path;
-    }
-
-    public List<ProjectImage> getImages() {
-        return images;
-    }
-
-    public void setImages(List<ProjectImage> images) {
-        this.images = images;
     }
 }

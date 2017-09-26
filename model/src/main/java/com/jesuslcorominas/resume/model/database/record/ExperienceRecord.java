@@ -1,34 +1,21 @@
-package com.jesuslcorominas.resume.model.vo;
+package com.jesuslcorominas.resume.model.database.record;
+
+import com.jesuslcorominas.resume.model.vo.Position;
+import com.orm.SugarRecord;
 
 import org.joda.time.DateTime;
-
-import java.util.List;
 
 /**
  * Created by Jesus Lopez Corominas
  * 22/09/2017.
- * <p>
- * Clase que modela las distintas experiencias del CV.
  */
-public class Experience {
-
-    private Long id;
+public class ExperienceRecord extends AbstractSugarRecord {
 
     private String companyName;
     private String image;
-    private DateTime start;
-    private DateTime end;
+    private String start;
+    private String end;
     private Position position;
-
-    private List<Project> projects;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getCompanyName() {
         return companyName;
@@ -46,19 +33,19 @@ public class Experience {
         this.image = image;
     }
 
-    public DateTime getStart() {
+    public String getStart() {
         return start;
     }
 
-    public void setStart(DateTime start) {
+    public void setStart(String start) {
         this.start = start;
     }
 
-    public DateTime getEnd() {
+    public String getEnd() {
         return end;
     }
 
-    public void setEnd(DateTime end) {
+    public void setEnd(String end) {
         this.end = end;
     }
 
@@ -68,13 +55,5 @@ public class Experience {
 
     public void setPosition(Position position) {
         this.position = position;
-    }
-
-    public List<Project> getProjects() {
-        return projects;
-    }
-
-    public void setProjects(List<Project> projects) {
-        this.projects = projects;
     }
 }

@@ -1,30 +1,20 @@
-package com.jesuslcorominas.resume.model.vo;
+package com.jesuslcorominas.resume.model.database.record;
+
+import com.orm.SugarRecord;
 
 import org.joda.time.DateTime;
 
 /**
  * Created by Jesus Lopez Corominas
  * 22/09/2017.
- * <p>
- * Clase que modela la formación complementaria del CV.
  */
-public class OtherTraining {
-
-    private Long id;
+public class OtherTrainingRecord extends AbstractSugarRecord {
 
     private String name;
     private String school;
-    private DateTime date;
+    private String date;
     private int hours;
     private String image;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -42,11 +32,11 @@ public class OtherTraining {
         this.school = school;
     }
 
-    public DateTime getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(DateTime date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

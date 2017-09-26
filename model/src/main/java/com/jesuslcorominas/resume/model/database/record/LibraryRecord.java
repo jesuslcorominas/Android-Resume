@@ -1,24 +1,15 @@
-package com.jesuslcorominas.resume.model.vo;
+package com.jesuslcorominas.resume.model.database.record;
 
 /**
  * Created by Jesus Lopez Corominas
  * 22/09/2017.
  */
-public class Library {
+public class LibraryRecord extends AbstractSugarRecord {
 
-    private Long id;
     private String name;
     private String path;
     private String image;
     private String description;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;

@@ -1,27 +1,15 @@
-package com.jesuslcorominas.resume.model.vo;
+package com.jesuslcorominas.resume.model.database.record;
 
 /**
  * Created by Jesus Lopez Corominas
  * 22/09/2017.
- * <p>
- * Clase que modela los conocimientos del CV.
  */
-public class Knowledge {
-
-    private Long id;
+public class KnowledgeRecord extends AbstractSugarRecord {
 
     private String name;
     private String image;
-    private KnowledgeType type;
-    private KnowledgeLevel level;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+    private int type;
+    private int level;
 
     public String getName() {
         return name;
@@ -39,19 +27,19 @@ public class Knowledge {
         this.image = image;
     }
 
-    public KnowledgeType getType() {
+    public int getType() {
         return type;
     }
 
-    public void setType(KnowledgeType type) {
+    public void setType(int type) {
         this.type = type;
     }
 
-    public KnowledgeLevel getLevel() {
+    public int getLevel() {
         return level;
     }
 
-    public void setLevel(KnowledgeLevel level) {
+    public void setLevel(int level) {
         this.level = level;
     }
 }

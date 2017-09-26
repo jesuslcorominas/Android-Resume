@@ -1,32 +1,18 @@
-package com.jesuslcorominas.resume.model.vo;
-
-import org.joda.time.DateTime;
+package com.jesuslcorominas.resume.model.database.record;
 
 /**
  * Created by Jesus Lopez Corominas
  * 22/09/2017.
- * <p>
- * Clase que modela los datos personales del CV
  */
-public class PersonalData {
-
-    private Long id;
+public class PersonalDataRecord extends AbstractSugarRecord {
 
     private String name;
     private String surname;
-    private DateTime birthdate;
+    private String birthdate;
     private String email;
     private String phonenumber;
     private String summary;
     private String image;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -44,11 +30,11 @@ public class PersonalData {
         this.surname = surname;
     }
 
-    public DateTime getBirthdate() {
+    public String getBirthdate() {
         return birthdate;
     }
 
-    public void setBirthdate(DateTime birthdate) {
+    public void setBirthdate(String birthdate) {
         this.birthdate = birthdate;
     }
 

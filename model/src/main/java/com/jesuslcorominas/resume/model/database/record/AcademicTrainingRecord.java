@@ -1,31 +1,19 @@
-package com.jesuslcorominas.resume.model.vo;
+package com.jesuslcorominas.resume.model.database.record;
 
-import org.joda.time.DateTime;
+import com.orm.dsl.MultiUnique;
 
 /**
  * Created by Jesus Lopez Corominas
  * 22/09/2017.
- * <p>
- * Clase que modela la formación académica del CV.
  */
-public class AcademicTraining {
-
-    private Long id;
+public class AcademicTrainingRecord extends AbstractSugarRecord {
 
     private String name;
     private String school;
-    private DateTime start;
-    private DateTime end;
-    private Float mark;
+    private String start;
+    private String end;
+    private String mark;
     private String image;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;
@@ -43,27 +31,27 @@ public class AcademicTraining {
         this.school = school;
     }
 
-    public DateTime getStart() {
+    public String getStart() {
         return start;
     }
 
-    public void setStart(DateTime start) {
+    public void setStart(String start) {
         this.start = start;
     }
 
-    public DateTime getEnd() {
+    public String getEnd() {
         return end;
     }
 
-    public void setEnd(DateTime end) {
+    public void setEnd(String end) {
         this.end = end;
     }
 
-    public Float getMark() {
+    public String getMark() {
         return mark;
     }
 
-    public void setMark(Float mark) {
+    public void setMark(String mark) {
         this.mark = mark;
     }
 

@@ -1,25 +1,15 @@
-package com.jesuslcorominas.resume.model.vo;
+package com.jesuslcorominas.resume.model.database.record;
+
+import com.orm.SugarRecord;
 
 /**
  * Created by Jesus Lopez Corominas
  * 22/09/2017.
- * <p>
- * Clase que modela otros datos del CV.
  */
-public class OtherData {
-
-    private Long id;
+public class OtherDataRecord extends AbstractSugarRecord {
 
     private String name;
     private String description;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getName() {
         return name;

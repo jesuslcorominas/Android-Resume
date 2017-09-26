@@ -1,7 +1,7 @@
 package com.jesuslcorominas.resume.model.vo;
 
 /**
- * Created by Jesús López Corominas (dev.jesus.lopez.corominas@gmail.com)
+ * Created by Jesus Lopez Corominas
  * 22/09/2017.
  * <p>
  * Enumerado con los distintos niveles posibles de un conocimiento.
@@ -10,13 +10,13 @@ public enum KnowledgeLevel {
 
     UNDEFINED(0), BASIC(1), MEDIUM(2), ADVANCED(3);
 
-    private int value;
+    private final int value;
 
-    KnowledgeLevel (int value) {
+    KnowledgeLevel(int value) {
         this.value = value;
     }
 
-    public static KnowledgeLevel getKnowledgeLevel(int value) {
+    public static KnowledgeLevel getKnowledgeLevel(final int value) {
         if (value == BASIC.value) {
             return BASIC;
         } else if (value == MEDIUM.value) {
@@ -26,6 +26,10 @@ public enum KnowledgeLevel {
         }
 
         return UNDEFINED;
+    }
+
+    public int getValue() {
+        return this.value;
     }
 
 }
