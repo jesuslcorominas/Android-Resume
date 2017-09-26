@@ -6,7 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Created by Jesús López Corominas (dev.jesus.lopez.corominas@gmail.com)
+ * Created by Jesús López Corominas
  * 26/09/2017.
  */
 @Target(ElementType.FIELD)

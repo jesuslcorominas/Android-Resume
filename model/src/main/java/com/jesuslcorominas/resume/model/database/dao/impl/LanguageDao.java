@@ -6,7 +6,7 @@ import com.jesuslcorominas.resume.model.vo.Language;
 import org.androidannotations.annotations.EBean;
 
 /**
- * Created by Jesús López Corominas (dev.jesus.lopez.corominas@gmail.com)
+ * Created by Jesús López Corominas
  * 26/09/2017.
  */
 @EBean

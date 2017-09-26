@@ -1,7 +1,7 @@
 package com.jesuslcorominas.resume.commons.util;
 
 /**
- * Created by Jesús López Corominas (dev.jesus.lopez.corominas@gmail.com)
+ * Created by Jesús López Corominas
  * 25/09/2017.
  */
 public final class TextUtils {

@@ -1,7 +1,7 @@
 package com.jesuslcorominas.resume.model.vo;
 
 /**
- * Created by Jesús López Corominas (dev.jesus.lopez.corominas@gmail.com)
+ * Created by Jesús López Corominas
  * 26/09/2017.
  */
 public class ProjectLibrary {
