@@ -1,2 +1,2 @@
-# Android-Resume
+# Resume-Android
 Aplicación Android para mostrar mi CV
