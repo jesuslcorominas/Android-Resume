@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ImageView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:adjustViewBounds">true</item>
+    </style>
+
+    <style name="ImageView.Splash">
+        <item name="android:layout_width">@dimen/splash_icon</item>
+        <item name="android:layout_height">@dimen/splash_icon</item>
+        <item name="android:src">@drawable/ic_resume</item>
+        <item name="android:layout_centerInParent">true</item>
+    </style>
+
+    <style name="TextView">
+        <item name="android:textSize">@dimen/text</item>
+    </style>
+
+    <style name="TextView.Body">
+
+    </style>
+
+    <style name="TextView.Title">
+        <item name="android:singleLine">true</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textSize">@dimen/text_xlarge</item>
+    </style>
+
+    <style name="TextView.Title.Splash">
+        <item name="android:textSize">@dimen/text_xxlarge</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginBottom">@dimen/margin_xxxlarge</item>
+        <item name="android:gravity">center</item>
+        <item name="android:text">@string/app_name</item>
+        <item name="android:textColor">@color/light_gray</item>
+    </style>
+
+    <style name="Button">
+
+    </style>
+
+    <style name="Button.Borderless">
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+        <item name="android:padding">@dimen/margin_small</item>
+    </style>
+
+    <style name="Button.Borderless.Circular">
+        <item name="android:background">@drawable/selectable_item_background_circular</item>
+    </style>
+
+    <style name="Button.Borderless.Circular.SideMenu">
+        <item name="android:layout_width">@dimen/side_menu_image_button</item>
+        <item name="android:layout_height">@dimen/side_menu_image_button</item>
+        <item name="android:layout_margin">@dimen/margin</item>
+        <item name="android:scaleType">centerInside</item>
+    </style>
+
+</resources>

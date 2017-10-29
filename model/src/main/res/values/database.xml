@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <integer name="database_version">1</integer>
-    <string name="database_package">com.jesuslcorominas.resume.model.database.record</string>
-    <string name="database_name">android_resume.db</string>
-</resources>

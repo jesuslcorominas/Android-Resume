@@ -1,0 +1,369 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:109408783789428122",
+      "lastPropertyId": "8:7093239610865391464",
+      "name": "AcademicTraining",
+      "properties": [
+        {
+          "id": "1:4556976356371956370",
+          "name": "id"
+        },
+        {
+          "id": "2:6108565523466734713",
+          "name": "name"
+        },
+        {
+          "id": "3:5888820871196479422",
+          "name": "school"
+        },
+        {
+          "id": "4:2469441962115670391",
+          "name": "mark"
+        },
+        {
+          "id": "5:5399180915841150949",
+          "name": "image"
+        },
+        {
+          "id": "6:7960342455069391825",
+          "name": "start"
+        },
+        {
+          "id": "7:2630853401779157851",
+          "name": "end"
+        },
+        {
+          "id": "8:7093239610865391464",
+          "name": "update"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "2:8958125898675911102",
+      "lastPropertyId": "6:8068092434253422495",
+      "name": "Knowledge",
+      "properties": [
+        {
+          "id": "1:1307409177861525806",
+          "name": "id"
+        },
+        {
+          "id": "2:107827984354245060",
+          "name": "name"
+        },
+        {
+          "id": "3:5485387913896150675",
+          "name": "image"
+        },
+        {
+          "id": "4:49206271595216555",
+          "name": "type"
+        },
+        {
+          "id": "5:8321066359265429628",
+          "name": "level"
+        },
+        {
+          "id": "6:8068092434253422495",
+          "name": "update"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "3:1903216327321174956",
+      "lastPropertyId": "4:1858501093236053953",
+      "name": "Language",
+      "properties": [
+        {
+          "id": "1:4425361310508369081",
+          "name": "id"
+        },
+        {
+          "id": "2:5950254175718591577",
+          "name": "name"
+        },
+        {
+          "id": "3:5215865599517754838",
+          "name": "level"
+        },
+        {
+          "id": "4:1858501093236053953",
+          "name": "update"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "4:1976749441871459966",
+      "lastPropertyId": "4:182576385251252907",
+      "name": "OtherData",
+      "properties": [
+        {
+          "id": "1:5304186609426983009",
+          "name": "id"
+        },
+        {
+          "id": "2:7401339079095955511",
+          "name": "name"
+        },
+        {
+          "id": "3:6161544140908471305",
+          "name": "description"
+        },
+        {
+          "id": "4:182576385251252907",
+          "name": "update"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "5:4578004231784768405",
+      "lastPropertyId": "7:1628568586090227763",
+      "name": "OtherTraining",
+      "properties": [
+        {
+          "id": "1:4496033647931867373",
+          "name": "id"
+        },
+        {
+          "id": "2:1382823726994628691",
+          "name": "name"
+        },
+        {
+          "id": "3:5280946781719130516",
+          "name": "school"
+        },
+        {
+          "id": "4:9050287614604215131",
+          "name": "hours"
+        },
+        {
+          "id": "5:1175581079395740787",
+          "name": "image"
+        },
+        {
+          "id": "6:3530480389250820928",
+          "name": "date"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "6:2509400187491275561",
+      "lastPropertyId": "9:3800402386390775019",
+      "name": "PersonalData",
+      "properties": [
+        {
+          "id": "1:1920865988662802202",
+          "name": "id"
+        },
+        {
+          "id": "2:1581441774656877350",
+          "name": "name"
+        },
+        {
+          "id": "3:7038078608259933806",
+          "name": "surname"
+        },
+        {
+          "id": "4:5606547521212215010",
+          "name": "email"
+        },
+        {
+          "id": "5:5316866721437242132",
+          "name": "phoneNumber"
+        },
+        {
+          "id": "6:7013892434144341535",
+          "name": "summary"
+        },
+        {
+          "id": "7:6093267558888344242",
+          "name": "image"
+        },
+        {
+          "id": "8:4195452632317993715",
+          "name": "birthdate"
+        },
+        {
+          "id": "9:3800402386390775019",
+          "name": "update"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "7:7714403652590878093",
+      "lastPropertyId": "8:3028451336808147671",
+      "name": "Experience",
+      "properties": [
+        {
+          "id": "1:4427817228520953737",
+          "name": "id"
+        },
+        {
+          "id": "2:8539744929649088313",
+          "name": "companyName"
+        },
+        {
+          "id": "3:8085856869391477181",
+          "name": "image"
+        },
+        {
+          "id": "4:2722115542836465148",
+          "name": "start"
+        },
+        {
+          "id": "5:6028686701995361811",
+          "name": "end"
+        },
+        {
+          "id": "6:6828440611737053903",
+          "name": "position"
+        },
+        {
+          "id": "7:3125322442451985432",
+          "name": "description"
+        },
+        {
+          "id": "8:3028451336808147671",
+          "name": "update"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "8:37224929129766188",
+      "lastPropertyId": "9:3397218045733234369",
+      "name": "Project",
+      "properties": [
+        {
+          "id": "1:5724506805680195579",
+          "name": "id"
+        },
+        {
+          "id": "2:2642076784705653149",
+          "name": "name"
+        },
+        {
+          "id": "3:7451866158278378003",
+          "name": "description"
+        },
+        {
+          "id": "4:3366996517908760519",
+          "name": "platform"
+        },
+        {
+          "id": "5:119552689398222956",
+          "name": "icon"
+        },
+        {
+          "id": "6:2816546602019210800",
+          "name": "path"
+        },
+        {
+          "id": "8:5321056698194697725",
+          "indexId": "3:2686770721883759273",
+          "name": "experienceId"
+        },
+        {
+          "id": "9:3397218045733234369",
+          "name": "update"
+        }
+      ],
+      "relations": [
+        {
+          "id": "4:4885079203428069104",
+          "name": "libraries"
+        }
+      ]
+    },
+    {
+      "id": "9:2878439580708798029",
+      "lastPropertyId": "5:1322150218583501869",
+      "name": "ProjectImage",
+      "properties": [
+        {
+          "id": "1:1202836344307646474",
+          "name": "id"
+        },
+        {
+          "id": "2:3662269599645187952",
+          "name": "path"
+        },
+        {
+          "id": "4:167172649179303704",
+          "indexId": "4:9023561544628607563",
+          "name": "projectId"
+        },
+        {
+          "id": "5:1322150218583501869",
+          "name": "update"
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "10:4160993159406542550",
+      "lastPropertyId": "6:849629123888575926",
+      "name": "Library",
+      "properties": [
+        {
+          "id": "1:325136035509119807",
+          "name": "id"
+        },
+        {
+          "id": "2:922332038805064389",
+          "name": "name"
+        },
+        {
+          "id": "3:7790052385567405742",
+          "name": "path"
+        },
+        {
+          "id": "5:6426792359695909781",
+          "name": "description"
+        },
+        {
+          "id": "6:849629123888575926",
+          "name": "update"
+        }
+      ],
+      "relations": [
+        {
+          "id": "3:2448768095888416237",
+          "name": "projects"
+        }
+      ]
+    }
+  ],
+  "lastEntityId": "10:4160993159406542550",
+  "lastIndexId": "4:9023561544628607563",
+  "lastRelationId": "4:4885079203428069104",
+  "lastSequenceId": "0:0",
+  "modelVersion": 4,
+  "modelVersionParserMinimum": 4,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [
+    1729316887588094583,
+    2811532957638063327
+  ],
+  "retiredPropertyUids": [
+    2741551938524201435,
+    8865723205149564782,
+    3499557432912665211,
+    1628568586090227763
+  ],
+  "retiredRelationUids": [
+    5084390669785089102,
+    4393278883720611833
+  ],
+  "version": 1
+}

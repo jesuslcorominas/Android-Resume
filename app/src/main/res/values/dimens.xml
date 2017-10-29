@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="nav_header_vertical_spacing">@dimen/margin</dimen>
+    <dimen name="nav_header_height">160dp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">@dimen/margin</dimen>
+    <dimen name="activity_vertical_margin">@dimen/margin</dimen>
+    <dimen name="fab_margin">@dimen/margin</dimen>
+
+    <dimen name="margin_xsmall">2dp</dimen>
+    <dimen name="margin_small">4dp</dimen>
+    <dimen name="margin">8dp</dimen>
+    <dimen name="margin_large">12dp</dimen>
+    <dimen name="margin_xlarge">16dp</dimen>
+    <dimen name="margin_xxlarge">24dp</dimen>
+    <dimen name="margin_xxxlarge">32dp</dimen>
+
+    <dimen name="splash_icon">96dp</dimen>
+
+    <dimen name="text_xsmall">8sp</dimen>
+    <dimen name="text_small">10sp</dimen>
+    <dimen name="text">12sp</dimen>
+    <dimen name="text_large">16sp</dimen>
+    <dimen name="text_xlarge">24sp</dimen>
+    <dimen name="text_xxlarge">32sp</dimen>
+    <dimen name="text_xxxlarge">48sp</dimen>
+
+    <dimen name="side_menu_image_button">48dp</dimen>
+
+    <!-- Menu lateral -->
+    <dimen name="side_menu_width">320dp</dimen>
+</resources>

@@ -1,24 +1,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-
     package="com.jesuslcorominas.resume.model">
 
     <application
         android:allowBackup="true"
         android:supportsRtl="true">
 
-        <!-- SugarORM -->
-        <meta-data
-            android:name="DATABASE"
-            android:value="@string/database_name" />
-        <meta-data
-            android:name="VERSION"
-            android:value="@integer/database_version" />
-        <meta-data
-            android:name="QUERY_LOG"
-            android:value="true" />
-        <meta-data
-            android:name="DOMAIN_PACKAGE_NAME"
-            android:value="@string/database_package" />
     </application>
 
 </manifest>

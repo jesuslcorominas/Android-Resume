@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">Resume</string>
+
+    <string name="splash_icon_description">Icono de la aplicación</string>
+
+    <string name="side_menu_training">Formación</string>
+    <string name="side_menu_knowledge">Conocimientos</string>
+    <string name="side_menu_experience">Experiencia</string>
+    <string name="side_menu_other_data">Otros</string>
+    <string name="side_menu_button_github">Enlace a Github de la aplicación</string>
+    <string name="side_menu_button_google_play">Enlace a la ficha de la aplicación de Google Play</string>
+    <string name="side_menu_button_linkedin">Enlace a linkedIn de Jesús López Corominas</string>
+
+    <string name="navigation_drawer_open"></string>
+    <string name="navigation_drawer_close"></string>
+
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque nec tortor id massa facilisis interdum. Pellentesque in ultricies felis. Sed auctor ligula et quam consectetur, vitae rutrum mauris tincidunt. Integer vel odio nec sapien tempor laoreet id at elit. Morbi eu volutpat nisl, ac cursus tortor. Aliquam ut orci in mi rutrum imperdiet. Praesent et elit vulputate, convallis risus sit amet, egestas nunc. Pellentesque sagittis rutrum urna, eu dapibus dui aliquet in.
+
+Mauris id sodales eros, vitae posuere diam. Curabitur vel augue malesuada, malesuada mauris nec, vestibulum nibh. Cras tincidunt augue nec ipsum cursus aliquam. Mauris nec mi vulputate, lacinia diam vel, eleifend ante. Suspendisse potenti. Quisque suscipit ipsum vitae eros ullamcorper finibus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Phasellus vestibulum nisl at leo imperdiet aliquam. Nulla tristique suscipit purus, vitae placerat ligula feugiat a. Phasellus porta gravida sem elementum faucibus. Pellentesque risus nisi, rutrum non sem a, bibendum tristique tellus. Aliquam egestas sapien in lorem blandit efficitur. In imperdiet ultrices finibus. Suspendisse potenti. In malesuada imperdiet ante, quis blandit urna euismod sed. Donec dapibus venenatis lobortis.
+
+Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In eu aliquet leo. Curabitur auctor dolor sed ligula ultrices, vel fringilla tortor gravida. Pellentesque vel metus feugiat, auctor purus ut, fermentum lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Fusce nec ante efficitur, tristique elit at, bibendum nunc. Phasellus mattis felis risus, bibendum bibendum nunc molestie nec. In volutpat tempor justo, accumsan suscipit neque commodo ornare. Proin vestibulum, orci a sagittis lobortis, dui odio egestas ipsum, in pretium diam sem vitae sem. Fusce luctus purus et rutrum accumsan. Curabitur aliquam orci sit amet tincidunt cursus. Nunc et erat purus. Ut a tincidunt magna. Duis tortor leo, fermentum nec imperdiet vel, venenatis eget ante. Sed rhoncus tristique efficitur.
+
+In nec hendrerit magna. In eget tortor a turpis pretium facilisis. Cras blandit est ac lobortis mattis. Pellentesque ultricies ultrices sodales. Fusce pulvinar pulvinar tincidunt. Praesent et neque massa. Nam tristique nibh varius velit fringilla maximus. Sed sed dapibus massa. Curabitur blandit, tortor nec bibendum pharetra, turpis erat tempor odio, sit amet sagittis orci nisi lobortis erat.
+
+Vestibulum vel ex nec ante tincidunt rutrum. Integer ornare, orci in fringilla aliquet, erat arcu rutrum tellus, non euismod sapien lectus semper massa. Maecenas ultricies justo vel libero aliquet sodales. Suspendisse lectus lectus, ultricies vitae tempus et, vehicula vitae orci. Nulla facilisi. Quisque ut nulla euismod, vestibulum lacus eu, lacinia lectus. Donec ut quam dictum, molestie ex eu, gravida diam.</string>
 </resources>

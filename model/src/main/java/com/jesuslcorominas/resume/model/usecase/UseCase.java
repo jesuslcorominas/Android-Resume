@@ -1,17 +1,15 @@
 package com.jesuslcorominas.resume.model.usecase;
 
-import com.jesuslcorominas.resume.model.vo.ErrorInfo;
+import com.jesuslcorominas.resume.commons.GenericCallback;
 
 /**
- * Created by Jesús López Corominas
- * 26/09/2017.
+ * @author Jesús López Corominas
  */
-public interface UseCase <I, O>{
+public interface UseCase<I, O> {
 
     void execute(I inputData, Callback<O> callback);
 
-    interface Callback <O>{
-        void onSuccess(O data);
-        void onError(ErrorInfo errorInfo);
+    interface Callback<O> extends GenericCallback<O> {
     }
+
 }
