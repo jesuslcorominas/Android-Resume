@@ -2,7 +2,7 @@ package com.jesuslcorominas.resume.app.di.module;
 
 import com.jesuslcorominas.resume.app.presenter.MainPresenter;
 import com.jesuslcorominas.resume.app.presenter.impl.MainPresenterImpl;
-import com.jesuslcorominas.resume.model.usecase.GetExperiencesListUseCase;
+import com.jesuslcorominas.resume.model.usecase.ExperienceListUseCase;
 import com.jesuslcorominas.resume.model.di.module.ExperienceUseCaseModule;
 
 import dagger.Module;
@@ -15,7 +15,7 @@ import dagger.Provides;
 public class MainModule {
 
     @Provides
-    MainPresenter provideMainPresenter(GetExperiencesListUseCase getExperiencesListUseCase) {
-        return new MainPresenterImpl(getExperiencesListUseCase);
+    MainPresenter provideMainPresenter(ExperienceListUseCase experienceListUseCase) {
+        return new MainPresenterImpl(experienceListUseCase);
     }
 }

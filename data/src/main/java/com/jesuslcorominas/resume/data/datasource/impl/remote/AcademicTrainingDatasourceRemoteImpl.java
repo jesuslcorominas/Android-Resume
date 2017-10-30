@@ -1,8 +1,9 @@
 package com.jesuslcorominas.resume.data.datasource.impl.remote;
 
-import com.jesuslcorominas.resume.data.datasource.AcademicTrainingDatasource;
+import com.jesuslcorominas.resume.data.datasource.Datasource;
 import com.jesuslcorominas.resume.data.entity.AcademicTraining;
 import com.jesuslcorominas.resume.data.net.AcademicTrainingRestClient;
+import com.jesuslcorominas.resume.data.net.RestClient;
 
 import org.joda.time.DateTime;
 
@@ -11,36 +12,10 @@ import java.util.List;
 /**
  * @author Jesús López Corominas
  */
-public class AcademicTrainingDatasourceRemoteImpl implements AcademicTrainingDatasource {
+public class AcademicTrainingDatasourceRemoteImpl extends AbstractDatasourceRemoteImpl<AcademicTraining> {
 
-    private AcademicTrainingRestClient academicTrainingRestClient;
-
-    public AcademicTrainingDatasourceRemoteImpl(AcademicTrainingRestClient academicTrainingRestClient) {
-        this.academicTrainingRestClient = academicTrainingRestClient;
+    public AcademicTrainingDatasourceRemoteImpl(RestClient<AcademicTraining> restClient) {
+        super(restClient);
     }
 
-    @Override
-    public void refresh(DateTime dateTime, ListCallback<AcademicTraining> callback) {
-
-    }
-
-    @Override
-    public void list(ListCallback<AcademicTraining> callback) {
-
-    }
-
-    @Override
-    public void save(AcademicTraining item, SaveCallback<AcademicTraining> callback) {
-
-    }
-
-    @Override
-    public void save(List<AcademicTraining> items, SaveListCallback<AcademicTraining> callback) {
-
-    }
-
-    @Override
-    public void detail(long itemId, DetailCallback<AcademicTraining> callback) {
-
-    }
 }

@@ -10,6 +10,6 @@ import java.util.List;
 /**
  * @author Jesús López Corominas
  */
-public interface RefreshExperienceUseCase extends UseCase<DateTime, List<Experience>> {
+public interface ExperienceRefreshListUseCase extends UseCase<DateTime, List<Experience>> {
 
 }

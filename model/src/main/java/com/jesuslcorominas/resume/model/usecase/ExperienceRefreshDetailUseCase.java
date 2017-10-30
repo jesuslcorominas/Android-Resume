@@ -5,7 +5,5 @@ import com.jesuslcorominas.resume.data.entity.Experience;
 /**
  * @author Jesús López Corominas
  */
-public interface ExperienceDetailUseCase extends UseCase<Long, Experience> {
-
-
+public interface ExperienceRefreshDetailUseCase extends UseCase <Long, Experience>{
 }

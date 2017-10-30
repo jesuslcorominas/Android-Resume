@@ -35,6 +35,11 @@ public abstract class AbstractObjectBoxDao<V> implements Dao<V> {
     }
 
     @Override
+    public V findById(long itemId) {
+        return box.get(itemId);
+    }
+
+    @Override
     public List<V> find(Query<V> query) {
         if (query == null) {
             return box.getAll();

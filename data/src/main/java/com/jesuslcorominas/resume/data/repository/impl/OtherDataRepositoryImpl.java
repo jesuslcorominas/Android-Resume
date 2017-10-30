@@ -1,15 +1,15 @@
 package com.jesuslcorominas.resume.data.repository.impl;
 
-import com.jesuslcorominas.resume.data.datasource.OtherDataDatasource;
+import com.jesuslcorominas.resume.data.datasource.Datasource;
 import com.jesuslcorominas.resume.data.entity.OtherData;
-import com.jesuslcorominas.resume.data.repository.OtherDataRepository;
+import com.jesuslcorominas.resume.data.repository.Repository;
 
 /**
  * @author Jesús López Corominas
  */
-public class OtherDataRepositoryImpl extends AbstractRepository<OtherData, OtherDataDatasource> implements OtherDataRepository {
+public class OtherDataRepositoryImpl extends AbstractRepository<OtherData> {
 
-    public OtherDataRepositoryImpl(OtherDataDatasource localDatasource, OtherDataDatasource remoteDatasource) {
+    public OtherDataRepositoryImpl(Datasource<OtherData> localDatasource, Datasource<OtherData> remoteDatasource) {
         super(localDatasource, remoteDatasource);
     }
 }

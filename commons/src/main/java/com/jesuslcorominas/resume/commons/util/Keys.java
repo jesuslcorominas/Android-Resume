@@ -14,6 +14,7 @@ public final class Keys {
 
         public static final int notImplementedError = 1001;
         public static final int emptyData = 1002;
+        public static final int idNotValid = 1003;
 
         public static final int databaseGenericError = 2001;
 

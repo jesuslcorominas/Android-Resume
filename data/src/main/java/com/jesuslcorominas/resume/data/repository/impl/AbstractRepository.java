@@ -12,18 +12,18 @@ import java.util.List;
 /**
  * @author Jesús López Corominas
  */
-abstract class AbstractRepository<T, D extends Datasource<T>> implements Repository<T> {
+abstract class AbstractRepository<T> implements Repository<T> {
 
-    private D localDatasource;
-    private D remoteDatasource;
+    private Datasource<T> localDatasource;
+    private Datasource<T> remoteDatasource;
 
-    AbstractRepository(D localDatasource, D remoteDatasource) {
+    AbstractRepository(Datasource<T> localDatasource, Datasource<T> remoteDatasource) {
         this.localDatasource = localDatasource;
         this.remoteDatasource = remoteDatasource;
     }
 
     @Override
-    public void get(final long itemId, final DetailCallback<T> callback) {
+    public void detail(final long itemId, final DetailCallback<T> callback) {
         localDatasource.detail(itemId, new Datasource.DetailCallback<T>() {
             @Override
             public void onSuccess(T data) {
@@ -83,7 +83,7 @@ abstract class AbstractRepository<T, D extends Datasource<T>> implements Reposit
                         }
                     });
                 } else {
-                    callback.onError(new ErrorInfo(Keys.ResultCodes.emptyData, "No hay datos más nuevos"));
+                    callback.onSuccess(data);
                 }
             }
 
@@ -118,7 +118,7 @@ abstract class AbstractRepository<T, D extends Datasource<T>> implements Reposit
                                     }
                                 });
                             } else {
-                                callback.onError(new ErrorInfo(Keys.ResultCodes.emptyData, "No hay datos en ningún sitio"));
+                                callback.onSuccess(data);
                             }
                         }
 

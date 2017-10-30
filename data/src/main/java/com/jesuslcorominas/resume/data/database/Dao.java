@@ -48,6 +48,14 @@ public interface Dao<V> {
     List<V> find(Query<V> query);
 
     /**
+     * Obtiene el elemento cuyo id se pasa como parametro
+     *
+     * @param itemId El id del elemento a obtener
+     * @return El elemento cuyo id se pasa como parametro
+     */
+    V findById(long itemId);
+
+    /**
      * Almacena un registro en base de datos
      *
      * @param item El registro a almacenar

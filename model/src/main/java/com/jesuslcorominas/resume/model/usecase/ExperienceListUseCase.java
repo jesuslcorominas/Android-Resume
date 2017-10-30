@@ -7,5 +7,5 @@ import java.util.List;
 /**
  * @author Jesús López Corominas
  */
-public interface GetExperiencesListUseCase extends UseCase<Void, List<Experience>> {
+public interface ExperienceListUseCase extends UseCase<Void, List<Experience>> {
 }

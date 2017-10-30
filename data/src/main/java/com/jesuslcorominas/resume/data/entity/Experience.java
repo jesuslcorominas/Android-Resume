@@ -37,7 +37,7 @@ public class Experience {
     @Convert(converter = DateConverter.class, dbType = Long.class)
     private DateTime update;
 
-    // TODO mirar si puede hacerse privado con un get/set
+    // TODO mirar si puede hacerse privado con un detail/set
     @Backlink
     public ToMany<Project> projects;
 

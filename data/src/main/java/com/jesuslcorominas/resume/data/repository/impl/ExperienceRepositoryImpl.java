@@ -1,16 +1,16 @@
 package com.jesuslcorominas.resume.data.repository.impl;
 
 
-import com.jesuslcorominas.resume.data.datasource.ExperienceDatasource;
+import com.jesuslcorominas.resume.data.datasource.Datasource;
 import com.jesuslcorominas.resume.data.entity.Experience;
-import com.jesuslcorominas.resume.data.repository.ExperienceRepository;
+import com.jesuslcorominas.resume.data.repository.Repository;
 
 /**
  * @author Jesús López Corominas
  */
-public class ExperienceRepositoryImpl extends AbstractRepository<Experience, ExperienceDatasource> implements ExperienceRepository {
+public class ExperienceRepositoryImpl extends AbstractRepository<Experience> {
 
-    public ExperienceRepositoryImpl(ExperienceDatasource localDatasource, ExperienceDatasource remoteDatasource) {
+    public ExperienceRepositoryImpl(Datasource<Experience> localDatasource, Datasource<Experience> remoteDatasource) {
         super(localDatasource, remoteDatasource);
     }
 }

@@ -1,15 +1,15 @@
 package com.jesuslcorominas.resume.data.repository.impl;
 
-import com.jesuslcorominas.resume.data.datasource.PersonalDataDatasource;
+import com.jesuslcorominas.resume.data.datasource.Datasource;
 import com.jesuslcorominas.resume.data.entity.PersonalData;
-import com.jesuslcorominas.resume.data.repository.PersonalDataRepository;
+import com.jesuslcorominas.resume.data.repository.Repository;
 
 /**
  * @author Jesús López Corominas
  */
-public class PersonalDataRepositoryImpl extends AbstractRepository<PersonalData, PersonalDataDatasource> implements PersonalDataRepository {
+public class PersonalDataRepositoryImpl extends AbstractRepository<PersonalData> {
 
-    public PersonalDataRepositoryImpl(PersonalDataDatasource localDatasource, PersonalDataDatasource remoteDatasource) {
+    public PersonalDataRepositoryImpl(Datasource<PersonalData> localDatasource, Datasource<PersonalData> remoteDatasource) {
         super(localDatasource, remoteDatasource);
     }
 }

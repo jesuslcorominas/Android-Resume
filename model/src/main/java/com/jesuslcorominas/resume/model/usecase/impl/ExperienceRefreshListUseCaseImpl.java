@@ -2,20 +2,23 @@ package com.jesuslcorominas.resume.model.usecase.impl;
 
 import com.jesuslcorominas.resume.data.entity.Experience;
 import com.jesuslcorominas.resume.data.repository.Repository;
-import com.jesuslcorominas.resume.model.usecase.RefreshExperienceUseCase;
+import com.jesuslcorominas.resume.model.usecase.ExperienceRefreshListUseCase;
 
 import org.joda.time.DateTime;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 /**
  * @author Jesús López Corominas
  */
-public class RefreshExperienceUseCaseImpl implements RefreshExperienceUseCase {
+public class ExperienceRefreshListUseCaseImpl implements ExperienceRefreshListUseCase {
 
     private Repository<Experience> repository;
 
-    public RefreshExperienceUseCaseImpl(Repository<Experience> repository) {
+    @Inject
+    public ExperienceRefreshListUseCaseImpl(Repository<Experience> repository) {
         this.repository = repository;
     }
 

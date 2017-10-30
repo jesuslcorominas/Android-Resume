@@ -4,13 +4,7 @@ import com.jesuslcorominas.resume.app.presenter.MainPresenter;
 import com.jesuslcorominas.resume.app.presenter.callbackview.MainView;
 import com.jesuslcorominas.resume.commons.ErrorInfo;
 import com.jesuslcorominas.resume.data.entity.Experience;
-import com.jesuslcorominas.resume.model.usecase.GetExperiencesListUseCase;
-import com.jesuslcorominas.resume.model.usecase.GetPersonalDataUseCase;
-import com.jesuslcorominas.resume.model.usecase.impl.GetExperiencesListUseCaseImpl;
-import com.jesuslcorominas.resume.model.usecase.impl.GetPersonalDataUseCaseImpl;
-
-import org.androidannotations.annotations.Bean;
-import org.androidannotations.annotations.EBean;
+import com.jesuslcorominas.resume.model.usecase.ExperienceListUseCase;
 
 import java.util.List;
 
@@ -21,15 +15,15 @@ import javax.inject.Inject;
  */
 public class MainPresenterImpl extends AbstractPresenter<MainView> implements MainPresenter {
 
-    private GetExperiencesListUseCase getExperiencesListUseCase;
+    private ExperienceListUseCase experienceListUseCase;
 
-    @Inject public MainPresenterImpl (GetExperiencesListUseCase getExperiencesListUseCase) {
-        this.getExperiencesListUseCase = getExperiencesListUseCase;
+    @Inject public MainPresenterImpl (ExperienceListUseCase experienceListUseCase) {
+        this.experienceListUseCase = experienceListUseCase;
     }
 
     @Override
     public void test() {
-        getExperiencesListUseCase.execute(null, new GetExperiencesListUseCase.Callback<List<Experience>>() {
+        experienceListUseCase.execute(null, new ExperienceListUseCase.Callback<List<Experience>>() {
             @Override
             public void onSuccess(List<Experience> data) {
 

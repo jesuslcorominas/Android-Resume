@@ -11,7 +11,7 @@ import java.util.List;
  */
 public interface Repository<T> {
 
-    void get(long itemId, DetailCallback<T> callback);
+    void detail(long itemId, DetailCallback<T> callback);
 
     void refresh(DateTime dateTime, ListCallback<T> callback);
 
