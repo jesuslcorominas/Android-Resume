@@ -2,7 +2,6 @@ package com.jesuslcorominas.resume.model.usecase.impl;
 
 import com.jesuslcorominas.resume.commons.ErrorInfo;
 import com.jesuslcorominas.resume.data.entity.Experience;
-import com.jesuslcorominas.resume.data.repository.ExperienceRepository;
 import com.jesuslcorominas.resume.data.repository.Repository;
 import com.jesuslcorominas.resume.model.usecase.GetExperiencesListUseCase;
 
@@ -13,12 +12,12 @@ import javax.inject.Inject;
 /**
  * @author Jesús López Corominas
  */
-public class GetExperiencesListUseCaseImpl implements GetExperiencesListUseCase {
+public class ListExperiencesUseCaseImpl implements GetExperiencesListUseCase {
 
-    private ExperienceRepository experienceRepository;
+    private Repository<Experience> experienceRepository;
 
     @Inject
-    public GetExperiencesListUseCaseImpl(ExperienceRepository experienceRepository) {
+    public ListExperiencesUseCaseImpl(Repository<Experience> experienceRepository) {
         this.experienceRepository = experienceRepository;
     }
 
