@@ -48,8 +48,8 @@ public class ExperienceModule {
     }
 
     @Provides
-    RestClient<Experience> provideRestClient(Retrofit retrofit, ExperienceRestClient.Api api) {
-        return new ExperienceRestClientImpl(retrofit, api);
+    RestClient<Experience> provideRestClient(ExperienceRestClient.Api api) {
+        return new ExperienceRestClientImpl(api);
     }
 
     @Provides

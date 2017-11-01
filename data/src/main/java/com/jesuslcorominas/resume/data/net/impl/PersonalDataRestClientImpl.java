@@ -17,8 +17,8 @@ import retrofit2.Retrofit;
 public class PersonalDataRestClientImpl extends AbstractRestClient<PersonalData, PersonalDataRestClient.Api> implements PersonalDataRestClient {
 
     @Inject
-    public PersonalDataRestClientImpl(Retrofit retrofit, PersonalDataRestClient.Api api) {
-        super(retrofit, api);
+    public PersonalDataRestClientImpl(PersonalDataRestClient.Api api) {
+        super(api);
     }
 
     @Override

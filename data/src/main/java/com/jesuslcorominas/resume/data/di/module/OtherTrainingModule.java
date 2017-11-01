@@ -48,8 +48,8 @@ public class OtherTrainingModule {
     }
 
     @Provides
-    RestClient<OtherTraining> provideRestClient(Retrofit retrofit, OtherTrainingRestClient.Api api) {
-        return new OtherTrainingRestClientImpl(retrofit, api);
+    RestClient<OtherTraining> provideRestClient(OtherTrainingRestClient.Api api) {
+        return new OtherTrainingRestClientImpl(api);
     }
 
     @Provides

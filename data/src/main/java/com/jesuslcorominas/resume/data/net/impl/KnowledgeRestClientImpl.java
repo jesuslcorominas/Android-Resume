@@ -16,8 +16,8 @@ import retrofit2.Retrofit;
 public class KnowledgeRestClientImpl extends AbstractRestClient<Knowledge, KnowledgeRestClient.Api> implements KnowledgeRestClient {
 
     @Inject
-    public KnowledgeRestClientImpl(Retrofit retrofit, KnowledgeRestClient.Api api) {
-        super(retrofit, api);
+    public KnowledgeRestClientImpl(KnowledgeRestClient.Api api) {
+        super(api);
     }
 
     @Override

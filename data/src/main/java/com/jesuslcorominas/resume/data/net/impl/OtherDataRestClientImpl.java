@@ -16,8 +16,8 @@ import retrofit2.Retrofit;
 public class OtherDataRestClientImpl extends AbstractRestClient<OtherData, OtherDataRestClient.Api> implements OtherDataRestClient {
 
     @Inject
-    public OtherDataRestClientImpl(Retrofit retrofit, OtherDataRestClient.Api api) {
-        super(retrofit, api);
+    public OtherDataRestClientImpl(OtherDataRestClient.Api api) {
+        super(api);
     }
 
     @Override

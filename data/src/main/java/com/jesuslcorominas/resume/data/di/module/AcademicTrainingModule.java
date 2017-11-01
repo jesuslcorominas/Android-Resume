@@ -48,8 +48,8 @@ public class AcademicTrainingModule {
     }
 
     @Provides
-    RestClient<AcademicTraining> provideRestClient(Retrofit retrofit, AcademicTrainingRestClient.Api api) {
-        return new AcademicTrainingRestClientImpl(retrofit, api);
+    RestClient<AcademicTraining> provideRestClient(AcademicTrainingRestClient.Api api) {
+        return new AcademicTrainingRestClientImpl(api);
     }
 
     @Provides

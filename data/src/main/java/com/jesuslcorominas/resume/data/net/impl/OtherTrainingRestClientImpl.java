@@ -16,8 +16,8 @@ import retrofit2.Retrofit;
 public class OtherTrainingRestClientImpl extends AbstractRestClient<OtherTraining, OtherTrainingRestClient.Api> implements OtherTrainingRestClient {
 
     @Inject
-    public OtherTrainingRestClientImpl(Retrofit retrofit, OtherTrainingRestClient.Api api) {
-        super(retrofit, api);
+    public OtherTrainingRestClientImpl(OtherTrainingRestClient.Api api) {
+        super(api);
     }
 
     @Override

@@ -19,12 +19,9 @@ import retrofit2.Retrofit;
  */
 public abstract class AbstractRestClient<T, R> implements RestClient<T> {
 
-    private Retrofit retrofit;
-
     protected R api;
 
-    AbstractRestClient(Retrofit retrofit, R api) {
-        this.retrofit = retrofit;
+    AbstractRestClient(R api) {
         this.api = api;
     }
 

@@ -48,8 +48,8 @@ public class OtherDataModule {
     }
 
     @Provides
-    RestClient<OtherData> provideRestClient(Retrofit retrofit, OtherDataRestClient.Api api) {
-        return new OtherDataRestClientImpl(retrofit, api);
+    RestClient<OtherData> provideRestClient(OtherDataRestClient.Api api) {
+        return new OtherDataRestClientImpl(api);
     }
 
     @Provides

@@ -17,8 +17,8 @@ import retrofit2.Retrofit;
 public class ExperienceRestClientImpl extends AbstractRestClient<Experience, ExperienceRestClient.Api> implements ExperienceRestClient {
 
     @Inject
-    public ExperienceRestClientImpl(Retrofit retrofit, ExperienceRestClient.Api api) {
-        super(retrofit, api);
+    public ExperienceRestClientImpl(ExperienceRestClient.Api api) {
+        super(api);
     }
 
     @Override

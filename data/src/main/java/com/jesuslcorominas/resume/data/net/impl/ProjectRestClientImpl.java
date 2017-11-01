@@ -16,8 +16,8 @@ import retrofit2.Retrofit;
 public class ProjectRestClientImpl extends AbstractRestClient<Project, ProjectRestClient.Api> implements ProjectRestClient {
 
     @Inject
-    public ProjectRestClientImpl(Retrofit retrofit, ProjectRestClient.Api api) {
-        super(retrofit, api);
+    public ProjectRestClientImpl(ProjectRestClient.Api api) {
+        super(api);
     }
 
     @Override

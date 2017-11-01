@@ -16,8 +16,8 @@ import retrofit2.Retrofit;
 public class LanguageRestClientImpl extends AbstractRestClient<Language, LanguageRestClient.Api> implements LanguageRestClient {
 
     @Inject
-    public LanguageRestClientImpl(Retrofit retrofit,LanguageRestClient.Api api) {
-        super(retrofit, api);
+    public LanguageRestClientImpl(LanguageRestClient.Api api) {
+        super(api);
     }
 
     @Override

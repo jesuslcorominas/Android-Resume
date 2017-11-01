@@ -48,8 +48,8 @@ public class ProjectModule {
     }
 
     @Provides
-    RestClient<Project> provideRestClient(Retrofit retrofit, ProjectRestClient.Api api) {
-        return new ProjectRestClientImpl(retrofit, api);
+    RestClient<Project> provideRestClient(ProjectRestClient.Api api) {
+        return new ProjectRestClientImpl(api);
     }
 
     @Provides

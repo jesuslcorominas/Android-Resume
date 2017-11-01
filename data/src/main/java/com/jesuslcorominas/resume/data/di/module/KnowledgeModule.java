@@ -48,8 +48,8 @@ public class KnowledgeModule {
     }
 
     @Provides
-    RestClient<Knowledge> provideRestClient(Retrofit retrofit, KnowledgeRestClient.Api api) {
-        return new KnowledgeRestClientImpl(retrofit, api);
+    RestClient<Knowledge> provideRestClient(KnowledgeRestClient.Api api) {
+        return new KnowledgeRestClientImpl(api);
     }
 
     @Provides

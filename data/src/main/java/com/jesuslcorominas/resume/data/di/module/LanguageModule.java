@@ -48,8 +48,8 @@ public class LanguageModule {
     }
 
     @Provides
-    RestClient<Language> provideRestClient(Retrofit retrofit, LanguageRestClient.Api api) {
-        return new LanguageRestClientImpl(retrofit, api);
+    RestClient<Language> provideRestClient(LanguageRestClient.Api api) {
+        return new LanguageRestClientImpl(api);
     }
 
     @Provides

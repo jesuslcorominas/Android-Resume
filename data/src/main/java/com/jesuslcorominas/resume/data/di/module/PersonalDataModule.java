@@ -48,8 +48,8 @@ public class PersonalDataModule {
     }
 
     @Provides
-    RestClient<PersonalData> provideRestClient(Retrofit retrofit, PersonalDataRestClient.Api api) {
-        return new PersonalDataRestClientImpl(retrofit, api);
+    RestClient<PersonalData> provideRestClient(PersonalDataRestClient.Api api) {
+        return new PersonalDataRestClientImpl(api);
     }
 
     @Provides
