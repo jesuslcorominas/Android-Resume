@@ -9,11 +9,14 @@ import org.joda.time.DateTime;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 /**
  * @author Jesús López Corominas
  */
 public class PersonalDataDatasourceRemoteImpl extends AbstractDatasourceRemoteImpl<PersonalData> {
 
+    @Inject
     public PersonalDataDatasourceRemoteImpl(RestClient<PersonalData> restClient) {
         super(restClient);
     }

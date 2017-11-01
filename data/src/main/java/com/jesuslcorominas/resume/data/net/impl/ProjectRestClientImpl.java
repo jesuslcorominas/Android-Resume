@@ -6,6 +6,8 @@ import com.jesuslcorominas.resume.data.net.ProjectRestClient;
 
 import org.joda.time.DateTime;
 
+import javax.inject.Inject;
+
 import retrofit2.Retrofit;
 
 /**
@@ -13,6 +15,7 @@ import retrofit2.Retrofit;
  */
 public class ProjectRestClientImpl extends AbstractRestClient<Project, ProjectRestClient.Api> implements ProjectRestClient {
 
+    @Inject
     public ProjectRestClientImpl(Retrofit retrofit, ProjectRestClient.Api api) {
         super(retrofit, api);
     }

@@ -10,11 +10,14 @@ import org.joda.time.DateTime;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 /**
  * @author Jesús López Corominas
  */
 public class ExperienceDatasourceRemoteImpl extends AbstractDatasourceRemoteImpl<Experience> {
 
+    @Inject
     public ExperienceDatasourceRemoteImpl(RestClient<Experience> restClient) {
         super(restClient);
     }

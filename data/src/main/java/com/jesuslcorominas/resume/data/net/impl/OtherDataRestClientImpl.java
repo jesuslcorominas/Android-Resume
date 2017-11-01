@@ -6,6 +6,8 @@ import com.jesuslcorominas.resume.data.net.OtherDataRestClient;
 
 import org.joda.time.DateTime;
 
+import javax.inject.Inject;
+
 import retrofit2.Retrofit;
 
 /**
@@ -13,6 +15,7 @@ import retrofit2.Retrofit;
  */
 public class OtherDataRestClientImpl extends AbstractRestClient<OtherData, OtherDataRestClient.Api> implements OtherDataRestClient {
 
+    @Inject
     public OtherDataRestClientImpl(Retrofit retrofit, OtherDataRestClient.Api api) {
         super(retrofit, api);
     }

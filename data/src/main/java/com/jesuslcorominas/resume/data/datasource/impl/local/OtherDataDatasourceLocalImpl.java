@@ -9,11 +9,14 @@ import org.joda.time.DateTime;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 /**
  * @author Jesús López Corominas
  */
 public class OtherDataDatasourceLocalImpl extends AbstractDatasourceLocalImpl<OtherData> {
 
+    @Inject
     public OtherDataDatasourceLocalImpl(Dao<OtherData> dao) {
         super(dao);
     }

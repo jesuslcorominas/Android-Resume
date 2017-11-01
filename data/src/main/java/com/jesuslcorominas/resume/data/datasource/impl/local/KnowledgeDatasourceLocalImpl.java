@@ -9,11 +9,14 @@ import org.joda.time.DateTime;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 /**
  * @author Jesús López Corominas
  */
 public class KnowledgeDatasourceLocalImpl extends AbstractDatasourceLocalImpl<Knowledge> {
 
+    @Inject
     public KnowledgeDatasourceLocalImpl(Dao<Knowledge> dao) {
         super(dao);
     }

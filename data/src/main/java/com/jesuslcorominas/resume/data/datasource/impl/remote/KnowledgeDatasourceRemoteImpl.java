@@ -8,11 +8,14 @@ import org.joda.time.DateTime;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 /**
  * @author Jesús López Corominas
  */
 public class KnowledgeDatasourceRemoteImpl extends AbstractDatasourceRemoteImpl<Knowledge> {
 
+    @Inject
     public KnowledgeDatasourceRemoteImpl(RestClient<Knowledge> restClient) {
         super(restClient);
     }

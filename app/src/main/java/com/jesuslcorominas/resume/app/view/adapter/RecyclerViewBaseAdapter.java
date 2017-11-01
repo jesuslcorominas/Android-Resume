@@ -28,7 +28,6 @@ public abstract class RecyclerViewBaseAdapter<T, V extends View & ItemView<T>> e
     private OnItemClickListener<T, V> itemClickListener;
     private OnItemLongClickListener<T, V> itemLongClickListener;
 
-
     private boolean multiSelect = false;
     private ArrayList<Integer> selectedItems = new ArrayList<Integer>();
 

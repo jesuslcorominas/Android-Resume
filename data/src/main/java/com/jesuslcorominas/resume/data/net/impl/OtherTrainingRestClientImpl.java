@@ -6,6 +6,8 @@ import com.jesuslcorominas.resume.data.net.OtherTrainingRestClient;
 
 import org.joda.time.DateTime;
 
+import javax.inject.Inject;
+
 import retrofit2.Retrofit;
 
 /**
@@ -13,6 +15,7 @@ import retrofit2.Retrofit;
  */
 public class OtherTrainingRestClientImpl extends AbstractRestClient<OtherTraining, OtherTrainingRestClient.Api> implements OtherTrainingRestClient {
 
+    @Inject
     public OtherTrainingRestClientImpl(Retrofit retrofit, OtherTrainingRestClient.Api api) {
         super(retrofit, api);
     }

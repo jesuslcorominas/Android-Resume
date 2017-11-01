@@ -2,6 +2,8 @@ package com.jesuslcorominas.resume.data.database.dao;
 
 import com.jesuslcorominas.resume.data.entity.Knowledge;
 
+import javax.inject.Inject;
+
 import io.objectbox.Box;
 
 /**
@@ -9,6 +11,7 @@ import io.objectbox.Box;
  */
 public class KnowledgeDao extends AbstractObjectBoxDao<Knowledge> {
 
+    @Inject
     public KnowledgeDao(Box<Knowledge> box) {
         super(box);
     }

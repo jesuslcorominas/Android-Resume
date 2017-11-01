@@ -7,6 +7,8 @@ import com.jesuslcorominas.resume.data.net.RestClient;
 
 import org.joda.time.DateTime;
 
+import javax.inject.Inject;
+
 import retrofit2.Retrofit;
 
 /**
@@ -14,6 +16,7 @@ import retrofit2.Retrofit;
  */
 public class ExperienceRestClientImpl extends AbstractRestClient<Experience, ExperienceRestClient.Api> implements ExperienceRestClient {
 
+    @Inject
     public ExperienceRestClientImpl(Retrofit retrofit, ExperienceRestClient.Api api) {
         super(retrofit, api);
     }

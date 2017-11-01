@@ -6,6 +6,8 @@ import com.jesuslcorominas.resume.data.net.LanguageRestClient;
 
 import org.joda.time.DateTime;
 
+import javax.inject.Inject;
+
 import retrofit2.Retrofit;
 
 /**
@@ -13,6 +15,7 @@ import retrofit2.Retrofit;
  */
 public class LanguageRestClientImpl extends AbstractRestClient<Language, LanguageRestClient.Api> implements LanguageRestClient {
 
+    @Inject
     public LanguageRestClientImpl(Retrofit retrofit,LanguageRestClient.Api api) {
         super(retrofit, api);
     }

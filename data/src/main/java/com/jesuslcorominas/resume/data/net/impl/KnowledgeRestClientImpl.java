@@ -6,6 +6,8 @@ import com.jesuslcorominas.resume.data.net.KnowledgeRestClient;
 
 import org.joda.time.DateTime;
 
+import javax.inject.Inject;
+
 import retrofit2.Retrofit;
 
 /**
@@ -13,6 +15,7 @@ import retrofit2.Retrofit;
  */
 public class KnowledgeRestClientImpl extends AbstractRestClient<Knowledge, KnowledgeRestClient.Api> implements KnowledgeRestClient {
 
+    @Inject
     public KnowledgeRestClientImpl(Retrofit retrofit, KnowledgeRestClient.Api api) {
         super(retrofit, api);
     }
