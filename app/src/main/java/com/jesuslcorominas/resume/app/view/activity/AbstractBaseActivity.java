@@ -27,6 +27,8 @@ abstract class AbstractBaseActivity<V extends CallbackView> extends Activity {
 
     abstract V getCallbackView();
 
+    abstract void initializeDagger();
+
     @Bean
     Navigator navigator;
 
@@ -74,20 +76,15 @@ abstract class AbstractBaseActivity<V extends CallbackView> extends Activity {
     // ==============================
     @AfterViews
     void afterViews() {
-        Presenter<V> presenter = getPresenter();
-        if (presenter == null) {
-            throw new RuntimeException("Debes establecer un presenter para la activity");
-        }
-
-        presenter.setCallbackView(getCallbackView());
-
         init();
+
+        initializeDagger();
+        initPresenter();
     }
 
     // ==============================
     // EventBus
     // ==============================
-
     /**
      * Metodo sin funcionalidad unicamente para evitar errores de EventBus.
      *
@@ -99,5 +96,16 @@ abstract class AbstractBaseActivity<V extends CallbackView> extends Activity {
     public void onEvent(AbstractEvent event) {
     }
 
+    // ==============================
+    // Otros
+    // ==============================
+    private void initPresenter() {
+        Presenter<V> presenter = getPresenter();
+        if (presenter == null) {
+            throw new RuntimeException("Debes establecer un presenter para la activity");
+        }
+
+        presenter.setCallbackView(getCallbackView());
+    }
 
 }

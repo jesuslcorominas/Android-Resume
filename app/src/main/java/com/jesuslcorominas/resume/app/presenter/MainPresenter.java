@@ -1,6 +1,7 @@
 package com.jesuslcorominas.resume.app.presenter;
 
 import com.jesuslcorominas.resume.app.presenter.callbackview.MainView;
+import com.jesuslcorominas.resume.data.entity.PersonalData;
 
 /**
  * @author Jesús López Corominas
@@ -8,5 +9,5 @@ import com.jesuslcorominas.resume.app.presenter.callbackview.MainView;
 
 public interface MainPresenter extends Presenter<MainView> {
 
-    void test();
+    void getPersonalData();
 }

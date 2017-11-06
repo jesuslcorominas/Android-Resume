@@ -4,9 +4,21 @@
     android:layout_height="match_parent"
     android:background="@color/white">
 
-    <ImageView
-        style="@style/ImageView.Splash"
-        android:contentDescription="@string/splash_icon_description" />
+    <android.support.v7.widget.AppCompatImageView
+        android:layout_width="@dimen/splash_icon"
+        android:layout_height="@dimen/splash_icon"
+        android:layout_centerInParent="true"
+        android:contentDescription="@string/splash_icon_description"
+        android:src="@drawable/ic_resume" />
 
-    <TextView style="@style/TextView.Title.Splash" />
+    <android.support.v7.widget.AppCompatTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/margin_xlarge"
+        android:padding="@dimen/margin"
+        android:text="@string/app_name"
+        android:textAlignment="center"
+        android:textColor="@color/light_gray"
+        android:textSize="@dimen/text_xxxlarge" />
 </RelativeLayout>

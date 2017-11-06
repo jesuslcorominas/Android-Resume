@@ -1,8 +1,7 @@
 package com.jesuslcorominas.resume.data.di.module;
 
-import com.jesuslcorominas.resume.data.database.BoxFactory;
-import com.jesuslcorominas.resume.data.database.Dao;
-import com.jesuslcorominas.resume.data.database.dao.ProjectDao;
+import com.jesuslcorominas.resume.data.database.dao.Dao;
+import com.jesuslcorominas.resume.data.database.dao.impl.ProjectDao;
 import com.jesuslcorominas.resume.data.datasource.Datasource;
 import com.jesuslcorominas.resume.data.datasource.impl.local.ProjectDatasourceLocalImpl;
 import com.jesuslcorominas.resume.data.datasource.impl.remote.ProjectDatasourceRemoteImpl;
@@ -18,17 +17,18 @@ import javax.inject.Named;
 import dagger.Module;
 import dagger.Provides;
 import io.objectbox.Box;
+import io.objectbox.BoxStore;
 import retrofit2.Retrofit;
 
 /**
  * @author Jesús López Corominas
  */
-@Module(includes = {NetModule.class, DatabaseModule.class})
+@Module(includes = {NetModule.class})
 public class ProjectModule {
 
     @Provides
-    Box<Project> provideBox(BoxFactory factory) {
-        return factory.getBoxStore().boxFor(Project.class);
+    Box<Project> provideBox(BoxStore boxStore) {
+        return boxStore.boxFor(Project.class);
     }
 
     @Provides

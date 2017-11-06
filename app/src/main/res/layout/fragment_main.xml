@@ -1,7 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_light"
+    android:orientation="vertical">
 
+    <android.support.v7.widget.CardView
+        android:id="@+id/fragment_main_cardView_email"
+        style="@style/CustomCardView">
 
+        <LinearLayout style="@style/CustomCardViewContentLayout">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/fragment_main_textView_email"
+                style="@style/TextView.Body.CardView.SingleLine" />
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/fragment_main_cardView_phone"
+        style="@style/CustomCardView">
+
+        <LinearLayout style="@style/CustomCardViewContentLayout">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/fragment_main_textView_phone"
+                style="@style/TextView.Body.CardView.SingleLine" />
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/fragment_main_cardView_summary"
+        style="@style/CustomCardView">
+
+        <LinearLayout style="@style/CustomCardViewContentLayout">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/fragment_main_textView_summary"
+                style="@style/TextView.Body.CardView.Clickable" />
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
 </LinearLayout>

@@ -32,6 +32,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * @author Jesús López Corominas
  */
 @Module
+@Singleton
 public class NetModule {
 
     private static final int READ_TIMEOUT = 60;

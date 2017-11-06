@@ -23,4 +23,11 @@ Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculu
 In nec hendrerit magna. In eget tortor a turpis pretium facilisis. Cras blandit est ac lobortis mattis. Pellentesque ultricies ultrices sodales. Fusce pulvinar pulvinar tincidunt. Praesent et neque massa. Nam tristique nibh varius velit fringilla maximus. Sed sed dapibus massa. Curabitur blandit, tortor nec bibendum pharetra, turpis erat tempor odio, sit amet sagittis orci nisi lobortis erat.
 
 Vestibulum vel ex nec ante tincidunt rutrum. Integer ornare, orci in fringilla aliquet, erat arcu rutrum tellus, non euismod sapien lectus semper massa. Maecenas ultricies justo vel libero aliquet sodales. Suspendisse lectus lectus, ultricies vitae tempus et, vehicula vitae orci. Nulla facilisi. Quisque ut nulla euismod, vestibulum lacus eu, lacinia lectus. Donec ut quam dictum, molestie ex eu, gravida diam.</string>
+
+    <string name="main_image_description">Imagen del usuario</string>
+
+    <string name="error_getting_personal_data">No se han podido obtener los datos personales.</string>
+    <string name="retry">Reintentar</string>
+
+    <string name="personal_data_no_data">No hay datos personales que mostrar.</string>
 </resources>

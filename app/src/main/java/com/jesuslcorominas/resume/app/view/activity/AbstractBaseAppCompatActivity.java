@@ -25,6 +25,8 @@ abstract class AbstractBaseAppCompatActivity<V extends CallbackView> extends App
 
     abstract V getCallbackView();
 
+    abstract void initializeDagger();
+
     abstract void init();
 
     @Bean
@@ -78,14 +80,10 @@ abstract class AbstractBaseAppCompatActivity<V extends CallbackView> extends App
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
 
-        Presenter<V> presenter = getPresenter();
-//        if (presenter == null) {
-//            throw new NullPointerException("Debes establecer un presenter para la activity");
-//        }
-//
-//        presenter.setCallbackView(getCallbackView());
-
         init();
+
+        initializeDagger();
+        initPresenter();
     }
 
     // ==============================
@@ -109,5 +107,17 @@ abstract class AbstractBaseAppCompatActivity<V extends CallbackView> extends App
     @OptionsItem(android.R.id.home)
     void homeSelected() {
         navigator.up(this);
+    }
+
+    // ==============================
+    // Otros
+    // ==============================
+    private void initPresenter() {
+        Presenter<V> presenter = getPresenter();
+        if (presenter == null) {
+            throw new NullPointerException("Debes establecer un presenter para la activity");
+        }
+
+        presenter.setCallbackView(getCallbackView());
     }
 }

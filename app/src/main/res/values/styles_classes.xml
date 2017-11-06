@@ -1,43 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="ImageView">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">wrap_content</item>
-        <item name="android:adjustViewBounds">true</item>
-    </style>
-
-    <style name="ImageView.Splash">
-        <item name="android:layout_width">@dimen/splash_icon</item>
-        <item name="android:layout_height">@dimen/splash_icon</item>
-        <item name="android:src">@drawable/ic_resume</item>
-        <item name="android:layout_centerInParent">true</item>
-    </style>
-
     <style name="TextView">
         <item name="android:textSize">@dimen/text</item>
+        <item name="android:textColor">@color/dark_gray</item>
     </style>
 
     <style name="TextView.Body">
-
-    </style>
-
-    <style name="TextView.Title">
-        <item name="android:singleLine">true</item>
+        <item name="android:textSize">@dimen/text_large</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:ellipsize">end</item>
-        <item name="android:textSize">@dimen/text_xlarge</item>
     </style>
 
-    <style name="TextView.Title.Splash">
-        <item name="android:textSize">@dimen/text_xxlarge</item>
-        <item name="android:layout_alignParentBottom">true</item>
-        <item name="android:layout_gravity">center</item>
-        <item name="android:layout_marginBottom">@dimen/margin_xxxlarge</item>
-        <item name="android:gravity">center</item>
-        <item name="android:text">@string/app_name</item>
+    <style name="TextView.Body.CardView">
+        <item name="android:layout_margin">@dimen/margin</item>
+    </style>
+
+    <style name="TextView.Body.CardView.SingleLine">
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="TextView.Body.CardView.Clickable">
+        <item name="android:linksClickable">true</item>
+        <item name="android:autoLink">all</item>
+    </style>
+
+    <style name="TextView.Header">
+        <item name="android:maxLines">1</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:textSize">@dimen/text_xxxlarge</item>
+    </style>
+
+    <style name="TextView.Error">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">@dimen/margin_xxlarge</item>
+        <item name="android:layout_marginLeft">@dimen/margin_xxlarge</item>
+        <item name="android:layout_marginRight">@dimen/margin_xxlarge</item>
+        <item name="android:layout_marginStart">@dimen/margin_xxlarge</item>
+        <item name="android:layout_marginTop">@dimen/margin_large</item>
+        <item name="android:textAlignment">center</item>
         <item name="android:textColor">@color/light_gray</item>
+        <item name="android:textSize">@dimen/text_large</item>
     </style>
 
     <style name="Button">
@@ -60,4 +65,17 @@
         <item name="android:scaleType">centerInside</item>
     </style>
 
+    <style name="CustomCardView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/margin</item>
+        <item name="android:padding">@dimen/margin</item>
+    </style>
+
+    <style name="CustomCardViewContentLayout">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">@dimen/margin</item>
+    </style>
 </resources>

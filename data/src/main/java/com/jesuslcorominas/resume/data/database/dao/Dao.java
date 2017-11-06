@@ -1,4 +1,4 @@
-package com.jesuslcorominas.resume.data.database;
+package com.jesuslcorominas.resume.data.database.dao;
 
 import java.util.List;
 

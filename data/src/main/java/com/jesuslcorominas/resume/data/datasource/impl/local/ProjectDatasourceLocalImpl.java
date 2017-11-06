@@ -1,6 +1,6 @@
 package com.jesuslcorominas.resume.data.datasource.impl.local;
 
-import com.jesuslcorominas.resume.data.database.Dao;
+import com.jesuslcorominas.resume.data.database.dao.Dao;
 import com.jesuslcorominas.resume.data.entity.Project;
 
 import javax.inject.Inject;

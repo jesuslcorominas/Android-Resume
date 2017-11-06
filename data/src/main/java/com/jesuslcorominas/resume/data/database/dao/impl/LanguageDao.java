@@ -1,4 +1,4 @@
-package com.jesuslcorominas.resume.data.database.dao;
+package com.jesuslcorominas.resume.data.database.dao.impl;
 
 import com.jesuslcorominas.resume.data.entity.Language;
 

@@ -2,7 +2,7 @@ package com.jesuslcorominas.resume.data.datasource.impl.local;
 
 import com.jesuslcorominas.resume.commons.ErrorInfo;
 import com.jesuslcorominas.resume.commons.util.Keys;
-import com.jesuslcorominas.resume.data.database.Dao;
+import com.jesuslcorominas.resume.data.database.dao.Dao;
 import com.jesuslcorominas.resume.data.datasource.Datasource;
 
 import org.joda.time.DateTime;

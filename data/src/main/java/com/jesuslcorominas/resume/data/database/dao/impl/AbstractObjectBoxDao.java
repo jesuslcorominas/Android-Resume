@@ -1,6 +1,6 @@
-package com.jesuslcorominas.resume.data.database.dao;
+package com.jesuslcorominas.resume.data.database.dao.impl;
 
-import com.jesuslcorominas.resume.data.database.Dao;
+import com.jesuslcorominas.resume.data.database.dao.Dao;
 
 import java.util.List;
 

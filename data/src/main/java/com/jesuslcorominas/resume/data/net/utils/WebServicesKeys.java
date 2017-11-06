@@ -30,7 +30,7 @@ public final class WebServicesKeys {
         public static final String otherTraining = "other_training/";
         public static final String otherTrainingDetail = otherTraining + detail;
 
-        public static final String personalData = "personalData/";
+        public static final String personalData = "personal_data/";
         public static final String personalDataDetail = personalData + detail;
 
         public static final String project = "project/";

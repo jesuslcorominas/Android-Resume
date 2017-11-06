@@ -1,5 +1,6 @@
 package com.jesuslcorominas.resume.app.view.activity;
 
+import com.jesuslcorominas.resume.app.App;
 import com.jesuslcorominas.resume.app.R;
 import com.jesuslcorominas.resume.app.presenter.Presenter;
 import com.jesuslcorominas.resume.app.presenter.SplashPresenter;
@@ -10,18 +11,26 @@ import org.androidannotations.annotations.Bean;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.UiThread;
 
+import javax.inject.Inject;
+
 /**
  * @author Jesús López Corominas
  */
 @EActivity(R.layout.activity_splash)
 public class SplashActivity extends AbstractBaseActivity<SplashView> implements SplashView {
 
-    @Bean(SplashPresenterImpl.class)
+    @Inject
     SplashPresenter presenter;
 
     // ==============================
     // Activity
     // ==============================
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        presenter.onInit();
+    }
 
     // ==============================
     // AbstractBaseActivity
@@ -38,7 +47,12 @@ public class SplashActivity extends AbstractBaseActivity<SplashView> implements 
 
     @Override
     void init() {
-        presenter.onInit();
+
+    }
+
+    @Override
+    void initializeDagger() {
+        ((App) getApplication()).getSplashComponent().inject(this);
     }
 
     // ==============================
