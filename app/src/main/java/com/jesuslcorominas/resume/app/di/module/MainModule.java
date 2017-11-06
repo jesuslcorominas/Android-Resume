@@ -14,7 +14,7 @@ import dagger.Provides;
 /**
  * @author Jesús López Corominas
  */
-@Module(includes = {AppModule.class, PersonalDataUseCaseModule.class})
+@Module(includes = {PersonalDataUseCaseModule.class})
 public class MainModule {
 
     @Provides

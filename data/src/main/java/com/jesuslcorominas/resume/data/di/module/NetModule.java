@@ -18,7 +18,6 @@ import org.joda.time.format.DateTimeFormat;
 import java.lang.reflect.Type;
 import java.util.concurrent.TimeUnit;
 
-import javax.inject.Named;
 import javax.inject.Singleton;
 
 import dagger.Module;
@@ -37,6 +36,22 @@ public class NetModule {
 
     private static final int READ_TIMEOUT = 60;
     private static final int CONNECT_TIMEOUT = 5;
+
+    private static NetModule instance;
+
+    private String endPoint;
+
+    private NetModule(String endPoint) {
+        this.endPoint = endPoint;
+    }
+
+    public static NetModule getInstance(String endPoint) {
+        if (instance == null) {
+            instance = new NetModule(endPoint);
+        }
+
+        return instance;
+    }
 
     @Singleton
     @Provides
@@ -117,9 +132,9 @@ public class NetModule {
 
     @Singleton
     @Provides
-    Retrofit provideRetrofit(OkHttpClient okHttpClient, Gson gson, @Named("baseUrl") String baseUrl) {
+    Retrofit provideRetrofit(OkHttpClient okHttpClient, Gson gson) {
         return new Retrofit.Builder().
-                baseUrl(baseUrl).
+                baseUrl(endPoint).
                 addConverterFactory(GsonConverterFactory.create(gson)).
                 client(okHttpClient).
                 build();

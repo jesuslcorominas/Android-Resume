@@ -6,7 +6,8 @@ import com.jesuslcorominas.resume.app.di.component.DaggerMainComponent;
 import com.jesuslcorominas.resume.app.di.component.DaggerSplashComponent;
 import com.jesuslcorominas.resume.app.di.component.MainComponent;
 import com.jesuslcorominas.resume.app.di.component.SplashComponent;
-import com.jesuslcorominas.resume.app.di.module.AppModule;
+import com.jesuslcorominas.resume.data.di.module.DatabaseModule;
+import com.jesuslcorominas.resume.data.di.module.NetModule;
 
 import org.androidannotations.annotations.EApplication;
 
@@ -23,10 +24,15 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
 
-        AppModule appModule = new AppModule(this);
+        mainComponent = DaggerMainComponent.builder().
+                netModule(NetModule.getInstance(BuildConfig.END_POINT + BuildConfig.URL_WS)).
+                databaseModule(DatabaseModule.getInstance(getFilesDir())).
+                build();
 
-        mainComponent = DaggerMainComponent.builder().appModule(appModule).build();
-        splashComponent = DaggerSplashComponent.builder().appModule(appModule).build();
+        splashComponent = DaggerSplashComponent.builder().
+                netModule(NetModule.getInstance(BuildConfig.END_POINT + BuildConfig.URL_WS)).
+                databaseModule(DatabaseModule.getInstance(getFilesDir())).
+                build();
     }
 
     public MainComponent getMainComponent() {
