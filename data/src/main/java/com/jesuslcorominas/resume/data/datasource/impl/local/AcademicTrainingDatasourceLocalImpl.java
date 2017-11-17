@@ -8,7 +8,7 @@ import javax.inject.Inject;
 /**
  * @author Jesús López Corominas
  */
-public class AcademicTrainingDatasourceLocalImpl extends AbstractDatasourceLocalImpl<AcademicTraining> {
+public class AcademicTrainingDatasourceLocalImpl extends AbstractDatasourceLocal<AcademicTraining> {
 
     @Inject
     public AcademicTrainingDatasourceLocalImpl(Dao<AcademicTraining> dao) {

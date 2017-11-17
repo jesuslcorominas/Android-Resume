@@ -1,9 +1,12 @@
 package com.jesuslcorominas.resume.data.entity;
 
+import com.google.gson.annotations.SerializedName;
 import com.jesuslcorominas.resume.data.database.converter.DateConverter;
 import com.jesuslcorominas.resume.data.database.converter.PositionConverter;
 
 import org.joda.time.DateTime;
+
+import java.util.Comparator;
 
 import io.objectbox.annotation.Backlink;
 import io.objectbox.annotation.Convert;
@@ -20,6 +23,7 @@ public class Experience {
     @Id(assignable = true)
     private long id;
 
+    @SerializedName("company_name")
     private String companyName;
     private String image;
 
@@ -103,5 +107,60 @@ public class Experience {
 
     public void setUpdate(DateTime update) {
         this.update = update;
+    }
+
+    public static class ExperiencesComparator implements Comparator<Experience> {
+
+        @Override
+        public int compare(Experience o1, Experience o2) {
+            if (o1 == null) {
+                // Si el primero es nulo va delante
+                return 1;
+            }
+
+            if (o2 == null) {
+                // Si el segundo es nulo va delante
+                return -1;
+            }
+
+            if (o1.getEnd() != null) {
+                // Si el final del primero no es nulo
+                if (o2.getEnd() != null) {
+                    // Si el final del segundo tampoco lo, comparamos ambos finales
+                    int compareEnds = o2.getEnd().compareTo(o1.getEnd());
+                    if (compareEnds != 0) {
+                        // Si no tienen el mismo final
+                        return o2.getEnd().compareTo(o1.getEnd());
+                    }
+                } else {
+                    // Si estamos aqui el primero tiene fin y el segundo no, con lo que va delante
+                    return -1;
+                }
+            } else if (o2.getEnd() != null) {
+                // Si estamos aqui, el primero no tiene fin y el segundo si, con lo que el primero va delante
+                return 1;
+            }
+
+            // Si estamos aqui es que ambos finales son nulos por lo que comparamos los inicios
+            if (o1.getStart() != null) {
+                // Si el inicio del primero no es nulo
+                if (o2.getStart() != null) {
+                    // Si el inicio del segundo tampoco lo, comparamos ambos inicios
+                    int compareStarts = o2.getStart().compareTo(o1.getStart());
+                    if (compareStarts != 0) {
+                        // Si no tienen el mismo inicio
+                        return o2.getStart().compareTo(o1.getStart());
+                    }
+                } else {
+                    // Si estamos aqui el primero tiene inicio y el segundo no, con lo que va delante
+                    return -1;
+                }
+            } else if (o2.getStart() != null) {
+                // Si estamos aqui, el primero no tiene inicio y el segundo si, con lo que el primero va delante
+                return 1;
+            }
+
+            return Long.valueOf(o2.getId()).compareTo(o1.getId());
+        }
     }
 }

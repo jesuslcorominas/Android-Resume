@@ -8,7 +8,6 @@ import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
-import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 /**
@@ -23,7 +22,5 @@ public interface AcademicTrainingRestClient extends RestClient<AcademicTraining>
         @GET(WebServicesKeys.Paths.academicTraining)
         Call<ServerResponse<List<AcademicTraining>>> refresh(@Query(WebServicesKeys.Fields.lastUpdated) String date);
 
-        @GET(WebServicesKeys.Paths.academicTrainingDetail)
-        Call<ServerResponse<AcademicTraining>> detail(@Path(WebServicesKeys.Fields.id) long itemId);
     }
 }

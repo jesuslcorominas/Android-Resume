@@ -13,8 +13,6 @@ public interface RestClient<T> {
 
     void list(RestClient.ListCallback<T> callback);
 
-    void detail(long itemId, RestClient.DetailCallback<T> callback);
-
     void refresh(DateTime date, RestClient.ListCallback<T> callback);
 
     interface ListCallback<T> extends GenericCallback<List<T>> {

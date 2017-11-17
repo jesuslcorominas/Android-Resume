@@ -8,7 +8,7 @@ import javax.inject.Inject;
 /**
  * @author Jesús López Corominas
  */
-public class ExperienceDatasourceLocalImpl extends AbstractDatasourceLocalImpl<Experience>  {
+public class ExperienceDatasourceLocalImpl extends AbstractDatasourceLocal<Experience> {
 
     @Inject
     public ExperienceDatasourceLocalImpl(Dao<Experience> dao) {

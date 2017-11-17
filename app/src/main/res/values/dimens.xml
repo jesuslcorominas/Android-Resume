@@ -2,7 +2,7 @@
 <resources>
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="nav_header_vertical_spacing">@dimen/margin</dimen>
-    <dimen name="nav_header_height">160dp</dimen>
+    <dimen name="navigation_header_height">240dp</dimen>
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">@dimen/margin</dimen>
     <dimen name="activity_vertical_margin">@dimen/margin</dimen>
@@ -16,10 +16,6 @@
     <dimen name="margin_xxlarge">24dp</dimen>
     <dimen name="margin_xxxlarge">32dp</dimen>
 
-    <dimen name="splash_icon">96dp</dimen>
-
-    <dimen name="error_icon">128dp</dimen>
-
     <dimen name="text_xsmall">8sp</dimen>
     <dimen name="text_small">10sp</dimen>
     <dimen name="text">12sp</dimen>
@@ -28,10 +24,18 @@
     <dimen name="text_xxlarge">24sp</dimen>
     <dimen name="text_xxxlarge">32sp</dimen>
 
+    <dimen name="splash_icon">96dp</dimen>
+
     <dimen name="side_menu_image_button">48dp</dimen>
+
+    <dimen name="error_icon">128dp</dimen>
 
     <dimen name="main_image_height">320dp</dimen>
 
+    <dimen name="card_height">196dp</dimen>
     <!-- Menu lateral -->
     <dimen name="side_menu_width">320dp</dimen>
+
+    <dimen name="progress_bar_height">16dp</dimen>
+    <dimen name="progress_corner">8dp</dimen>
 </resources>

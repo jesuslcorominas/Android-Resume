@@ -25,7 +25,5 @@ public interface ExperienceRestClient extends RestClient<Experience> {
         @GET(WebServicesKeys.Paths.experience)
         Call<ServerResponse<List<Experience>>> refresh(@Query(WebServicesKeys.Fields.lastUpdated) DateTime date);
 
-        @GET(WebServicesKeys.Paths.experienceDetail)
-        Call<ServerResponse<Experience>> detail(@Path(WebServicesKeys.Fields.id) long itemId);
     }
 }

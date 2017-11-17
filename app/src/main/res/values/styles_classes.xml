@@ -28,8 +28,20 @@
 
     <style name="TextView.Header">
         <item name="android:maxLines">1</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
         <item name="android:ellipsize">end</item>
         <item name="android:textSize">@dimen/text_xxxlarge</item>
+    </style>
+
+    <style name="TextView.Header.2">
+        <item name="android:textSize">@dimen/text_xxlarge</item>
+    </style>
+
+    <style name="TextView.Header.3">
+        <item name="android:textSize">@dimen/text_xlarge</item>
+    </style>
+    <style name="TextView.Header.4">
+        <item name="android:textSize">@dimen/text_large</item>
     </style>
 
     <style name="TextView.Error">
@@ -51,18 +63,17 @@
 
     <style name="Button.Borderless">
         <item name="android:background">?android:attr/selectableItemBackground</item>
-        <item name="android:padding">@dimen/margin_small</item>
     </style>
 
     <style name="Button.Borderless.Circular">
-        <item name="android:background">@drawable/selectable_item_background_circular</item>
+        <item name="android:background">?selectableItemBackgroundBorderless</item>
     </style>
 
     <style name="Button.Borderless.Circular.SideMenu">
         <item name="android:layout_width">@dimen/side_menu_image_button</item>
         <item name="android:layout_height">@dimen/side_menu_image_button</item>
+        <item name="android:scaleType">fitCenter</item>
         <item name="android:layout_margin">@dimen/margin</item>
-        <item name="android:scaleType">centerInside</item>
     </style>
 
     <style name="CustomCardView">

@@ -23,7 +23,5 @@ public interface OtherTrainingRestClient extends RestClient <OtherTraining>{
         @GET(WebServicesKeys.Paths.otherTraining)
         Call<ServerResponse<List<OtherTraining>>> refresh(@Query(WebServicesKeys.Fields.lastUpdated) String date);
 
-        @GET(WebServicesKeys.Paths.otherTrainingDetail)
-        Call<ServerResponse<OtherTraining>> detail(@Path(WebServicesKeys.Fields.id) long itemId);
     }
 }

@@ -30,4 +30,15 @@ public enum KnowledgeLevel {
     public int getValue() {
         return this.value;
     }
+
+    public static int getMaxValue() {
+        int max = 0;
+        for (KnowledgeLevel knowledgeLevel : KnowledgeLevel.values()) {
+            if (knowledgeLevel.value > max) {
+                max = knowledgeLevel.value;
+            }
+        }
+
+        return max;
+    }
 }

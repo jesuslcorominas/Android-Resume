@@ -25,4 +25,25 @@ public abstract class AbstractPresenter<V extends CallbackView> implements Prese
     public void onPause() {
         resumed = false;
     }
+
+    void showProgressAndHideOthers() {
+        callbackView.showProgress();
+
+        callbackView.hideNoData();
+        callbackView.hideData();
+    }
+
+    void showDataAndHideOthers() {
+        callbackView.showData();
+
+        callbackView.hideNoData();
+        callbackView.hideProgress();
+    }
+
+    void showNoDataAndHideOthers() {
+        callbackView.showNoData();
+
+        callbackView.hideProgress();
+        callbackView.hideData();
+    }
 }

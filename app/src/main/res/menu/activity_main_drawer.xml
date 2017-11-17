@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <group android:checkableBehavior="single">
+    <group>
         <item
-            android:id="@+id/sideMenu_item_new"
+            android:id="@+id/sideMenu_item_experience"
+            android:icon="@drawable/ic_resume"
+            android:title="@string/side_menu_experience" />
+
+        <item
+            android:id="@+id/sideMenu_item_training"
             android:icon="@drawable/ic_resume"
             android:title="@string/side_menu_training" />
+
         <item
-            android:id="@+id/sideMenu_item_open"
+            android:id="@+id/sideMenu_item_knowledges"
             android:icon="@drawable/ic_resume"
             android:title="@string/side_menu_knowledge" />
         <item
-            android:id="@+id/sideMenu_item_save"
-            android:icon="@drawable/ic_resume"
-            android:title="@string/side_menu_experience" />
-        <item
-            android:id="@+id/sideMenu_item_delete"
+            android:id="@+id/sideMenu_item_other_data"
             android:icon="@drawable/ic_resume"
             android:title="@string/side_menu_other_data" />
     </group>

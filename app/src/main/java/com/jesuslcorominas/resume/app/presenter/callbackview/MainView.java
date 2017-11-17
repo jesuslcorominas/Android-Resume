@@ -8,15 +8,4 @@ import com.jesuslcorominas.resume.data.entity.PersonalData;
  */
 public interface MainView extends CallbackView {
 
-    void showProgress();
-    void hideProgress();
-
-    void showPersonalData(PersonalData personalData);
-    void hidePersonalData();
-
-    void showNoData();
-    void hideNoData();
-
-    void showErrorGettingPersonalData(ErrorInfo errorInfo);
-
 }

@@ -22,6 +22,7 @@ public class OtherTraining {
 
     @Convert(converter = DateConverter.class, dbType = Long.class)
     private DateTime date;
+
     private int hours;
     private String image;
 

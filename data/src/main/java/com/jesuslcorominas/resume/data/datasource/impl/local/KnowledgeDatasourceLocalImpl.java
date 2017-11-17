@@ -8,7 +8,7 @@ import javax.inject.Inject;
 /**
  * @author Jesús López Corominas
  */
-public class KnowledgeDatasourceLocalImpl extends AbstractDatasourceLocalImpl<Knowledge> {
+public class KnowledgeDatasourceLocalImpl extends AbstractDatasourceLocal<Knowledge> {
 
     @Inject
     public KnowledgeDatasourceLocalImpl(Dao<Knowledge> dao) {

@@ -29,9 +29,4 @@ public class OtherDataRestClientImpl extends AbstractRestClient<OtherData, Other
     public void refresh(DateTime date, ListCallback<OtherData> callback) {
         enqueueCall(api.refresh(date.toString(Keys.Miscellany.internalDateFormatter)), callback);
     }
-
-    @Override
-    public void detail(long itemId, DetailCallback<OtherData> callback) {
-        enqueueCall(api.detail(itemId), callback);
-    }
 }

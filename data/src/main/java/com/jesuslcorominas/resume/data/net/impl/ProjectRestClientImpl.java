@@ -30,8 +30,4 @@ public class ProjectRestClientImpl extends AbstractRestClient<Project, ProjectRe
         enqueueCall(api.refresh(date.toString(Keys.Miscellany.internalDateFormatter)), callback);
     }
 
-    @Override
-    public void detail(long itemId, DetailCallback<Project> callback) {
-        enqueueCall(api.detail(itemId), callback);
-    }
 }

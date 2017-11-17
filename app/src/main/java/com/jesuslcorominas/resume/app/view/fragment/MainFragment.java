@@ -57,7 +57,6 @@ public class MainFragment extends AbstractBaseFragment {
     void onShowPersonalData(ShowPersonalDataEvent event) {
         PersonalData personalData = event.getPersonalData();
 
-
         textViewPhone.setText(personalData.getPhoneNumber());
         cardViewPhone.setVisibility(TextUtils.isEmpty(personalData.getPhoneNumber()) ? View.GONE : View.VISIBLE);
 

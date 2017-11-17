@@ -30,9 +30,4 @@ public class ExperienceRestClientImpl extends AbstractRestClient<Experience, Exp
     public void refresh(DateTime date, ListCallback<Experience> callback) {
         enqueueCall(api.refresh(date), callback);
     }
-
-    @Override
-    public void detail(long itemId, RestClient.DetailCallback<Experience> callback) {
-        enqueueCall(api.detail(itemId), callback);
-    }
 }

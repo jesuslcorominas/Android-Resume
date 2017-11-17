@@ -5,7 +5,7 @@ package com.jesuslcorominas.resume.data.entity;
  */
 public enum KnowledgeType {
 
-    UNDEFINED(0), MOBILE_DEVELOPMENT(1), PROGRAMMING_LANGUAGE(2);
+    UNDEFINED(0), LANGUAGE(1), MOBILE_DEVELOPMENT(2), PROGRAMMING_LANGUAGE(3), OTHERS(4);
 
     private final int value;
 

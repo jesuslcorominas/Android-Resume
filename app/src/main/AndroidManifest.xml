@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".view.activity.SplashActivity_"
+        <activity
+            android:name=".view.activity.SplashActivity_"
             android:configChanges="screenSize|smallestScreenSize|orientation|screenLayout"
             android:noHistory="true"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar.FullScreen">>
@@ -25,6 +26,18 @@
 
         <activity
             android:name=".view.activity.MainActivity_"
+            android:configChanges="screenSize|smallestScreenSize|orientation|screenLayout|keyboardHidden" />
+
+        <activity
+            android:name=".view.activity.ExperiencesActivity_"
+            android:configChanges="screenSize|smallestScreenSize|orientation|screenLayout|keyboardHidden" />
+
+        <activity
+            android:name=".view.activity.OtherDataActivity_"
+            android:configChanges="screenSize|smallestScreenSize|orientation|screenLayout|keyboardHidden" />
+
+        <activity
+            android:name=".view.activity.KnowledgesActivity_"
             android:configChanges="screenSize|smallestScreenSize|orientation|screenLayout|keyboardHidden" />
     </application>
 

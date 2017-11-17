@@ -30,9 +30,4 @@ public class KnowledgeRestClientImpl extends AbstractRestClient<Knowledge, Knowl
         enqueueCall(api.refresh(date.toString(Keys.Miscellany.internalDateFormatter)), callback);
     }
 
-    @Override
-    public void detail(long itemId, DetailCallback<Knowledge> callback) {
-        enqueueCall(api.detail(itemId), callback);
-    }
-
 }

@@ -8,7 +8,7 @@ import javax.inject.Inject;
 /**
  * @author Jesús López Corominas
  */
-public class PersonalDataDatasourceLocalImpl extends AbstractDatasourceLocalImpl<PersonalData> {
+public class PersonalDataDatasourceLocalImpl extends AbstractDatasourceLocal<PersonalData> {
 
     @Inject
     public PersonalDataDatasourceLocalImpl(Dao<PersonalData> dao) {

@@ -105,21 +105,17 @@ abstract class AbstractRepository<T> implements Repository<T> {
                     remoteDatasource.list(new Datasource.ListCallback<T>() {
                         @Override
                         public void onSuccess(List<T> data) {
-                            if (data != null && data.size() > 0) {
-                                localDatasource.save(data, new Datasource.SaveListCallback<T>() {
-                                    @Override
-                                    public void onSuccess(List<T> data) {
-                                        callback.onSuccess(data);
-                                    }
+                            localDatasource.save(data, new Datasource.SaveListCallback<T>() {
+                                @Override
+                                public void onSuccess(List<T> data) {
+                                    callback.onSuccess(data);
+                                }
 
-                                    @Override
-                                    public void onError(ErrorInfo error) {
-                                        callback.onError(error);
-                                    }
-                                });
-                            } else {
-                                callback.onSuccess(data);
-                            }
+                                @Override
+                                public void onError(ErrorInfo error) {
+                                    callback.onError(error);
+                                }
+                            });
                         }
 
                         @Override

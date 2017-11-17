@@ -8,7 +8,7 @@ import javax.inject.Inject;
 /**
  * @author Jesús López Corominas
  */
-public class ProjectDatasourceLocalImpl extends AbstractDatasourceLocalImpl<Project> {
+public class ProjectDatasourceLocalImpl extends AbstractDatasourceLocal<Project> {
 
     @Inject
     public ProjectDatasourceLocalImpl(Dao<Project> dao) {

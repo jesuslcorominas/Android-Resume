@@ -24,7 +24,7 @@ import retrofit2.Retrofit;
 /**
  * @author Jesús López Corominas
  */
-@Module(includes = {NetModule.class})
+@Module(includes = {NetModule.class, DatabaseModule.class})
 public class OtherTrainingModule {
 
     @Provides

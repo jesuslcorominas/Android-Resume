@@ -31,10 +31,5 @@ public class PersonalDataRestClientImpl extends AbstractRestClient<PersonalData,
         enqueueCall(api.refresh(date.toString(Keys.Miscellany.internalDateFormatter)), callback);
     }
 
-    @Override
-    public void detail(long itemId, RestClient.DetailCallback<PersonalData> callback) {
-        enqueueCall(api.detail(itemId), callback);
-    }
-
 
 }

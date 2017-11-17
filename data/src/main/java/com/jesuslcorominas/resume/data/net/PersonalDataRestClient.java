@@ -22,8 +22,5 @@ public interface PersonalDataRestClient extends RestClient<PersonalData> {
 
         @GET(WebServicesKeys.Paths.personalData)
         Call<ServerResponse<List<PersonalData>>> refresh(@Query(WebServicesKeys.Fields.lastUpdated) String date);
-
-        @GET(WebServicesKeys.Paths.personalDataDetail)
-        Call<ServerResponse<PersonalData>> detail(@Path(WebServicesKeys.Fields.id) long itemId);
     }
 }

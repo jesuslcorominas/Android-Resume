@@ -2,8 +2,6 @@ package com.jesuslcorominas.resume.app.di.module;
 
 import com.jesuslcorominas.resume.app.presenter.SplashPresenter;
 import com.jesuslcorominas.resume.app.presenter.impl.SplashPresenterImpl;
-import com.jesuslcorominas.resume.model.di.module.PersonalDataUseCaseModule;
-import com.jesuslcorominas.resume.model.usecase.PersonalDataDetailUseCase;
 
 import dagger.Module;
 import dagger.Provides;
@@ -11,11 +9,11 @@ import dagger.Provides;
 /**
  * @author Jesús López Corominas
  */
-@Module(includes = {PersonalDataUseCaseModule.class})
+@Module
 public class SplashModule {
 
     @Provides
-    SplashPresenter provideSplashPresenter(PersonalDataDetailUseCase personalDataDetailUseCase) {
-        return new SplashPresenterImpl(personalDataDetailUseCase);
+    SplashPresenter provideSplashPresenter() {
+        return new SplashPresenterImpl();
     }
 }

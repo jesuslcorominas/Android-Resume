@@ -2,9 +2,15 @@ package com.jesuslcorominas.resume.app.view.activity;
 
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
+import android.support.annotation.StringRes;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.View;
 import android.view.WindowManager;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
+import com.jesuslcorominas.resume.app.R;
 import com.jesuslcorominas.resume.app.event.AbstractEvent;
 import com.jesuslcorominas.resume.app.presenter.Presenter;
 import com.jesuslcorominas.resume.app.presenter.callbackview.CallbackView;
@@ -15,11 +21,13 @@ import org.androidannotations.annotations.AfterViews;
 import org.androidannotations.annotations.Bean;
 import org.androidannotations.annotations.EActivity;
 import org.androidannotations.annotations.OptionsItem;
+import org.androidannotations.annotations.UiThread;
+import org.androidannotations.annotations.ViewById;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
 @EActivity
-abstract class AbstractBaseAppCompatActivity<V extends CallbackView> extends AppCompatActivity {
+abstract class AbstractBaseAppCompatActivity<V extends CallbackView> extends AppCompatActivity implements CallbackView {
 
     abstract Presenter<V> getPresenter();
 
@@ -29,8 +37,26 @@ abstract class AbstractBaseAppCompatActivity<V extends CallbackView> extends App
 
     abstract void init();
 
+    @StringRes
+    abstract int getErrorRes();
+
+    @StringRes
+    abstract int getTitleRes();
+
     @Bean
     Navigator navigator;
+
+    @ViewById(R.id.toolbar)
+    Toolbar toolbar;
+
+    @ViewById(R.id.layout_progress)
+    LinearLayout layoutProgress;
+
+    @ViewById(R.id.layout_sad)
+    LinearLayout layoutSad;
+
+    @ViewById(R.id.layout_sad_textView_error)
+    TextView textViewError;
 
     // ==============================
     // Activity
@@ -71,14 +97,29 @@ abstract class AbstractBaseAppCompatActivity<V extends CallbackView> extends App
         EventBus.getDefault().unregister(this);
     }
 
+    @Override
+    public void onBackPressed() {
+        navigator.up(this);
+
+        super.onBackPressed();
+    }
+
     // ==============================
     // Inicializacion
     // ==============================
     @AfterViews
     void afterViews() {
+        if (toolbar != null) {
+            setSupportActionBar(toolbar);
+        }
+
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         }
+
+        textViewError.setText(getString(R.string.no_data, getString(getErrorRes())));
+
+        setTitle(getTitleRes() == 0 ? "" : getString(getTitleRes()));
 
         init();
 
@@ -119,5 +160,32 @@ abstract class AbstractBaseAppCompatActivity<V extends CallbackView> extends App
         }
 
         presenter.setCallbackView(getCallbackView());
+    }
+
+    // ==============================
+    // CallbackView
+    // ==============================
+    @UiThread
+    @Override
+    public void showProgress() {
+        layoutProgress.setVisibility(View.VISIBLE);
+    }
+
+    @UiThread
+    @Override
+    public void hideProgress() {
+        layoutProgress.setVisibility(View.GONE);
+    }
+
+    @UiThread
+    @Override
+    public void showNoData() {
+        layoutSad.setVisibility(View.VISIBLE);
+    }
+
+    @UiThread
+    @Override
+    public void hideNoData() {
+        layoutSad.setVisibility(View.GONE);
     }
 }

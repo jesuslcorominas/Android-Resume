@@ -23,7 +23,5 @@ public interface ProjectRestClient extends RestClient<Project> {
         @GET(WebServicesKeys.Paths.project)
         Call<ServerResponse<List<Project>>> refresh(@Query(WebServicesKeys.Fields.lastUpdated) String date);
 
-        @GET(WebServicesKeys.Paths.projectDetail)
-        Call<ServerResponse<Project>> detail(@Path(WebServicesKeys.Fields.id) long itemId);
     }
 }

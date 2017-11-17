@@ -116,30 +116,6 @@
       "relations": []
     },
     {
-      "id": "4:8525801123673998924",
-      "lastPropertyId": "4:2813630699839165649",
-      "name": "Language",
-      "properties": [
-        {
-          "id": "1:6249409104792660489",
-          "name": "id"
-        },
-        {
-          "id": "2:7388895167936339315",
-          "name": "name"
-        },
-        {
-          "id": "3:4700471616797502661",
-          "name": "level"
-        },
-        {
-          "id": "4:2813630699839165649",
-          "name": "update"
-        }
-      ],
-      "relations": []
-    },
-    {
       "id": "5:8226928070277750682",
       "lastPropertyId": "5:4866055795182805849",
       "name": "Library",
@@ -350,9 +326,16 @@
   "lastSequenceId": "0:0",
   "modelVersion": 4,
   "modelVersionParserMinimum": 4,
-  "retiredEntityUids": [],
+  "retiredEntityUids": [
+    8525801123673998924
+  ],
   "retiredIndexUids": [],
-  "retiredPropertyUids": [],
+  "retiredPropertyUids": [
+    6249409104792660489,
+    7388895167936339315,
+    4700471616797502661,
+    2813630699839165649
+  ],
   "retiredRelationUids": [],
   "version": 1
 }

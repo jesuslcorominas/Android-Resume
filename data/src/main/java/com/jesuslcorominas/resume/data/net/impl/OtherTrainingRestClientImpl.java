@@ -29,9 +29,4 @@ public class OtherTrainingRestClientImpl extends AbstractRestClient<OtherTrainin
     public void refresh(DateTime date, ListCallback<OtherTraining> callback) {
         enqueueCall(api.refresh(date.toString(Keys.Miscellany.internalDateFormatter)), callback);
     }
-
-    @Override
-    public void detail(long itemId, DetailCallback<OtherTraining> callback) {
-        enqueueCall(api.detail(itemId), callback);
-    }
 }

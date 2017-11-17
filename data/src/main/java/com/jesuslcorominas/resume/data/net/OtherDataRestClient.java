@@ -23,7 +23,5 @@ public interface OtherDataRestClient extends RestClient<OtherData> {
         @GET(WebServicesKeys.Paths.otherData)
         Call<ServerResponse<List<OtherData>>> refresh(@Query(WebServicesKeys.Fields.lastUpdated) String date);
 
-        @GET(WebServicesKeys.Paths.otherDataDetail)
-        Call<ServerResponse<OtherData>> detail(@Path(WebServicesKeys.Fields.id) long itemId);
     }
 }

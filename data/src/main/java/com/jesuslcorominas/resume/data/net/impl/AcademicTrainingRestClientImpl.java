@@ -26,11 +26,6 @@ public class AcademicTrainingRestClientImpl extends AbstractRestClient <Academic
     }
 
     @Override
-    public void detail(long itemId, DetailCallback<AcademicTraining> callback) {
-        enqueueCall(api.detail(itemId), callback);
-    }
-
-    @Override
     public void refresh(DateTime date, ListCallback<AcademicTraining> callback) {
         enqueueCall(api.refresh(date.toString(Keys.Miscellany.internalDateFormatter)), callback);
     }

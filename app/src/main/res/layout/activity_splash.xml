@@ -21,4 +21,12 @@
         android:textAlignment="center"
         android:textColor="@color/light_gray"
         android:textSize="@dimen/text_xxxlarge" />
+
+    <include
+        layout="@layout/layout_sad"
+        android:visibility="gone" />
+
+    <include
+        layout="@layout/layout_progress"
+        android:visibility="gone" />
 </RelativeLayout>

@@ -23,7 +23,5 @@ public interface KnowledgeRestClient extends RestClient<Knowledge> {
         @GET(WebServicesKeys.Paths.knowledge)
         Call<ServerResponse<List<Knowledge>>> refresh(@Query(WebServicesKeys.Fields.lastUpdated) String date);
 
-        @GET(WebServicesKeys.Paths.knowledgeDetail)
-        Call<ServerResponse<Knowledge>> detail(@Path(WebServicesKeys.Fields.id) long itemId);
     }
 }
