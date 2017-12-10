@@ -7,9 +7,8 @@ import com.jesuslcorominas.resume.app.R;
 import com.jesuslcorominas.resume.app.event.impl.ShowKnowledgedEvent;
 import com.jesuslcorominas.resume.app.presenter.KnowledgesPresenter;
 import com.jesuslcorominas.resume.app.presenter.Presenter;
-import com.jesuslcorominas.resume.app.presenter.callbackview.KnowledgesView;
+import com.jesuslcorominas.resume.app.view.callbackview.KnowledgesView;
 import com.jesuslcorominas.resume.app.view.fragment.KnowledgesFragment;
-import com.jesuslcorominas.resume.app.view.fragment.OtherDataFragment;
 import com.jesuslcorominas.resume.commons.ErrorInfo;
 
 import org.androidannotations.annotations.Background;
@@ -81,7 +80,7 @@ public class KnowledgesActivity extends AbstractBaseAppCompatActivity<Knowledges
     // ==============================
     @Background
     void callPresenterGetData() {
-        presenter.getKnowledges();
+        presenter.loadKnowledges();
     }
 
     // ==============================
@@ -96,7 +95,7 @@ public class KnowledgesActivity extends AbstractBaseAppCompatActivity<Knowledges
     @UiThread
     @Override
     public void showData() {
-        EventBus.getDefault().post(new ShowKnowledgedEvent(presenter.getDatasource()));
+        EventBus.getDefault().post(new ShowKnowledgedEvent(presenter.getKnowledges()));
     }
 
     @UiThread

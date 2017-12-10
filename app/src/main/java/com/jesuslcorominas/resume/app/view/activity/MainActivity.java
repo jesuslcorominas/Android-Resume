@@ -9,6 +9,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.NestedScrollView;
+import android.support.v7.widget.AppCompatTextView;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
@@ -18,7 +19,7 @@ import com.jesuslcorominas.resume.app.R;
 import com.jesuslcorominas.resume.app.event.impl.ShowPersonalDataEvent;
 import com.jesuslcorominas.resume.app.presenter.MainPresenter;
 import com.jesuslcorominas.resume.app.presenter.Presenter;
-import com.jesuslcorominas.resume.app.presenter.callbackview.MainView;
+import com.jesuslcorominas.resume.app.view.callbackview.MainView;
 import com.jesuslcorominas.resume.app.util.Keys;
 import com.jesuslcorominas.resume.app.view.fragment.MainFragment;
 import com.jesuslcorominas.resume.commons.ErrorInfo;
@@ -32,6 +33,8 @@ import org.androidannotations.annotations.ViewById;
 import org.greenrobot.eventbus.EventBus;
 
 import javax.inject.Inject;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 /**
  * @author Jesús López Corominas
@@ -52,6 +55,11 @@ public class MainActivity extends AbstractBaseAppCompatActivity<MainView> implem
 
     @ViewById(R.id.activity_main_navigatorView)
     NavigationView navigationView;
+
+    // Estas dos vistas no se pueden inyectar con AndroidAnnotations porque no estan en la activity si no en el NavigationView
+    // Hay que inicializarlas de la forma "tradicional" en el init()
+    AppCompatTextView textViewMenuName;
+    CircleImageView circleImageViewMenuAvatar;
 
     @ViewById(R.id.layout_main)
     CoordinatorLayout layoutMain;
@@ -103,6 +111,9 @@ public class MainActivity extends AbstractBaseAppCompatActivity<MainView> implem
 
         navigationView.setNavigationItemSelectedListener(this);
 
+        textViewMenuName = (AppCompatTextView) navigationView.getHeaderView(0).findViewById(R.id.navigationView_main_header_textView_name);
+        circleImageViewMenuAvatar = (CircleImageView) navigationView.getHeaderView(0).findViewById(R.id.navigationView_main_header_imageView_avatar);
+
         getFragmentManager().beginTransaction()
                 .add(R.id.appBarMain_frameLayout_container, MainFragment.newInstance())
                 .commit();
@@ -149,6 +160,7 @@ public class MainActivity extends AbstractBaseAppCompatActivity<MainView> implem
                 navigator.experiences(this);
                 break;
             case R.id.sideMenu_item_training:
+                navigator.trainings(this);
                 break;
             case R.id.sideMenu_item_knowledges:
                 navigator.knowledges(this);
@@ -169,7 +181,7 @@ public class MainActivity extends AbstractBaseAppCompatActivity<MainView> implem
     // ==============================
     @Background
     void callPresenterGetData() {
-        presenter.getPersonalData();
+        presenter.loadPersonalData();
     }
 
     // ==============================
@@ -178,9 +190,9 @@ public class MainActivity extends AbstractBaseAppCompatActivity<MainView> implem
     @UiThread
     @Override
     public void showData() {
-        PersonalData personalData = presenter.getDatasource();
+        PersonalData personalData = presenter.getPersonalData();
 
-        setTitle(personalData.getName() + " " + personalData.getSurname());
+        setTitle(getString(R.string.side_menu_name, personalData.getName(), personalData.getSurname()));
 
         appBarLayout.setExpanded(true);
 
@@ -191,6 +203,12 @@ public class MainActivity extends AbstractBaseAppCompatActivity<MainView> implem
         Picasso.with(this).
                 load(Keys.IMAGES_PATH + personalData.getImage()).
                 into(imageViewMainImage);
+
+        // Menu lateral
+        textViewMenuName.setText(getString(R.string.side_menu_name, personalData.getName(), personalData.getSurname()));
+        Picasso.with(this).
+                load(Keys.IMAGES_PATH + personalData.getImage()).
+                into(circleImageViewMenuAvatar);
     }
 
     @UiThread

@@ -3,18 +3,18 @@ package com.jesuslcorominas.resume.model.usecase.impl;
 import com.jesuslcorominas.resume.commons.ErrorInfo;
 import com.jesuslcorominas.resume.commons.util.Keys;
 import com.jesuslcorominas.resume.data.repository.Repository;
-import com.jesuslcorominas.resume.model.usecase.ListUseCase;
+import com.jesuslcorominas.resume.model.usecase.GetListUseCase;
 
 import java.util.List;
 
 /**
  * @author Jesús López Corominas
  */
-abstract class AbstractListUseCaseImpl<O> implements ListUseCase<O> {
+abstract class AbstractListUseCaseImpl<O> implements GetListUseCase<O> {
 
     private Repository<O> repository;
 
-    public AbstractListUseCaseImpl(Repository<O> repository) {
+    AbstractListUseCaseImpl(Repository<O> repository) {
         this.repository = repository;
     }
 

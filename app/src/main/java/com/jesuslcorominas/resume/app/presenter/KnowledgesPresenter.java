@@ -1,7 +1,6 @@
 package com.jesuslcorominas.resume.app.presenter;
 
-import com.jesuslcorominas.resume.app.presenter.callbackview.KnowledgesView;
-import com.jesuslcorominas.resume.data.entity.Experience;
+import com.jesuslcorominas.resume.app.view.callbackview.KnowledgesView;
 import com.jesuslcorominas.resume.data.entity.Knowledge;
 
 import java.util.ArrayList;
@@ -11,7 +10,7 @@ import java.util.ArrayList;
  */
 public interface KnowledgesPresenter extends Presenter<KnowledgesView> {
 
-    void getKnowledges();
+    void loadKnowledges();
 
-    ArrayList<Knowledge> getDatasource();
+    ArrayList<Knowledge> getKnowledges();
 }

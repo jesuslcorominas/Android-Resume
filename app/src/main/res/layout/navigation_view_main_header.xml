@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="@dimen/navigation_header_height"
     android:background="@color/colorPrimary"
@@ -10,6 +11,25 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/navigationView_main_header_imageView_avatar"
+        android:layout_width="@dimen/menu_image"
+        android:layout_height="@dimen/menu_image"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/margin_xxlarge"
+        app:civ_border_color="@color/white"
+        app:civ_border_width="@dimen/menu_image_border" />
 
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/navigationView_main_header_textView_name"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:maxLines="1"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_xlarge" />
 
 </LinearLayout>

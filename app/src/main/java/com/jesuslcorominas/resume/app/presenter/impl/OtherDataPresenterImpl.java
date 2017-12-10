@@ -1,10 +1,10 @@
 package com.jesuslcorominas.resume.app.presenter.impl;
 
 import com.jesuslcorominas.resume.app.presenter.OtherDataPresenter;
-import com.jesuslcorominas.resume.app.presenter.callbackview.OtherDataView;
+import com.jesuslcorominas.resume.app.view.callbackview.OtherDataView;
 import com.jesuslcorominas.resume.commons.ErrorInfo;
 import com.jesuslcorominas.resume.data.entity.OtherData;
-import com.jesuslcorominas.resume.model.usecase.ListUseCase;
+import com.jesuslcorominas.resume.model.usecase.GetListUseCase;
 import com.jesuslcorominas.resume.model.usecase.UseCase;
 
 import java.util.ArrayList;
@@ -15,17 +15,19 @@ import java.util.List;
  */
 public class OtherDataPresenterImpl extends AbstractPresenter<OtherDataView> implements OtherDataPresenter {
 
-    private ListUseCase<OtherData> otherDataListUseCase;
+    private GetListUseCase<OtherData> otherDataListUseCase;
 
     private ArrayList<OtherData> otherDataList;
 
-    public OtherDataPresenterImpl(ListUseCase<OtherData> otherDataListUseCase) {
+    public OtherDataPresenterImpl(GetListUseCase<OtherData> otherDataListUseCase) {
         this.otherDataListUseCase = otherDataListUseCase;
     }
 
     @Override
     public void getOtherData() {
-        showProgressAndHideOthers();
+        if (resumed) {
+            showProgressAndHideOthers();
+        }
 
         otherDataListUseCase.execute(null, new UseCase.Callback<List<OtherData>>() {
             @Override
@@ -33,13 +35,17 @@ public class OtherDataPresenterImpl extends AbstractPresenter<OtherDataView> imp
                 OtherDataPresenterImpl.this.otherDataList = new ArrayList<>();
                 OtherDataPresenterImpl.this.otherDataList.addAll(data);
 
-                showDataAndHideOthers();
+                if (resumed) {
+                    showDataAndHideOthers();
+                }
             }
 
             @Override
             public void onError(ErrorInfo error) {
-                callbackView.showErrorGettingData(error);
-                showNoDataAndHideOthers();
+                if (resumed) {
+                    callbackView.showErrorGettingData(error);
+                    showNoDataAndHideOthers();
+                }
             }
         });
     }

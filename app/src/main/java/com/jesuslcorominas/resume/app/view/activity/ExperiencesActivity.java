@@ -7,7 +7,7 @@ import com.jesuslcorominas.resume.app.R;
 import com.jesuslcorominas.resume.app.event.impl.ShowExperiencesEvent;
 import com.jesuslcorominas.resume.app.presenter.ExperiencesPresenter;
 import com.jesuslcorominas.resume.app.presenter.Presenter;
-import com.jesuslcorominas.resume.app.presenter.callbackview.ExperiencesView;
+import com.jesuslcorominas.resume.app.view.callbackview.ExperiencesView;
 import com.jesuslcorominas.resume.app.view.fragment.ExperiencesFragment;
 import com.jesuslcorominas.resume.commons.ErrorInfo;
 
@@ -80,7 +80,7 @@ public class ExperiencesActivity extends AbstractBaseAppCompatActivity<Experienc
     // ==============================
     @Background
     void callPresenterGetData() {
-        presenter.getExperiences();
+        presenter.loadExperiences();
     }
 
     // ==============================
@@ -95,7 +95,7 @@ public class ExperiencesActivity extends AbstractBaseAppCompatActivity<Experienc
     @UiThread
     @Override
     public void showData() {
-        EventBus.getDefault().post(new ShowExperiencesEvent(presenter.getDatasource()));
+        EventBus.getDefault().post(new ShowExperiencesEvent(presenter.getExperiences()));
     }
 
     @UiThread

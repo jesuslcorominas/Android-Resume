@@ -1,24 +1,17 @@
 package com.jesuslcorominas.resume.data.di.module;
 
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.JsonDeserializationContext;
-import com.google.gson.JsonDeserializer;
-import com.google.gson.JsonElement;
-import com.google.gson.JsonParseException;
-import com.google.gson.JsonPrimitive;
-import com.google.gson.JsonSerializationContext;
-import com.google.gson.JsonSerializer;
-import com.jesuslcorominas.resume.commons.util.Keys;
-import com.jesuslcorominas.resume.data.entity.KnowledgeLevel;
-import com.jesuslcorominas.resume.data.entity.KnowledgeType;
-import com.jesuslcorominas.resume.data.entity.Platform;
-import com.jesuslcorominas.resume.data.entity.Position;
+import com.jesuslcorominas.resume.data.net.ExperienceRestClient;
+import com.jesuslcorominas.resume.data.net.KnowledgeRestClient;
+import com.jesuslcorominas.resume.data.net.OtherDataRestClient;
+import com.jesuslcorominas.resume.data.net.PersonalDataRestClient;
+import com.jesuslcorominas.resume.data.net.TrainingRestClient;
+import com.jesuslcorominas.resume.data.net.impl.ExperienceRestClientImpl;
+import com.jesuslcorominas.resume.data.net.impl.KnowledgeRestClientImpl;
+import com.jesuslcorominas.resume.data.net.impl.OtherDataRestClientImpl;
+import com.jesuslcorominas.resume.data.net.impl.PersonalDataRestClientImpl;
+import com.jesuslcorominas.resume.data.net.impl.TrainingRestClientImpl;
 
-import org.joda.time.DateTime;
-import org.joda.time.format.DateTimeFormat;
-
-import java.lang.reflect.Type;
 import java.util.concurrent.TimeUnit;
 
 import javax.inject.Singleton;
@@ -33,7 +26,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * @author Jesús López Corominas
  */
-@Module
+@Module(includes = {GsonModule.class})
 @Singleton
 public class NetModule {
 
@@ -54,139 +47,6 @@ public class NetModule {
         }
 
         return instance;
-    }
-
-    @Singleton
-    @Provides
-    Gson provideGson(JsonSerializer<DateTime> dateTimeJsonSerializer, JsonDeserializer<DateTime> dateTimeJsonDeserializer,
-                     JsonSerializer<Position> positionJsonSerializer, JsonDeserializer<Position> positionJsonDeserializer,
-                     JsonSerializer<KnowledgeType> knowledgeTypeJsonSerializer, JsonDeserializer<KnowledgeType> knowledgeTypeJsonDeserializer,
-                     JsonSerializer<KnowledgeLevel> knowledgeLevelJsonSerializer, JsonDeserializer<KnowledgeLevel> knowledgeLevelJsonDeserializer,
-                     JsonSerializer<Platform> platformJsonSerializer, JsonDeserializer<Platform> platformJsonDeserializer) {
-        return new GsonBuilder().
-                serializeNulls().
-                setPrettyPrinting().
-                registerTypeAdapter(DateTime.class, dateTimeJsonDeserializer).
-                registerTypeAdapter(DateTime.class, dateTimeJsonSerializer).
-                registerTypeAdapter(Position.class, positionJsonDeserializer).
-                registerTypeAdapter(Position.class, positionJsonSerializer).
-                registerTypeAdapter(KnowledgeType.class, knowledgeTypeJsonDeserializer).
-                registerTypeAdapter(KnowledgeType.class, knowledgeTypeJsonSerializer).
-                registerTypeAdapter(KnowledgeLevel.class, knowledgeLevelJsonDeserializer).
-                registerTypeAdapter(KnowledgeLevel.class, knowledgeLevelJsonSerializer).
-                registerTypeAdapter(Platform.class, platformJsonDeserializer).
-                registerTypeAdapter(Platform.class, platformJsonSerializer).
-                create();
-    }
-
-    @Singleton
-    @Provides
-    JsonSerializer<DateTime> provideDateTimeJsonSerializer() {
-        return new JsonSerializer<DateTime>() {
-            @Override
-            public JsonElement serialize(DateTime src, Type typeOfSrc, JsonSerializationContext context) {
-                return new JsonPrimitive(src.toString(Keys.Miscellany.internalDateFormatter));
-            }
-        };
-    }
-
-    @Singleton
-    @Provides
-    JsonDeserializer<DateTime> provideDateTimeJsonDeserializer() {
-        return new JsonDeserializer<DateTime>() {
-            @Override
-            public DateTime deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
-                return DateTime.parse(json.getAsString(), DateTimeFormat.forPattern(Keys.Miscellany.internalDateFormatter));
-            }
-        };
-    }
-
-    @Singleton
-    @Provides
-    JsonDeserializer<Position> providePositionJsonDeserializer() {
-        return new JsonDeserializer<Position>() {
-            @Override
-            public Position deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
-                return Position.getPosition(json.getAsInt());
-            }
-        };
-    }
-
-    @Singleton
-    @Provides
-    JsonSerializer<Position> providePositionJsonSerializer() {
-        return new JsonSerializer<Position>() {
-            @Override
-            public JsonElement serialize(Position src, Type typeOfSrc, JsonSerializationContext context) {
-                return new JsonPrimitive(src.getValue());
-            }
-        };
-    }
-
-    @Singleton
-    @Provides
-    JsonDeserializer<KnowledgeType> provideKnowledgeTypeJsonDeserializer() {
-        return new JsonDeserializer<KnowledgeType>() {
-            @Override
-            public KnowledgeType deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
-                return KnowledgeType.getKnowledgeType(json.getAsInt());
-            }
-        };
-    }
-
-    @Singleton
-    @Provides
-    JsonSerializer<KnowledgeType> provideKnowledgeTypeJsonSerializer() {
-        return new JsonSerializer<KnowledgeType>() {
-            @Override
-            public JsonElement serialize(KnowledgeType src, Type typeOfSrc, JsonSerializationContext context) {
-                return new JsonPrimitive(src.getValue());
-            }
-        };
-    }
-
-    @Singleton
-    @Provides
-    JsonDeserializer<KnowledgeLevel> provideKnowledgeLevelJsonDeserializer() {
-        return new JsonDeserializer<KnowledgeLevel>() {
-            @Override
-            public KnowledgeLevel deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
-                return KnowledgeLevel.getKnowledgeLevel(json.getAsInt());
-            }
-        };
-    }
-
-    @Singleton
-    @Provides
-    JsonSerializer<KnowledgeLevel> provideKnowledgeLevelJsonSerializer() {
-        return new JsonSerializer<KnowledgeLevel>() {
-            @Override
-            public JsonElement serialize(KnowledgeLevel src, Type typeOfSrc, JsonSerializationContext context) {
-                return new JsonPrimitive(src.getValue());
-            }
-        };
-    }
-
-    @Singleton
-    @Provides
-    JsonDeserializer<Platform> providePlatformJsonDeserializer() {
-        return new JsonDeserializer<Platform>() {
-            @Override
-            public Platform deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context) throws JsonParseException {
-                return Platform.getPlatform(json.getAsInt());
-            }
-        };
-    }
-
-    @Singleton
-    @Provides
-    JsonSerializer<Platform> providePlatformJsonSerializer() {
-        return new JsonSerializer<Platform>() {
-            @Override
-            public JsonElement serialize(Platform src, Type typeOfSrc, JsonSerializationContext context) {
-                return new JsonPrimitive(src.getValue());
-            }
-        };
     }
 
     @Singleton
@@ -216,5 +76,55 @@ public class NetModule {
                 addConverterFactory(GsonConverterFactory.create(gson)).
                 client(okHttpClient).
                 build();
+    }
+
+    @Provides
+    TrainingRestClient.Api provideTrainingRestClientApi(Retrofit retrofit) {
+        return retrofit.create(TrainingRestClient.Api.class);
+    }
+
+    @Provides
+    TrainingRestClient provideTrainingRestClient(TrainingRestClient.Api api) {
+        return new TrainingRestClientImpl(api);
+    }
+
+    @Provides
+    ExperienceRestClient.Api provideExperienceRestClientApi(Retrofit retrofit) {
+        return retrofit.create(ExperienceRestClient.Api.class);
+    }
+
+    @Provides
+    ExperienceRestClient provideExperienceRestClient(ExperienceRestClient.Api api) {
+        return new ExperienceRestClientImpl(api);
+    }
+
+    @Provides
+    KnowledgeRestClient.Api provideKnowledgeRestClientApi(Retrofit retrofit) {
+        return retrofit.create(KnowledgeRestClient.Api.class);
+    }
+
+    @Provides
+    KnowledgeRestClient provideKnowledgeRestClient(KnowledgeRestClient.Api api) {
+        return new KnowledgeRestClientImpl(api);
+    }
+
+    @Provides
+    OtherDataRestClient.Api provideOtherDataRestClientApi(Retrofit retrofit) {
+        return retrofit.create(OtherDataRestClient.Api.class);
+    }
+
+    @Provides
+    OtherDataRestClient provideOtherDataRestClient(OtherDataRestClient.Api api) {
+        return new OtherDataRestClientImpl(api);
+    }
+
+    @Provides
+    PersonalDataRestClient.Api providePersonalDataRestClientApi(Retrofit retrofit) {
+        return retrofit.create(PersonalDataRestClient.Api.class);
+    }
+
+    @Provides
+    PersonalDataRestClient providePersonalDataRestClient(PersonalDataRestClient.Api api) {
+        return new PersonalDataRestClientImpl(api);
     }
 }

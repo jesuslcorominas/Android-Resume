@@ -1,15 +1,15 @@
 package com.jesuslcorominas.resume.app.presenter.impl;
 
 import com.jesuslcorominas.resume.app.presenter.Presenter;
-import com.jesuslcorominas.resume.app.presenter.callbackview.CallbackView;
+import com.jesuslcorominas.resume.app.view.callbackview.CallbackView;
 
 /**
  * @author Jesús López Corominas
  */
 public abstract class AbstractPresenter<V extends CallbackView> implements Presenter<V> {
 
-    protected V callbackView;
-    protected boolean resumed;
+    V callbackView;
+    boolean resumed;
 
     @Override
     public void setCallbackView(V view) {

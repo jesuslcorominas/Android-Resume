@@ -48,6 +48,7 @@ public class ExperienceItemView extends CardView implements ItemView<Experience>
         Picasso.
                 with(context).
                 load(Keys.IMAGES_PATH + item.getImage()).
+                placeholder(R.drawable.ic_no_image).
                 error(R.drawable.ic_no_image).
                 into(imageViewLogo);
 

@@ -1,7 +1,7 @@
 package com.jesuslcorominas.resume.app.presenter.impl;
 
 import com.jesuslcorominas.resume.app.presenter.SplashPresenter;
-import com.jesuslcorominas.resume.app.presenter.callbackview.SplashView;
+import com.jesuslcorominas.resume.app.view.callbackview.SplashView;
 
 /**
  * @author Jesús López Corominas

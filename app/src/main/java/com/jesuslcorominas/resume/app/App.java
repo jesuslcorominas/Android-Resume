@@ -7,11 +7,13 @@ import com.jesuslcorominas.resume.app.di.component.DaggerKnowledgeComponent;
 import com.jesuslcorominas.resume.app.di.component.DaggerMainComponent;
 import com.jesuslcorominas.resume.app.di.component.DaggerOtherDataComponent;
 import com.jesuslcorominas.resume.app.di.component.DaggerSplashComponent;
+import com.jesuslcorominas.resume.app.di.component.DaggerTrainingComponent;
 import com.jesuslcorominas.resume.app.di.component.ExperienceComponent;
 import com.jesuslcorominas.resume.app.di.component.KnowledgeComponent;
 import com.jesuslcorominas.resume.app.di.component.MainComponent;
 import com.jesuslcorominas.resume.app.di.component.OtherDataComponent;
 import com.jesuslcorominas.resume.app.di.component.SplashComponent;
+import com.jesuslcorominas.resume.app.di.component.TrainingComponent;
 import com.jesuslcorominas.resume.data.di.module.DatabaseModule;
 import com.jesuslcorominas.resume.data.di.module.NetModule;
 
@@ -28,6 +30,7 @@ public class App extends Application {
     private ExperienceComponent experienceComponent;
     private OtherDataComponent otherDataComponent;
     private KnowledgeComponent knowledgeComponent;
+    private TrainingComponent trainingComponent;
 
     @Override
     public void onCreate() {
@@ -58,6 +61,11 @@ public class App extends Application {
                 databaseModule(dbModule).
                 build();
 
+        trainingComponent = DaggerTrainingComponent.builder().
+                netModule(netModule).
+                databaseModule(dbModule).
+                build();
+
         splashComponent = DaggerSplashComponent.builder().
                 build();
     }
@@ -80,5 +88,9 @@ public class App extends Application {
 
     public KnowledgeComponent getKnowledgeComponent() {
         return knowledgeComponent;
+    }
+
+    public TrainingComponent getTrainingComponent() {
+        return trainingComponent;
     }
 }

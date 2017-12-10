@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.jesuslcorominas.resume.app.R;
 import com.jesuslcorominas.resume.app.event.AbstractEvent;
 import com.jesuslcorominas.resume.app.presenter.Presenter;
-import com.jesuslcorominas.resume.app.presenter.callbackview.CallbackView;
+import com.jesuslcorominas.resume.app.view.callbackview.CallbackView;
 import com.jesuslcorominas.resume.app.util.Navigator;
 import com.jesuslcorominas.resume.app.util.Utils;
 

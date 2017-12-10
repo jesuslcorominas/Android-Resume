@@ -14,7 +14,6 @@ public final class Keys {
 
         public static final int notImplementedError = 1001;
         public static final int emptyData = 1002;
-        public static final int idNotValid = 1003;
 
         public static final int databaseGenericError = 2001;
 
@@ -24,5 +23,6 @@ public final class Keys {
     public static final class Miscellany {
         public static final String internalDateFormatter = "yyyy-MM-dd";
         public static final String printDateFormatter = "dd/MM/yyyy";
+        public static final String parcelDateFormatter = "dd/MM/yyyy HH:mm:ss";
     }
 }

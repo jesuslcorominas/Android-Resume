@@ -12,15 +12,13 @@ public final class WebServicesKeys {
     public static final class Paths {
         private static final String detail = "{" + Fields.id + "}/";
 
-        public static final String academicTraining = "academic_training/";
+        public static final String training = "training/";
 
         public static final String experience = "experience/";
 
         public static final String knowledge = "knowledge/";
 
         public static final String otherData = "other_data/";
-
-        public static final String otherTraining = "other_training/";
 
         public static final String personalData = "personal_data/";
 

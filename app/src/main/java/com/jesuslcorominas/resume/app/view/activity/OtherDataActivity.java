@@ -7,7 +7,7 @@ import com.jesuslcorominas.resume.app.R;
 import com.jesuslcorominas.resume.app.event.impl.ShowOtherDataEvent;
 import com.jesuslcorominas.resume.app.presenter.OtherDataPresenter;
 import com.jesuslcorominas.resume.app.presenter.Presenter;
-import com.jesuslcorominas.resume.app.presenter.callbackview.OtherDataView;
+import com.jesuslcorominas.resume.app.view.callbackview.OtherDataView;
 import com.jesuslcorominas.resume.app.view.fragment.OtherDataFragment;
 import com.jesuslcorominas.resume.commons.ErrorInfo;
 

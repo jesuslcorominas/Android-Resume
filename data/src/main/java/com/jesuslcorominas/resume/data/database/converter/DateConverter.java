@@ -11,6 +11,10 @@ public class DateConverter implements PropertyConverter<DateTime, Long> {
 
     @Override
     public DateTime convertToEntityProperty(Long databaseValue) {
+        if (databaseValue == null) {
+            return null;
+        }
+
         return new DateTime(databaseValue);
     }
 

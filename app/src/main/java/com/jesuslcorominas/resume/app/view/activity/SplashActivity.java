@@ -6,7 +6,7 @@ import com.jesuslcorominas.resume.app.App;
 import com.jesuslcorominas.resume.app.R;
 import com.jesuslcorominas.resume.app.presenter.Presenter;
 import com.jesuslcorominas.resume.app.presenter.SplashPresenter;
-import com.jesuslcorominas.resume.app.presenter.callbackview.SplashView;
+import com.jesuslcorominas.resume.app.view.callbackview.SplashView;
 import com.jesuslcorominas.resume.commons.ErrorInfo;
 
 import org.androidannotations.annotations.Background;

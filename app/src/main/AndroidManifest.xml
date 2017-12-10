@@ -39,6 +39,19 @@
         <activity
             android:name=".view.activity.KnowledgesActivity_"
             android:configChanges="screenSize|smallestScreenSize|orientation|screenLayout|keyboardHidden" />
+
+        <activity
+            android:name=".view.activity.TrainingsActivity_"
+            android:configChanges="screenSize|smallestScreenSize|orientation|screenLayout|keyboardHidden" />
+
+        <activity
+            android:name=".view.activity.ExperienceDetailActivity_"
+            android:configChanges="screenSize|smallestScreenSize|orientation|screenLayout|keyboardHidden" />
+
+        <activity
+            android:name=".view.activity.ProjectDetailActivity_"
+            android:configChanges="screenSize|smallestScreenSize|orientation|screenLayout|keyboardHidden" />
+
     </application>
 
 </manifest>

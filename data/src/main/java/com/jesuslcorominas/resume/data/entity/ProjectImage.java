@@ -24,7 +24,7 @@ public class ProjectImage {
     @Convert(converter = DateConverter.class, dbType = Long.class)
     private DateTime update;
 
-    ToOne<Project> project;
+    private ToOne<Project> project;
 
     public long getId() {
         return id;
@@ -48,5 +48,13 @@ public class ProjectImage {
 
     public void setUpdate(DateTime update) {
         this.update = update;
+    }
+
+    public ToOne<Project> getProject() {
+        return project;
+    }
+
+    public void setProject(ToOne<Project> project) {
+        this.project = project;
     }
 }

@@ -1,6 +1,6 @@
 package com.jesuslcorominas.resume.app.presenter;
 
-import com.jesuslcorominas.resume.app.presenter.callbackview.CallbackView;
+import com.jesuslcorominas.resume.app.view.callbackview.CallbackView;
 
 /**
  * @author Jesús López Corominas

@@ -30,6 +30,9 @@
 
     <dimen name="error_icon">128dp</dimen>
 
+    <dimen name="menu_image">128dp</dimen>
+    <dimen name="menu_image_border">2dp</dimen>
+
     <dimen name="main_image_height">320dp</dimen>
 
     <dimen name="card_height">196dp</dimen>

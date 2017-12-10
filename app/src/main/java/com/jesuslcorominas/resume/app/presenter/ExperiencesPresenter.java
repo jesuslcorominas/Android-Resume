@@ -1,6 +1,6 @@
 package com.jesuslcorominas.resume.app.presenter;
 
-import com.jesuslcorominas.resume.app.presenter.callbackview.ExperiencesView;
+import com.jesuslcorominas.resume.app.view.callbackview.ExperiencesView;
 import com.jesuslcorominas.resume.data.entity.Experience;
 
 import java.util.ArrayList;
@@ -10,8 +10,8 @@ import java.util.ArrayList;
  */
 public interface ExperiencesPresenter extends Presenter<ExperiencesView> {
 
-    void getExperiences();
+    void loadExperiences();
 
-    ArrayList<Experience> getDatasource();
+    ArrayList<Experience> getExperiences();
 
 }

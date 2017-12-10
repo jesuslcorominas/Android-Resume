@@ -5,10 +5,13 @@ import com.jesuslcorominas.resume.data.database.converter.PlatformConverter;
 
 import org.joda.time.DateTime;
 
+import java.util.List;
+
 import io.objectbox.annotation.Backlink;
 import io.objectbox.annotation.Convert;
 import io.objectbox.annotation.Entity;
 import io.objectbox.annotation.Id;
+import io.objectbox.annotation.Transient;
 import io.objectbox.relation.ToMany;
 import io.objectbox.relation.ToOne;
 
@@ -33,13 +36,18 @@ public class Project {
     @Convert(converter = DateConverter.class, dbType = Long.class)
     private DateTime update;
 
-    public ToOne<Experience> experience;
+    private ToOne<Experience> experience;
 
-    public ToMany<Library> libraries;
+    private ToMany<Library> librariesRelation;
 
     @Backlink
-    public ToMany<ProjectImage> images;
+    private ToMany<ProjectImage> imagesRelation;
 
+    @Transient
+    private List<Library> libraries;
+
+    @Transient
+    private List<ProjectImage> images;
 
     public long getId() {
         return id;
@@ -95,5 +103,45 @@ public class Project {
 
     public void setUpdate(DateTime update) {
         this.update = update;
+    }
+
+    public ToOne<Experience> getExperience() {
+        return experience;
+    }
+
+    public void setExperience(ToOne<Experience> experience) {
+        this.experience = experience;
+    }
+
+    public ToMany<Library> getLibrariesRelation() {
+        return librariesRelation;
+    }
+
+    public void setLibrariesRelation(ToMany<Library> librariesRelation) {
+        this.librariesRelation = librariesRelation;
+    }
+
+    public List<Library> getLibraries() {
+        return libraries;
+    }
+
+    public void setLibraries(List<Library> libraries) {
+        this.libraries = libraries;
+    }
+
+    public ToMany<ProjectImage> getImagesRelation() {
+        return imagesRelation;
+    }
+
+    public void setImagesRelation(ToMany<ProjectImage> imagesRelation) {
+        this.imagesRelation = imagesRelation;
+    }
+
+    public List<ProjectImage> getImages() {
+        return images;
+    }
+
+    public void setImages(List<ProjectImage> images) {
+        this.images = images;
     }
 }

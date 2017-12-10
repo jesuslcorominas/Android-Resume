@@ -7,11 +7,13 @@ import com.jesuslcorominas.resume.data.database.converter.PositionConverter;
 import org.joda.time.DateTime;
 
 import java.util.Comparator;
+import java.util.List;
 
 import io.objectbox.annotation.Backlink;
 import io.objectbox.annotation.Convert;
 import io.objectbox.annotation.Entity;
 import io.objectbox.annotation.Id;
+import io.objectbox.annotation.Transient;
 import io.objectbox.relation.ToMany;
 
 /**
@@ -41,9 +43,11 @@ public class Experience {
     @Convert(converter = DateConverter.class, dbType = Long.class)
     private DateTime update;
 
-    // TODO mirar si puede hacerse privado con un detail/set
     @Backlink
-    public ToMany<Project> projects;
+    private ToMany<Project> projectsRelation;
+
+    @Transient
+    private List<Project> projects;
 
     public long getId() {
         return id;
@@ -109,20 +113,26 @@ public class Experience {
         this.update = update;
     }
 
+    public ToMany<Project> getProjectsRelation() {
+        return projectsRelation;
+    }
+
+    public void setProjectsRelation(ToMany<Project> projectsRelation) {
+        this.projectsRelation = projectsRelation;
+    }
+
+    public List<Project> getProjects() {
+        return projects;
+    }
+
+    public void setProjects(List<Project> projects) {
+        this.projects = projects;
+    }
+
     public static class ExperiencesComparator implements Comparator<Experience> {
 
         @Override
         public int compare(Experience o1, Experience o2) {
-            if (o1 == null) {
-                // Si el primero es nulo va delante
-                return 1;
-            }
-
-            if (o2 == null) {
-                // Si el segundo es nulo va delante
-                return -1;
-            }
-
             if (o1.getEnd() != null) {
                 // Si el final del primero no es nulo
                 if (o2.getEnd() != null) {
@@ -130,15 +140,15 @@ public class Experience {
                     int compareEnds = o2.getEnd().compareTo(o1.getEnd());
                     if (compareEnds != 0) {
                         // Si no tienen el mismo final
-                        return o2.getEnd().compareTo(o1.getEnd());
+                        return compareEnds;
                     }
                 } else {
                     // Si estamos aqui el primero tiene fin y el segundo no, con lo que va delante
-                    return -1;
+                    return 1;
                 }
             } else if (o2.getEnd() != null) {
                 // Si estamos aqui, el primero no tiene fin y el segundo si, con lo que el primero va delante
-                return 1;
+                return -1;
             }
 
             // Si estamos aqui es que ambos finales son nulos por lo que comparamos los inicios
@@ -149,18 +159,19 @@ public class Experience {
                     int compareStarts = o2.getStart().compareTo(o1.getStart());
                     if (compareStarts != 0) {
                         // Si no tienen el mismo inicio
-                        return o2.getStart().compareTo(o1.getStart());
+                        return compareStarts;
                     }
                 } else {
                     // Si estamos aqui el primero tiene inicio y el segundo no, con lo que va delante
-                    return -1;
+                    return 1;
                 }
             } else if (o2.getStart() != null) {
                 // Si estamos aqui, el primero no tiene inicio y el segundo si, con lo que el primero va delante
-                return 1;
+                return -1;
             }
 
-            return Long.valueOf(o2.getId()).compareTo(o1.getId());
+            return Long.valueOf(o1.getId()).compareTo(o2.getId());
         }
     }
+
 }

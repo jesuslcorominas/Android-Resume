@@ -9,11 +9,13 @@ import io.objectbox.Property;
 import io.objectbox.query.Query;
 
 /**
+ * // TODO agregar metodos para buscar y borrar por el nombre de la columna
+ *
  * @author Jesús López Corominas
  */
 public abstract class AbstractObjectBoxDao<V> implements Dao<V> {
 
-    private Box<V> box;
+    protected Box<V> box;
 
     AbstractObjectBoxDao(Box<V> box) {
         this.box = box;
@@ -22,11 +24,6 @@ public abstract class AbstractObjectBoxDao<V> implements Dao<V> {
     @Override
     public List<V> getAll() {
         return find(null);
-    }
-
-    @Override
-    public List<V> find(String columnName, String filterValue) {
-        return box.find(columnName, filterValue);
     }
 
     @Override
@@ -77,8 +74,4 @@ public abstract class AbstractObjectBoxDao<V> implements Dao<V> {
         box.remove(find(query));
     }
 
-    @Override
-    public void delete(String columnName, String filterValue) {
-        delete(box.find(columnName, filterValue));
-    }
 }

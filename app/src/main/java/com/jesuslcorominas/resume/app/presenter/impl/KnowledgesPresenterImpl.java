@@ -1,11 +1,10 @@
 package com.jesuslcorominas.resume.app.presenter.impl;
 
 import com.jesuslcorominas.resume.app.presenter.KnowledgesPresenter;
-import com.jesuslcorominas.resume.app.presenter.callbackview.KnowledgesView;
+import com.jesuslcorominas.resume.app.view.callbackview.KnowledgesView;
 import com.jesuslcorominas.resume.commons.ErrorInfo;
-import com.jesuslcorominas.resume.data.entity.Experience;
 import com.jesuslcorominas.resume.data.entity.Knowledge;
-import com.jesuslcorominas.resume.model.usecase.ListUseCase;
+import com.jesuslcorominas.resume.model.usecase.GetListUseCase;
 import com.jesuslcorominas.resume.model.usecase.UseCase;
 
 import java.util.ArrayList;
@@ -19,16 +18,18 @@ public class KnowledgesPresenterImpl extends AbstractPresenter<KnowledgesView> i
 
     private ArrayList<Knowledge> knowledges;
 
-    private ListUseCase<Knowledge> knowledgeListUseCase;
+    private GetListUseCase<Knowledge> knowledgeListUseCase;
 
-    public KnowledgesPresenterImpl(ListUseCase<Knowledge> knowledgeListUseCase) {
+    public KnowledgesPresenterImpl(GetListUseCase<Knowledge> knowledgeListUseCase) {
         this.knowledgeListUseCase = knowledgeListUseCase;
     }
 
     @Override
-    public void getKnowledges() {
+    public void loadKnowledges() {
         // Si no hay datos ocultamos todas las vistas menos el progress
-        showProgressAndHideOthers();
+        if (resumed) {
+            showProgressAndHideOthers();
+        }
 
         knowledgeListUseCase.execute(null, new UseCase.Callback<List<Knowledge>>() {
             @Override
@@ -37,20 +38,23 @@ public class KnowledgesPresenterImpl extends AbstractPresenter<KnowledgesView> i
 
                 Collections.sort(data, new Knowledge.KnowledgesComparator());
                 KnowledgesPresenterImpl.this.knowledges.addAll(data);
-
-                showDataAndHideOthers();
+                if (resumed) {
+                    showDataAndHideOthers();
+                }
             }
 
             @Override
             public void onError(ErrorInfo error) {
-                callbackView.showErrorGettingData(error);
-                showNoDataAndHideOthers();
+                if (resumed) {
+                    callbackView.showErrorGettingData(error);
+                    showNoDataAndHideOthers();
+                }
             }
         });
     }
 
     @Override
-    public ArrayList<Knowledge> getDatasource() {
+    public ArrayList<Knowledge> getKnowledges() {
         return knowledges;
     }
 }

@@ -14,55 +14,12 @@ import java.util.List;
  */
 abstract class AbstractRepository<T> implements Repository<T> {
 
-    private Datasource<T> localDatasource;
-    private Datasource<T> remoteDatasource;
+    protected Datasource<T> localDatasource;
+    protected Datasource<T> remoteDatasource;
 
     AbstractRepository(Datasource<T> localDatasource, Datasource<T> remoteDatasource) {
         this.localDatasource = localDatasource;
         this.remoteDatasource = remoteDatasource;
-    }
-
-    @Override
-    public void detail(final long itemId, final DetailCallback<T> callback) {
-        localDatasource.detail(itemId, new Datasource.DetailCallback<T>() {
-            @Override
-            public void onSuccess(T data) {
-                if (data != null) {
-                    callback.onSuccess(data);
-                } else {
-                    remoteDatasource.detail(itemId, new Datasource.DetailCallback<T>() {
-                        @Override
-                        public void onSuccess(T data) {
-                            if (data != null) {
-                                localDatasource.save(data, new Datasource.SaveCallback<T>() {
-                                    @Override
-                                    public void onSuccess(T data) {
-                                        callback.onSuccess(data);
-                                    }
-
-                                    @Override
-                                    public void onError(ErrorInfo error) {
-                                        callback.onError(error);
-                                    }
-                                });
-                            } else {
-                                callback.onError(new ErrorInfo(Keys.ResultCodes.emptyData, "No hay datos en ningún sitio"));
-                            }
-                        }
-
-                        @Override
-                        public void onError(ErrorInfo error) {
-                            callback.onError(error);
-                        }
-                    });
-                }
-            }
-
-            @Override
-            public void onError(ErrorInfo error) {
-                callback.onError(error);
-            }
-        });
     }
 
     @Override

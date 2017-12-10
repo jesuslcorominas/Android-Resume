@@ -25,7 +25,7 @@ public class Library {
     @Convert(converter = DateConverter.class, dbType = Long.class)
     private DateTime update;
 
-    public ToMany<Project> projects;
+    private ToMany<Project> projects;
 
     public long getId() {
         return id;
@@ -65,5 +65,13 @@ public class Library {
 
     public void setUpdate(DateTime update) {
         this.update = update;
+    }
+
+    public ToMany<Project> getProjects() {
+        return projects;
+    }
+
+    public void setProjects(ToMany<Project> projects) {
+        this.projects = projects;
     }
 }
