@@ -41,9 +41,12 @@
     <string name="no_data">No hay %1$s que mostrar.</string>
     <string name="value_undefined">Desconocido</string>
 
-    <string name="position_developer">Desarrollador</string>
+    <string name="position_developer">Programador</string>
     <string name="position_trainer">Formador</string>
     <string name="position_learner">Prácticas</string>
+    <string name="position_analyst_programmer">Analísta-Programador</string>
+    <string name="position_sennior_developer">Programador Senior</string>
+
 
     <string name="training_duration">Duración: %1$dh.</string>
     <string name="training_mark">Calificación: %1$s</string>

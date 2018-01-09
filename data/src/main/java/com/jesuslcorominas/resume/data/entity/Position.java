@@ -5,7 +5,7 @@ package com.jesuslcorominas.resume.data.entity;
  */
 public enum Position {
 
-    UNDEFINED(0), DEVELOPER(1), TRAINER(2), LEARNER(3);
+    UNDEFINED(0), DEVELOPER(1), TRAINER(2), LEARNER(3), ANALYST_PROGRAMMER(4), SENIOR_DEVELOPER(5);
 
     private final int value;
 
