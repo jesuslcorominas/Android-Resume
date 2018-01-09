@@ -54,7 +54,6 @@ freeline.py
 freeline/
 freeline_project_description.json
 gradle.properties
-build.gradle
 .idea/misc.xml
 .idea/encodings.xml
 .idea/copyright/profiles_settings.xml
