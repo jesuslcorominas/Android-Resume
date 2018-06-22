@@ -3,9 +3,9 @@ package com.jesuslcorominas.resume.app.presenter.impl;
 import com.jesuslcorominas.resume.app.presenter.KnowledgesPresenter;
 import com.jesuslcorominas.resume.app.view.callbackview.KnowledgesView;
 import com.jesuslcorominas.resume.commons.ErrorInfo;
-import com.jesuslcorominas.resume.data.entity.Knowledge;
+import com.jesuslcorominas.resume.commons.GetCallback;
+import com.jesuslcorominas.resume.commons.model.Knowledge;
 import com.jesuslcorominas.resume.model.usecase.GetListUseCase;
-import com.jesuslcorominas.resume.model.usecase.UseCase;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -16,7 +16,7 @@ import java.util.List;
  */
 public class KnowledgesPresenterImpl extends AbstractPresenter<KnowledgesView> implements KnowledgesPresenter {
 
-    private ArrayList<Knowledge> knowledges;
+    private List<Knowledge> knowledges;
 
     private GetListUseCase<Knowledge> knowledgeListUseCase;
 
@@ -31,7 +31,7 @@ public class KnowledgesPresenterImpl extends AbstractPresenter<KnowledgesView> i
             showProgressAndHideOthers();
         }
 
-        knowledgeListUseCase.execute(null, new UseCase.Callback<List<Knowledge>>() {
+        knowledgeListUseCase.execute(null, new GetCallback<List<Knowledge>>() {
             @Override
             public void onSuccess(List<Knowledge> data) {
                 KnowledgesPresenterImpl.this.knowledges = new ArrayList<>();
@@ -54,7 +54,7 @@ public class KnowledgesPresenterImpl extends AbstractPresenter<KnowledgesView> i
     }
 
     @Override
-    public ArrayList<Knowledge> getKnowledges() {
+    public List<Knowledge> getKnowledges() {
         return knowledges;
     }
 }

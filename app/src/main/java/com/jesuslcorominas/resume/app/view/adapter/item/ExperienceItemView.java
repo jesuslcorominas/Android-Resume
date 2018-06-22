@@ -8,7 +8,8 @@ import android.widget.TextView;
 import com.jesuslcorominas.resume.app.R;
 import com.jesuslcorominas.resume.app.util.Keys;
 import com.jesuslcorominas.resume.app.util.PositionHelper;
-import com.jesuslcorominas.resume.data.entity.Experience;
+import com.jesuslcorominas.resume.commons.model.Experience;
+import com.jesuslcorominas.resume.data.entity.ExperienceObjectBoxEntity;
 import com.squareup.picasso.Picasso;
 
 import org.androidannotations.annotations.EViewGroup;
@@ -52,7 +53,7 @@ public class ExperienceItemView extends CardView implements ItemView<Experience>
                 error(R.drawable.ic_no_image).
                 into(imageViewLogo);
 
-        textViewName.setText(item.getCompanyName());
+        textViewName.setText(item.getName());
         textViewPosition.setText(PositionHelper.getValue(item.getPosition()));
     }
 }

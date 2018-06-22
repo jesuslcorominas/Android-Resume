@@ -11,8 +11,8 @@ import com.jesuslcorominas.resume.app.view.activity.MainActivity_;
 import com.jesuslcorominas.resume.app.view.activity.OtherDataActivity_;
 import com.jesuslcorominas.resume.app.view.activity.ProjectDetailActivity_;
 import com.jesuslcorominas.resume.app.view.activity.TrainingsActivity_;
-import com.jesuslcorominas.resume.data.entity.Experience;
-import com.jesuslcorominas.resume.data.entity.Project;
+import com.jesuslcorominas.resume.data.entity.ExperienceObjectBoxEntity;
+import com.jesuslcorominas.resume.data.entity.ProjectObjectBoxEntity;
 
 import org.androidannotations.annotations.EBean;
 
@@ -32,12 +32,12 @@ public class Navigator {
         anim(origin);
     }
 
-    public void experienceDetail(Context origin, Experience experience) {
+    public void experienceDetail(Context origin, ExperienceObjectBoxEntity experience) {
         ExperienceDetailActivity_.intent(origin).experienceId(experience.getId()).start();
         anim(origin);
     }
 
-    public void projectDetail(Context origin, Project project) {
+    public void projectDetail(Context origin, ProjectObjectBoxEntity project) {
         ProjectDetailActivity_.intent(origin).projectId(project.getId()).start();
         anim(origin);
     }

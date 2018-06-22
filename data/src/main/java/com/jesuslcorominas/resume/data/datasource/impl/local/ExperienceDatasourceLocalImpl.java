@@ -1,9 +1,9 @@
 package com.jesuslcorominas.resume.data.datasource.impl.local;
 
-import com.jesuslcorominas.resume.data.database.dao.Dao;
+import com.jesuslcorominas.resume.commons.model.Experience;
 import com.jesuslcorominas.resume.data.database.dao.ExperienceDao;
 import com.jesuslcorominas.resume.data.datasource.ExperienceDatasource;
-import com.jesuslcorominas.resume.data.entity.Experience;
+import com.jesuslcorominas.resume.data.entity.ExperienceObjectBoxEntity;
 
 import javax.inject.Inject;
 

@@ -5,7 +5,7 @@ import android.support.v7.widget.CardView;
 import android.widget.TextView;
 
 import com.jesuslcorominas.resume.app.R;
-import com.jesuslcorominas.resume.data.entity.Training;
+import com.jesuslcorominas.resume.commons.model.Training;
 
 import org.androidannotations.annotations.EViewGroup;
 import org.androidannotations.annotations.ViewById;

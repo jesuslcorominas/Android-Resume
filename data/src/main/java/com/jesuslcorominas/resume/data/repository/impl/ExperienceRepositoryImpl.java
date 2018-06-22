@@ -1,16 +1,11 @@
 package com.jesuslcorominas.resume.data.repository.impl;
 
 
-import com.jesuslcorominas.resume.commons.ErrorInfo;
-import com.jesuslcorominas.resume.data.datasource.Datasource;
+import com.jesuslcorominas.resume.commons.model.Experience;
 import com.jesuslcorominas.resume.data.datasource.ExperienceDatasource;
-import com.jesuslcorominas.resume.data.entity.Experience;
-import com.jesuslcorominas.resume.data.entity.Library;
-import com.jesuslcorominas.resume.data.entity.Project;
-import com.jesuslcorominas.resume.data.entity.ProjectImage;
-import com.jesuslcorominas.resume.data.repository.ExperienceRepository;
-
-import java.util.List;
+import com.jesuslcorominas.resume.data.entity.ExperienceObjectBoxEntity;
+import com.jesuslcorominas.resume.model.repository.ExperienceRepository;
+import com.jesuslcorominas.resume.model.repository.Repository;
 
 import javax.inject.Inject;
 

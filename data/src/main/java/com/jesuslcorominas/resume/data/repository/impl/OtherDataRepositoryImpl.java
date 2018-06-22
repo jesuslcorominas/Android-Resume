@@ -1,9 +1,10 @@
 package com.jesuslcorominas.resume.data.repository.impl;
 
-import com.jesuslcorominas.resume.data.datasource.Datasource;
+import com.jesuslcorominas.resume.commons.model.OtherData;
 import com.jesuslcorominas.resume.data.datasource.OtherDataDatasource;
-import com.jesuslcorominas.resume.data.entity.OtherData;
-import com.jesuslcorominas.resume.data.repository.OtherDataRepository;
+import com.jesuslcorominas.resume.data.entity.OtherDataObjectBoxEntity;
+import com.jesuslcorominas.resume.model.repository.OtherDataRepository;
+import com.jesuslcorominas.resume.model.repository.Repository;
 
 import javax.inject.Inject;
 

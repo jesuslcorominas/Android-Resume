@@ -10,12 +10,12 @@ import com.jesuslcorominas.resume.data.database.dao.impl.KnowledgeDaoImpl;
 import com.jesuslcorominas.resume.data.database.dao.impl.OtherDataDaoImpl;
 import com.jesuslcorominas.resume.data.database.dao.impl.PersonalDataDaoImpl;
 import com.jesuslcorominas.resume.data.database.dao.impl.TrainingDaoImpl;
-import com.jesuslcorominas.resume.data.entity.Experience;
-import com.jesuslcorominas.resume.data.entity.Knowledge;
+import com.jesuslcorominas.resume.data.entity.ExperienceObjectBoxEntity;
+import com.jesuslcorominas.resume.data.entity.KnowledgeObjectBoxEntity;
 import com.jesuslcorominas.resume.data.entity.MyObjectBox;
-import com.jesuslcorominas.resume.data.entity.OtherData;
-import com.jesuslcorominas.resume.data.entity.PersonalData;
-import com.jesuslcorominas.resume.data.entity.Training;
+import com.jesuslcorominas.resume.data.entity.OtherDataObjectBoxEntity;
+import com.jesuslcorominas.resume.data.entity.PersonalDataObjectBoxEntity;
+import com.jesuslcorominas.resume.data.entity.TrainingObjectBoxEntity;
 
 import java.io.File;
 
@@ -56,52 +56,52 @@ public class DatabaseModule {
     }
 
     @Provides
-    Box<Training> provideTrainingBox(BoxStore boxStore) {
-        return boxStore.boxFor(Training.class);
+    Box<TrainingObjectBoxEntity> provideTrainingBox(BoxStore boxStore) {
+        return boxStore.boxFor(TrainingObjectBoxEntity.class);
     }
 
     @Provides
-    Box<Knowledge> provideKnowledgeBox(BoxStore boxStore) {
-        return boxStore.boxFor(Knowledge.class);
+    Box<KnowledgeObjectBoxEntity> provideKnowledgeBox(BoxStore boxStore) {
+        return boxStore.boxFor(KnowledgeObjectBoxEntity.class);
     }
 
     @Provides
-    Box<Experience> provideExperienceBox(BoxStore boxStore) {
-        return boxStore.boxFor(Experience.class);
+    Box<ExperienceObjectBoxEntity> provideExperienceBox(BoxStore boxStore) {
+        return boxStore.boxFor(ExperienceObjectBoxEntity.class);
     }
 
     @Provides
-    Box<OtherData> provideOtherDataBox(BoxStore boxStore) {
-        return boxStore.boxFor(OtherData.class);
+    Box<OtherDataObjectBoxEntity> provideOtherDataBox(BoxStore boxStore) {
+        return boxStore.boxFor(OtherDataObjectBoxEntity.class);
     }
 
     @Provides
-    Box<PersonalData> providePersonalDataBox(BoxStore boxStore) {
-        return boxStore.boxFor(PersonalData.class);
+    Box<PersonalDataObjectBoxEntity> providePersonalDataBox(BoxStore boxStore) {
+        return boxStore.boxFor(PersonalDataObjectBoxEntity.class);
     }
 
     @Provides
-    TrainingDao provideTrainingDao(Box<Training> box) {
+    TrainingDao provideTrainingDao(Box<TrainingObjectBoxEntity> box) {
         return new TrainingDaoImpl(box);
     }
 
     @Provides
-    ExperienceDao provideExperienceDao(Box<Experience> box) {
+    ExperienceDao provideExperienceDao(Box<ExperienceObjectBoxEntity> box) {
         return new ExperienceDaoImpl(boxStore, box);
     }
 
     @Provides
-    KnowledgeDao provideKnowledgeDao(Box<Knowledge> box) {
+    KnowledgeDao provideKnowledgeDao(Box<KnowledgeObjectBoxEntity> box) {
         return new KnowledgeDaoImpl(box);
     }
 
     @Provides
-    OtherDataDao provideOtherDataDao(Box<OtherData> box) {
+    OtherDataDao provideOtherDataDao(Box<OtherDataObjectBoxEntity> box) {
         return new OtherDataDaoImpl(box);
     }
 
     @Provides
-    PersonalDataDao providePersonalDataDao(Box<PersonalData> box) {
+    PersonalDataDao providePersonalDataDao(Box<PersonalDataObjectBoxEntity> box) {
         return new PersonalDataDaoImpl(box);
     }
 }

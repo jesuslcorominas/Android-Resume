@@ -1,9 +1,8 @@
 package com.jesuslcorominas.resume.app.event.impl;
 
 import com.jesuslcorominas.resume.app.event.Event;
-import com.jesuslcorominas.resume.data.entity.Experience;
+import com.jesuslcorominas.resume.commons.model.Experience;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -11,13 +10,13 @@ import java.util.List;
  */
 public class ShowExperiencesEvent implements Event {
 
-    private final ArrayList<Experience> experiences;
+    private final List<Experience> experiences;
 
-    public ShowExperiencesEvent(ArrayList<Experience> experiences) {
+    public ShowExperiencesEvent(List<Experience> experiences) {
         this.experiences = experiences;
     }
 
-    public ArrayList<Experience> getExperiences() {
+    public List<Experience> getExperiences() {
         return experiences;
     }
 }

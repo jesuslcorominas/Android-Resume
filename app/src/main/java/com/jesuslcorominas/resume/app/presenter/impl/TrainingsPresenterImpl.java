@@ -3,7 +3,9 @@ package com.jesuslcorominas.resume.app.presenter.impl;
 import com.jesuslcorominas.resume.app.presenter.TrainingsPresenter;
 import com.jesuslcorominas.resume.app.view.callbackview.TrainingsView;
 import com.jesuslcorominas.resume.commons.ErrorInfo;
-import com.jesuslcorominas.resume.data.entity.Training;
+import com.jesuslcorominas.resume.commons.GetCallback;
+import com.jesuslcorominas.resume.commons.model.Training;
+import com.jesuslcorominas.resume.data.entity.TrainingObjectBoxEntity;
 import com.jesuslcorominas.resume.model.usecase.GetListUseCase;
 import com.jesuslcorominas.resume.model.usecase.UseCase;
 
@@ -31,7 +33,7 @@ public class TrainingsPresenterImpl extends AbstractPresenter<TrainingsView> imp
             showProgressAndHideOthers();
         }
 
-        trainingListUseCase.execute(null, new UseCase.Callback<List<Training>>() {
+        trainingListUseCase.execute(null, new GetCallback<List<Training>>() {
             @Override
             public void onSuccess(List<Training> data) {
                 TrainingsPresenterImpl.this.trainings = new ArrayList<>();
@@ -55,7 +57,7 @@ public class TrainingsPresenterImpl extends AbstractPresenter<TrainingsView> imp
     }
 
     @Override
-    public ArrayList<Training> getTrainings() {
+    public List<Training> getTrainings() {
         return trainings;
     }
 }

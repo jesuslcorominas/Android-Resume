@@ -1,9 +1,9 @@
 package com.jesuslcorominas.resume.model.usecase.impl;
 
 import com.jesuslcorominas.resume.commons.ErrorInfo;
-import com.jesuslcorominas.resume.data.entity.PersonalData;
-import com.jesuslcorominas.resume.data.repository.PersonalDataRepository;
-import com.jesuslcorominas.resume.data.repository.Repository;
+import com.jesuslcorominas.resume.commons.GetCallback;
+import com.jesuslcorominas.resume.commons.model.PersonalData;
+import com.jesuslcorominas.resume.model.repository.PersonalDataRepository;
 import com.jesuslcorominas.resume.model.usecase.PersonalDataDetailUseCase;
 
 import java.util.List;
@@ -23,8 +23,8 @@ public class GetPersonalDataUseCaseImpl implements PersonalDataDetailUseCase {
     }
 
     @Override
-    public void execute(Void inputData, final Callback<PersonalData> callback) {
-        repository.list(new Repository.ListCallback<PersonalData>() {
+    public void execute(Void inputData, final GetCallback<PersonalData> callback) {
+        repository.list(null, new GetCallback<List<PersonalData>>() {
             @Override
             public void onSuccess(List<PersonalData> data) {
                 callback.onSuccess(data.get(0));

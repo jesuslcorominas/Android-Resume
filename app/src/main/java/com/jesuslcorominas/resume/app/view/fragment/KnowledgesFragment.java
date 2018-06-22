@@ -4,7 +4,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.jesuslcorominas.resume.app.R;
-import com.jesuslcorominas.resume.app.event.impl.ShowKnowledgedEvent;
+import com.jesuslcorominas.resume.app.event.impl.ShowKnowledgesEvent;
 import com.jesuslcorominas.resume.app.view.adapter.KnowledgesRecyclerAdapter;
 import com.jesuslcorominas.resume.app.view.adapter.divider.HorizontalSpaceItemDecoration;
 import com.jesuslcorominas.resume.app.view.adapter.divider.VerticalSpaceItemDecoration;
@@ -60,7 +60,7 @@ public class KnowledgesFragment extends AbstractBaseFragment {
 
     @SuppressWarnings("unused")
     @Subscribe
-    public void onShowKnowledgesEvent(ShowKnowledgedEvent event) {
+    public void onShowKnowledgesEvent(ShowKnowledgesEvent event) {
         knowledgesRecyclerAdapter.addItems(event.getKnowledges());
     }
 }

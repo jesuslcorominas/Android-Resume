@@ -1,8 +1,10 @@
 package com.jesuslcorominas.resume.data.repository.impl;
 
+import com.jesuslcorominas.resume.commons.model.PersonalData;
 import com.jesuslcorominas.resume.data.datasource.PersonalDataDatasource;
-import com.jesuslcorominas.resume.data.entity.PersonalData;
-import com.jesuslcorominas.resume.data.repository.PersonalDataRepository;
+import com.jesuslcorominas.resume.data.entity.PersonalDataObjectBoxEntity;
+import com.jesuslcorominas.resume.model.repository.PersonalDataRepository;
+import com.jesuslcorominas.resume.model.repository.Repository;
 
 import javax.inject.Inject;
 

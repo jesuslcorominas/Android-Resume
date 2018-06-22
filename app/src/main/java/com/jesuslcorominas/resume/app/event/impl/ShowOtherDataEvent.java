@@ -1,22 +1,23 @@
 package com.jesuslcorominas.resume.app.event.impl;
 
 import com.jesuslcorominas.resume.app.event.Event;
-import com.jesuslcorominas.resume.data.entity.OtherData;
+import com.jesuslcorominas.resume.commons.model.OtherData;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author Jesús López Corominas
  */
 public class ShowOtherDataEvent implements Event {
 
-    private final ArrayList<OtherData> otherDataList;
+    private final List<OtherData> otherDataList;
 
-    public ShowOtherDataEvent(ArrayList<OtherData> otherDataList) {
+    public ShowOtherDataEvent(List<OtherData> otherDataList) {
         this.otherDataList = otherDataList;
     }
 
-    public ArrayList<OtherData> getOtherDataList() {
+    public List<OtherData> getOtherDataList() {
         return otherDataList;
     }
 }

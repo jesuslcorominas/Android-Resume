@@ -1,6 +1,6 @@
 package com.jesuslcorominas.resume.data.database.converter;
 
-import com.jesuslcorominas.resume.data.entity.KnowledgeType;
+import com.jesuslcorominas.resume.commons.model.KnowledgeType;
 
 import io.objectbox.converter.PropertyConverter;
 

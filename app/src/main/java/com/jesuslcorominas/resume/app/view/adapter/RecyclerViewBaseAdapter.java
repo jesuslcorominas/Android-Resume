@@ -9,6 +9,7 @@ import com.jesuslcorominas.resume.app.view.adapter.item.ItemView;
 import com.jesuslcorominas.resume.app.view.control.ViewWrapper;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Clase base para loa adaptadores de la aplicacion.
@@ -63,7 +64,7 @@ public abstract class RecyclerViewBaseAdapter<T, V extends View & ItemView<T>> e
         return new ViewWrapper<V>(onCreateItemView(parent, viewType));
     }
 
-    public final void addItems(ArrayList<T> newItems) {
+    public final void addItems(List<T> newItems) {
         items.clear();
         items.addAll(newItems);
         notifyDataSetChanged();

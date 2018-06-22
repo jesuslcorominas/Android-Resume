@@ -4,7 +4,7 @@ import android.annotation.SuppressLint;
 
 import com.jesuslcorominas.resume.app.App;
 import com.jesuslcorominas.resume.app.R;
-import com.jesuslcorominas.resume.app.event.impl.ShowKnowledgedEvent;
+import com.jesuslcorominas.resume.app.event.impl.ShowKnowledgesEvent;
 import com.jesuslcorominas.resume.app.presenter.KnowledgesPresenter;
 import com.jesuslcorominas.resume.app.presenter.Presenter;
 import com.jesuslcorominas.resume.app.view.callbackview.KnowledgesView;
@@ -95,7 +95,7 @@ public class KnowledgesActivity extends AbstractBaseAppCompatActivity<Knowledges
     @UiThread
     @Override
     public void showData() {
-        EventBus.getDefault().post(new ShowKnowledgedEvent(presenter.getKnowledges()));
+        EventBus.getDefault().post(new ShowKnowledgesEvent(presenter.getKnowledges()));
     }
 
     @UiThread

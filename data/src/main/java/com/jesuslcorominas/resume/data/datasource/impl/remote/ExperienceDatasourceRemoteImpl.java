@@ -1,9 +1,8 @@
 package com.jesuslcorominas.resume.data.datasource.impl.remote;
 
+import com.jesuslcorominas.resume.commons.model.Experience;
 import com.jesuslcorominas.resume.data.datasource.ExperienceDatasource;
-import com.jesuslcorominas.resume.data.entity.Experience;
-import com.jesuslcorominas.resume.data.net.ExperienceRestClient;
-import com.jesuslcorominas.resume.data.net.RestClient;
+import com.jesuslcorominas.resume.data.net.client.ExperienceRestClient;
 
 import javax.inject.Inject;
 

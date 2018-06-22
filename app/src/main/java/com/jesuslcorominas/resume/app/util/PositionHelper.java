@@ -3,7 +3,7 @@ package com.jesuslcorominas.resume.app.util;
 import android.support.annotation.StringRes;
 
 import com.jesuslcorominas.resume.app.R;
-import com.jesuslcorominas.resume.data.entity.Position;
+import com.jesuslcorominas.resume.commons.model.Position;
 
 /**
  * @author Jesús López Corominas

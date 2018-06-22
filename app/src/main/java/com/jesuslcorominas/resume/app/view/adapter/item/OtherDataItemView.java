@@ -5,7 +5,8 @@ import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.CardView;
 
 import com.jesuslcorominas.resume.app.R;
-import com.jesuslcorominas.resume.data.entity.OtherData;
+import com.jesuslcorominas.resume.commons.model.OtherData;
+import com.jesuslcorominas.resume.data.entity.OtherDataObjectBoxEntity;
 
 import org.androidannotations.annotations.EViewGroup;
 import org.androidannotations.annotations.ViewById;

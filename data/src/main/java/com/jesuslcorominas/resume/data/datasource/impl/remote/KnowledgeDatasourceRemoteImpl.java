@@ -1,9 +1,8 @@
 package com.jesuslcorominas.resume.data.datasource.impl.remote;
 
+import com.jesuslcorominas.resume.commons.model.Knowledge;
 import com.jesuslcorominas.resume.data.datasource.KnowledgeDatasource;
-import com.jesuslcorominas.resume.data.entity.Knowledge;
-import com.jesuslcorominas.resume.data.net.KnowledgeRestClient;
-import com.jesuslcorominas.resume.data.net.RestClient;
+import com.jesuslcorominas.resume.data.net.client.KnowledgeRestClient;
 
 import javax.inject.Inject;
 

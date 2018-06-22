@@ -23,7 +23,8 @@ import com.jesuslcorominas.resume.app.view.callbackview.MainView;
 import com.jesuslcorominas.resume.app.util.Keys;
 import com.jesuslcorominas.resume.app.view.fragment.MainFragment;
 import com.jesuslcorominas.resume.commons.ErrorInfo;
-import com.jesuslcorominas.resume.data.entity.PersonalData;
+import com.jesuslcorominas.resume.commons.model.PersonalData;
+import com.jesuslcorominas.resume.data.entity.PersonalDataObjectBoxEntity;
 import com.squareup.picasso.Picasso;
 
 import org.androidannotations.annotations.Background;
@@ -223,7 +224,7 @@ public class MainActivity extends AbstractBaseAppCompatActivity<MainView> implem
     @UiThread
     @Override
     public void showErrorGettingData(ErrorInfo errorInfo) {
-        Snackbar.make(layoutMain, R.string.error_getting_personal_data, Snackbar.LENGTH_INDEFINITE).setAction(R.string.retry, new View.OnClickListener() {
+        Snackbar.make(layoutMain, R.string.error_getting_personal_data, Snackbar.LENGTH_LONG).setAction(R.string.retry, new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 callPresenterGetData();

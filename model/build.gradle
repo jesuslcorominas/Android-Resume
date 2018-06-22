@@ -17,9 +17,6 @@ dependencies {
     // Commons
     compile project(':commons')
 
-    // Modelo
-    compile project(':data')
-
     // libs
     compile fileTree(dir: 'libs', include: ['*.jar'])
 

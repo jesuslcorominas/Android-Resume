@@ -3,7 +3,9 @@ package com.jesuslcorominas.resume.app.presenter.impl;
 import com.jesuslcorominas.resume.app.presenter.ExperiencesPresenter;
 import com.jesuslcorominas.resume.app.view.callbackview.ExperiencesView;
 import com.jesuslcorominas.resume.commons.ErrorInfo;
-import com.jesuslcorominas.resume.data.entity.Experience;
+import com.jesuslcorominas.resume.commons.GetCallback;
+import com.jesuslcorominas.resume.commons.model.Experience;
+import com.jesuslcorominas.resume.data.entity.ExperienceObjectBoxEntity;
 import com.jesuslcorominas.resume.model.usecase.GetListUseCase;
 import com.jesuslcorominas.resume.model.usecase.UseCase;
 
@@ -16,7 +18,7 @@ import java.util.List;
  */
 public class ExperiencesPresenterImpl extends AbstractPresenter<ExperiencesView> implements ExperiencesPresenter {
 
-    private ArrayList<Experience> experiences;
+    private List<Experience> experiences;
 
     private final GetListUseCase<Experience> experienceListUseCase;
 
@@ -31,7 +33,7 @@ public class ExperiencesPresenterImpl extends AbstractPresenter<ExperiencesView>
             showProgressAndHideOthers();
         }
 
-        experienceListUseCase.execute(null, new UseCase.Callback<List<Experience>>() {
+        experienceListUseCase.execute(null, new GetCallback<List<Experience>>() {
             @Override
             public void onSuccess(List<Experience> data) {
                 // TODO mirar a ver porque la primera vez queda mal ordenado
@@ -56,7 +58,7 @@ public class ExperiencesPresenterImpl extends AbstractPresenter<ExperiencesView>
     }
 
     @Override
-    public ArrayList<Experience> getExperiences() {
+    public List<Experience> getExperiences() {
         return experiences;
     }
 }

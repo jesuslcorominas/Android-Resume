@@ -8,8 +8,9 @@ import android.widget.ProgressBar;
 
 import com.jesuslcorominas.resume.app.R;
 import com.jesuslcorominas.resume.app.util.Keys;
-import com.jesuslcorominas.resume.data.entity.Knowledge;
-import com.jesuslcorominas.resume.data.entity.KnowledgeLevel;
+import com.jesuslcorominas.resume.commons.model.Knowledge;
+import com.jesuslcorominas.resume.commons.model.KnowledgeLevel;
+import com.jesuslcorominas.resume.data.entity.KnowledgeObjectBoxEntity;
 import com.squareup.picasso.Picasso;
 
 import org.androidannotations.annotations.EViewGroup;

@@ -21,7 +21,4 @@ public class ErrorInfo {
         return message;
     }
 
-    public static String getMessage2() {
-        return "HOLA";
-    }
 }

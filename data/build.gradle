@@ -55,6 +55,9 @@ dependencies {
     // Commons
     compile project(':commons')
 
+    // Modelo
+    compile project(':model')
+
     compile fileTree(dir: 'libs', include: ['*.jar'])
 
     // Servicios rest
@@ -68,6 +71,9 @@ dependencies {
 
     // Joda-time
     compile "joda-time:joda-time:$jodatimeVersion"
+
+    // ModelMapper
+    compile "org.modelmapper:modelmapper:$modelMapperVersion"
 
     // Test
     testCompile 'junit:junit:4.12'

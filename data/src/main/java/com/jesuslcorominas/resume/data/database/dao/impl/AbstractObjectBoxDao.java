@@ -13,65 +13,110 @@ import io.objectbox.query.Query;
  *
  * @author Jesús López Corominas
  */
-public abstract class AbstractObjectBoxDao<V> implements Dao<V> {
+public abstract class AbstractObjectBoxDao<VO, ENTITY> implements Dao<VO, ENTITY> {
 
-    protected Box<V> box;
+    protected Box<ENTITY> box;
 
-    AbstractObjectBoxDao(Box<V> box) {
+    AbstractObjectBoxDao(Box<ENTITY> box) {
         this.box = box;
     }
 
+//    @Override
+//    public List<VO> getAll() {
+//        return find(null);
+//    }
+//
+//    @Override
+//    public List<VO> find(Property columnProperty, String filterValue) {
+//        return find(box.query().equal(columnProperty, filterValue).build());
+//    }
+//
+//    @Override
+//    public VO findById(long itemId) {
+//        return box.get(itemId);
+//    }
+//
+//    @Override
+//    public List<VO> find(Query<VO> query) {
+//        if (query == null) {
+//            return box.getAll();
+//        }
+//
+//        return query.find();
+//    }
+//
+//    @Override
+//    public VO save(VO item) {
+//        box.put(item);
+//
+//        return item;
+//    }
+//
+//    @Override
+//    public List<VO> save(List<VO> items) {
+//        box.put(items);
+//
+//        return items;
+//    }
+//
+//    @Override
+//    public void delete(List<VO> items) {
+//        box.remove(items);
+//    }
+//
+//    @Override
+//    public void delete(Property columnProperty, String filterValue) {
+//        delete(box.query().equal(columnProperty, filterValue).build());
+//    }
+//
+//    @Override
+//    public void delete(Query<VO> query) {
+//        box.remove(find(query));
+//    }
+
+
     @Override
-    public List<V> getAll() {
-        return find(null);
+    public List<VO> getAll() {
+        return null;
     }
 
     @Override
-    public List<V> find(Property columnProperty, String filterValue) {
-        return find(box.query().equal(columnProperty, filterValue).build());
+    public List<VO> find(Property columnProperty, String filterValue) {
+        return null;
     }
 
     @Override
-    public V findById(long itemId) {
-        return box.get(itemId);
+    public List<VO> find(Query<VO> query) {
+        return null;
     }
 
     @Override
-    public List<V> find(Query<V> query) {
-        if (query == null) {
-            return box.getAll();
-        }
-
-        return query.find();
+    public VO findById(long itemId) {
+        return null;
     }
 
     @Override
-    public V save(V item) {
-        box.put(item);
-
-        return item;
+    public VO save(VO item) {
+        return null;
     }
 
     @Override
-    public List<V> save(List<V> items) {
-        box.put(items);
-
-        return items;
+    public List<VO> save(List<VO> items) {
+        return null;
     }
 
     @Override
-    public void delete(List<V> items) {
-        box.remove(items);
+    public void delete(List<VO> items) {
+
     }
 
     @Override
     public void delete(Property columnProperty, String filterValue) {
-        delete(box.query().equal(columnProperty, filterValue).build());
+
     }
 
     @Override
-    public void delete(Query<V> query) {
-        box.remove(find(query));
-    }
+    public void delete(Query<VO> query) {
 
+    }
 }

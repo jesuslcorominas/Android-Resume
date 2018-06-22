@@ -1,9 +1,9 @@
 package com.jesuslcorominas.resume.data.datasource.impl.local;
 
-import com.jesuslcorominas.resume.data.database.dao.Dao;
+import com.jesuslcorominas.resume.commons.model.PersonalData;
 import com.jesuslcorominas.resume.data.database.dao.PersonalDataDao;
 import com.jesuslcorominas.resume.data.datasource.PersonalDataDatasource;
-import com.jesuslcorominas.resume.data.entity.PersonalData;
+import com.jesuslcorominas.resume.data.entity.PersonalDataObjectBoxEntity;
 
 import javax.inject.Inject;
 

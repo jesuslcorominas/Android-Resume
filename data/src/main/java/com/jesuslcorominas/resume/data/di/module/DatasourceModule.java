@@ -20,11 +20,11 @@ import com.jesuslcorominas.resume.data.datasource.impl.remote.KnowledgeDatasourc
 import com.jesuslcorominas.resume.data.datasource.impl.remote.OtherDataDatasourceRemoteImpl;
 import com.jesuslcorominas.resume.data.datasource.impl.remote.PersonalDataDatasourceRemoteImpl;
 import com.jesuslcorominas.resume.data.datasource.impl.remote.TrainingDatasourceRemoteImpl;
-import com.jesuslcorominas.resume.data.net.ExperienceRestClient;
-import com.jesuslcorominas.resume.data.net.KnowledgeRestClient;
-import com.jesuslcorominas.resume.data.net.OtherDataRestClient;
-import com.jesuslcorominas.resume.data.net.PersonalDataRestClient;
-import com.jesuslcorominas.resume.data.net.TrainingRestClient;
+import com.jesuslcorominas.resume.data.net.client.ExperienceRestClient;
+import com.jesuslcorominas.resume.data.net.client.KnowledgeRestClient;
+import com.jesuslcorominas.resume.data.net.client.OtherDataRestClient;
+import com.jesuslcorominas.resume.data.net.client.PersonalDataRestClient;
+import com.jesuslcorominas.resume.data.net.client.TrainingRestClient;
 
 import javax.inject.Named;
 

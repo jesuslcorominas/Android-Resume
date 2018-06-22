@@ -1,9 +1,12 @@
 package com.jesuslcorominas.resume.model.usecase.impl;
 
 import com.jesuslcorominas.resume.commons.ErrorInfo;
+import com.jesuslcorominas.resume.commons.GetCallback;
 import com.jesuslcorominas.resume.commons.util.Keys;
-import com.jesuslcorominas.resume.data.repository.Repository;
+import com.jesuslcorominas.resume.model.repository.Repository;
 import com.jesuslcorominas.resume.model.usecase.GetListUseCase;
+
+import org.joda.time.DateTime;
 
 import java.util.List;
 
@@ -19,8 +22,9 @@ abstract class AbstractListUseCaseImpl<O> implements GetListUseCase<O> {
     }
 
     @Override
-    public void execute(Void inputData, final Callback<List<O>> callback) {
-        repository.list(new Repository.ListCallback<O>() {
+    public void execute(Void inputData, final GetCallback<List<O>> callback) {
+
+        repository.list(null, new GetCallback<List<O>>() {
             @Override
             public void onSuccess(List<O> data) {
                 if (data == null || data.size() == 0) {

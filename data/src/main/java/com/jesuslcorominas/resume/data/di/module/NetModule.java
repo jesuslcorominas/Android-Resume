@@ -1,16 +1,18 @@
 package com.jesuslcorominas.resume.data.di.module;
 
 import com.google.gson.Gson;
-import com.jesuslcorominas.resume.data.net.ExperienceRestClient;
-import com.jesuslcorominas.resume.data.net.KnowledgeRestClient;
-import com.jesuslcorominas.resume.data.net.OtherDataRestClient;
-import com.jesuslcorominas.resume.data.net.PersonalDataRestClient;
-import com.jesuslcorominas.resume.data.net.TrainingRestClient;
-import com.jesuslcorominas.resume.data.net.impl.ExperienceRestClientImpl;
-import com.jesuslcorominas.resume.data.net.impl.KnowledgeRestClientImpl;
-import com.jesuslcorominas.resume.data.net.impl.OtherDataRestClientImpl;
-import com.jesuslcorominas.resume.data.net.impl.PersonalDataRestClientImpl;
-import com.jesuslcorominas.resume.data.net.impl.TrainingRestClientImpl;
+import com.jesuslcorominas.resume.data.net.client.ExperienceRestClient;
+import com.jesuslcorominas.resume.data.net.client.KnowledgeRestClient;
+import com.jesuslcorominas.resume.data.net.client.OtherDataRestClient;
+import com.jesuslcorominas.resume.data.net.client.PersonalDataRestClient;
+import com.jesuslcorominas.resume.data.net.client.TrainingRestClient;
+import com.jesuslcorominas.resume.data.net.client.impl.ExperienceRestClientImpl;
+import com.jesuslcorominas.resume.data.net.client.impl.KnowledgeRestClientImpl;
+import com.jesuslcorominas.resume.data.net.client.impl.OtherDataRestClientImpl;
+import com.jesuslcorominas.resume.data.net.client.impl.PersonalDataRestClientImpl;
+import com.jesuslcorominas.resume.data.net.client.impl.TrainingRestClientImpl;
+
+import org.modelmapper.ModelMapper;
 
 import java.util.concurrent.TimeUnit;
 
@@ -26,7 +28,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * @author Jesús López Corominas
  */
-@Module(includes = {GsonModule.class})
+@Module(includes = {GsonModule.class, MapperModule.class})
 @Singleton
 public class NetModule {
 
@@ -84,8 +86,8 @@ public class NetModule {
     }
 
     @Provides
-    TrainingRestClient provideTrainingRestClient(TrainingRestClient.Api api) {
-        return new TrainingRestClientImpl(api);
+    TrainingRestClient provideTrainingRestClient(TrainingRestClient.Api api, ModelMapper mapper) {
+        return new TrainingRestClientImpl(api, mapper);
     }
 
     @Provides
@@ -94,8 +96,8 @@ public class NetModule {
     }
 
     @Provides
-    ExperienceRestClient provideExperienceRestClient(ExperienceRestClient.Api api) {
-        return new ExperienceRestClientImpl(api);
+    ExperienceRestClient provideExperienceRestClient(ExperienceRestClient.Api api, ModelMapper mapper) {
+        return new ExperienceRestClientImpl(api, mapper);
     }
 
     @Provides
@@ -104,8 +106,8 @@ public class NetModule {
     }
 
     @Provides
-    KnowledgeRestClient provideKnowledgeRestClient(KnowledgeRestClient.Api api) {
-        return new KnowledgeRestClientImpl(api);
+    KnowledgeRestClient provideKnowledgeRestClient(KnowledgeRestClient.Api api, ModelMapper mapper) {
+        return new KnowledgeRestClientImpl(api, mapper);
     }
 
     @Provides
@@ -114,8 +116,8 @@ public class NetModule {
     }
 
     @Provides
-    OtherDataRestClient provideOtherDataRestClient(OtherDataRestClient.Api api) {
-        return new OtherDataRestClientImpl(api);
+    OtherDataRestClient provideOtherDataRestClient(OtherDataRestClient.Api api, ModelMapper mapper) {
+        return new OtherDataRestClientImpl(api, mapper);
     }
 
     @Provides
@@ -124,7 +126,7 @@ public class NetModule {
     }
 
     @Provides
-    PersonalDataRestClient providePersonalDataRestClient(PersonalDataRestClient.Api api) {
-        return new PersonalDataRestClientImpl(api);
+    PersonalDataRestClient providePersonalDataRestClient(PersonalDataRestClient.Api api, ModelMapper mapper) {
+        return new PersonalDataRestClientImpl(api, mapper);
     }
 }

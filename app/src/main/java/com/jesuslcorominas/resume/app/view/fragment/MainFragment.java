@@ -7,7 +7,8 @@ import android.view.View;
 
 import com.jesuslcorominas.resume.app.R;
 import com.jesuslcorominas.resume.app.event.impl.ShowPersonalDataEvent;
-import com.jesuslcorominas.resume.data.entity.PersonalData;
+import com.jesuslcorominas.resume.commons.model.PersonalData;
+import com.jesuslcorominas.resume.data.entity.PersonalDataObjectBoxEntity;
 
 import org.androidannotations.annotations.EFragment;
 import org.androidannotations.annotations.ViewById;

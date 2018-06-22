@@ -5,16 +5,16 @@ import com.jesuslcorominas.resume.data.datasource.KnowledgeDatasource;
 import com.jesuslcorominas.resume.data.datasource.OtherDataDatasource;
 import com.jesuslcorominas.resume.data.datasource.PersonalDataDatasource;
 import com.jesuslcorominas.resume.data.datasource.TrainingDatasource;
-import com.jesuslcorominas.resume.data.repository.ExperienceRepository;
-import com.jesuslcorominas.resume.data.repository.KnowledgeRepository;
-import com.jesuslcorominas.resume.data.repository.OtherDataRepository;
-import com.jesuslcorominas.resume.data.repository.PersonalDataRepository;
-import com.jesuslcorominas.resume.data.repository.TrainingRepository;
 import com.jesuslcorominas.resume.data.repository.impl.ExperienceRepositoryImpl;
 import com.jesuslcorominas.resume.data.repository.impl.KnowledgeRepositoryImpl;
 import com.jesuslcorominas.resume.data.repository.impl.OtherDataRepositoryImpl;
 import com.jesuslcorominas.resume.data.repository.impl.PersonalDataRepositoryImpl;
 import com.jesuslcorominas.resume.data.repository.impl.TrainingRepositoryImpl;
+import com.jesuslcorominas.resume.model.repository.ExperienceRepository;
+import com.jesuslcorominas.resume.model.repository.KnowledgeRepository;
+import com.jesuslcorominas.resume.model.repository.OtherDataRepository;
+import com.jesuslcorominas.resume.model.repository.PersonalDataRepository;
+import com.jesuslcorominas.resume.model.repository.TrainingRepository;
 
 import javax.inject.Named;
 

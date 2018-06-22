@@ -1,6 +1,6 @@
 package com.jesuslcorominas.resume.model.usecase;
 
-import com.jesuslcorominas.resume.data.entity.PersonalData;
+import com.jesuslcorominas.resume.commons.model.PersonalData;
 
 /**
  * @author Jesús López Corominas

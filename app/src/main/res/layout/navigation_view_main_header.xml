@@ -17,8 +17,9 @@
         android:layout_height="@dimen/menu_image"
         android:layout_gravity="center"
         android:layout_marginTop="@dimen/margin_xxlarge"
-        app:civ_border_color="@color/white"
-        app:civ_border_width="@dimen/menu_image_border" />
+        app:civ_border_color="@color/white" tools:src="@drawable/yo"
+        app:civ_border_width="@dimen/menu_image_border"
+        xmlns:tools="http://schemas.android.com/tools" />
 
     <android.support.v7.widget.AppCompatTextView
         android:id="@+id/navigationView_main_header_textView_name"

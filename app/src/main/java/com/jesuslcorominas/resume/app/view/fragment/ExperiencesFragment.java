@@ -10,7 +10,8 @@ import com.jesuslcorominas.resume.app.view.adapter.ExperiencesRecyclerAdapter;
 import com.jesuslcorominas.resume.app.view.adapter.divider.HorizontalSpaceItemDecoration;
 import com.jesuslcorominas.resume.app.view.adapter.divider.VerticalSpaceItemDecoration;
 import com.jesuslcorominas.resume.app.view.adapter.item.ExperienceItemView;
-import com.jesuslcorominas.resume.data.entity.Experience;
+import com.jesuslcorominas.resume.commons.model.Experience;
+import com.jesuslcorominas.resume.data.entity.ExperienceObjectBoxEntity;
 
 import org.androidannotations.annotations.Bean;
 import org.androidannotations.annotations.EFragment;
@@ -70,6 +71,6 @@ public class ExperiencesFragment extends AbstractBaseFragment implements Experie
 
     @Override
     public void onItemClick(int position, ExperienceItemView view, Experience data) {
-        Log.d(ExperiencesFragment.class.getName(), "Click en la experiencia " + data.getCompanyName());
+        Log.d(ExperiencesFragment.class.getName(), "Click en la experiencia " + data.getName());
     }
 }

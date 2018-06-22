@@ -1,6 +1,6 @@
 package com.jesuslcorominas.resume.data.database.converter;
 
-import com.jesuslcorominas.resume.data.entity.KnowledgeLevel;
+import com.jesuslcorominas.resume.commons.model.KnowledgeLevel;
 
 import io.objectbox.converter.PropertyConverter;
 

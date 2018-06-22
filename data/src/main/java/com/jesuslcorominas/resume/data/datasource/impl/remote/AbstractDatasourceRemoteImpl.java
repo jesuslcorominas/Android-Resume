@@ -1,10 +1,9 @@
 package com.jesuslcorominas.resume.data.datasource.impl.remote;
 
 import com.jesuslcorominas.resume.commons.ErrorInfo;
+import com.jesuslcorominas.resume.commons.GetCallback;
 import com.jesuslcorominas.resume.data.datasource.Datasource;
-import com.jesuslcorominas.resume.data.net.RestClient;
-
-import org.joda.time.DateTime;
+import com.jesuslcorominas.resume.data.net.client.RestClient;
 
 import java.util.List;
 
@@ -13,15 +12,15 @@ import java.util.List;
  */
 abstract class AbstractDatasourceRemoteImpl<T> implements Datasource<T> {
 
-    protected RestClient<T> restClient;
+    private final RestClient<T> restClient;
 
-    public AbstractDatasourceRemoteImpl(RestClient<T> restClient) {
+    AbstractDatasourceRemoteImpl(RestClient<T> restClient) {
         this.restClient = restClient;
     }
 
     @Override
-    public void refresh(DateTime dateTime, final ListCallback<T> callback) {
-        restClient.refresh(dateTime, new RestClient.ListCallback<T>() {
+    public void list(final GetCallback<List<T>> callback) {
+        restClient.list(null, new GetCallback<List<T>>() {
             @Override
             public void onSuccess(List<T> data) {
                 callback.onSuccess(data);
@@ -35,32 +34,7 @@ abstract class AbstractDatasourceRemoteImpl<T> implements Datasource<T> {
     }
 
     @Override
-    public void list(final ListCallback<T> callback) {
-        restClient.list(new RestClient.ListCallback<T>() {
-            @Override
-            public void onSuccess(List<T> data) {
-                callback.onSuccess(data);
-            }
-
-            @Override
-            public void onError(ErrorInfo error) {
-                callback.onError(error);
-            }
-        });
-    }
-
-    @Override
-    public void save(T item, SaveCallback<T> callback) {
-
-    }
-
-    @Override
-    public void save(List<T> items, SaveListCallback<T> callback) {
-
-    }
-
-    @Override
-    public void detail(long itemId, Datasource.DetailCallback<T> callback) {
-
+    public void save(List<T> items, GetCallback<List<T>> callback) {
+// TODO implementar. Implementar la parte servidor
     }
 }

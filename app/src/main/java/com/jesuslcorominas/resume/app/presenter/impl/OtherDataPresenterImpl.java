@@ -3,7 +3,9 @@ package com.jesuslcorominas.resume.app.presenter.impl;
 import com.jesuslcorominas.resume.app.presenter.OtherDataPresenter;
 import com.jesuslcorominas.resume.app.view.callbackview.OtherDataView;
 import com.jesuslcorominas.resume.commons.ErrorInfo;
-import com.jesuslcorominas.resume.data.entity.OtherData;
+import com.jesuslcorominas.resume.commons.GetCallback;
+import com.jesuslcorominas.resume.commons.model.OtherData;
+import com.jesuslcorominas.resume.data.entity.OtherDataObjectBoxEntity;
 import com.jesuslcorominas.resume.model.usecase.GetListUseCase;
 import com.jesuslcorominas.resume.model.usecase.UseCase;
 
@@ -29,7 +31,7 @@ public class OtherDataPresenterImpl extends AbstractPresenter<OtherDataView> imp
             showProgressAndHideOthers();
         }
 
-        otherDataListUseCase.execute(null, new UseCase.Callback<List<OtherData>>() {
+        otherDataListUseCase.execute(null, new GetCallback<List<OtherData>>() {
             @Override
             public void onSuccess(List<OtherData> data) {
                 OtherDataPresenterImpl.this.otherDataList = new ArrayList<>();
@@ -51,7 +53,7 @@ public class OtherDataPresenterImpl extends AbstractPresenter<OtherDataView> imp
     }
 
     @Override
-    public ArrayList<OtherData> getDatasource() {
+    public List<OtherData> getDatasource() {
         return otherDataList;
     }
 }

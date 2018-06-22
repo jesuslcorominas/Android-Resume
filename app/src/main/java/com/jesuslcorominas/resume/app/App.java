@@ -1,6 +1,7 @@
 package com.jesuslcorominas.resume.app;
 
 import android.app.Application;
+import android.support.v7.app.AppCompatDelegate;
 
 import com.jesuslcorominas.resume.app.di.component.DaggerExperienceComponent;
 import com.jesuslcorominas.resume.app.di.component.DaggerKnowledgeComponent;

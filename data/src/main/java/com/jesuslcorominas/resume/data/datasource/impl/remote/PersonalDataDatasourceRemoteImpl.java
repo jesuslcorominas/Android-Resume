@@ -1,9 +1,8 @@
 package com.jesuslcorominas.resume.data.datasource.impl.remote;
 
+import com.jesuslcorominas.resume.commons.model.PersonalData;
 import com.jesuslcorominas.resume.data.datasource.PersonalDataDatasource;
-import com.jesuslcorominas.resume.data.entity.PersonalData;
-import com.jesuslcorominas.resume.data.net.PersonalDataRestClient;
-import com.jesuslcorominas.resume.data.net.RestClient;
+import com.jesuslcorominas.resume.data.net.client.PersonalDataRestClient;
 
 import javax.inject.Inject;
 

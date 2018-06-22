@@ -2,8 +2,10 @@ package com.jesuslcorominas.resume.app.di.module;
 
 import com.jesuslcorominas.resume.app.presenter.ExperiencesPresenter;
 import com.jesuslcorominas.resume.app.presenter.impl.ExperiencesPresenterImpl;
-import com.jesuslcorominas.resume.data.entity.Experience;
-import com.jesuslcorominas.resume.model.di.module.InteractorModule;
+import com.jesuslcorominas.resume.commons.model.Experience;
+import com.jesuslcorominas.resume.data.di.module.RepositoryModule;
+import com.jesuslcorominas.resume.data.entity.ExperienceObjectBoxEntity;
+import com.jesuslcorominas.resume.model.di.module.UseCaseModule;
 import com.jesuslcorominas.resume.model.usecase.GetListUseCase;
 
 import dagger.Module;
@@ -12,7 +14,7 @@ import dagger.Provides;
 /**
  * @author Jesús López Corominas
  */
-@Module(includes = {InteractorModule.class})
+@Module(includes = {UseCaseModule.class, RepositoryModule.class})
 public class ExperiencesModule {
 
     @Provides

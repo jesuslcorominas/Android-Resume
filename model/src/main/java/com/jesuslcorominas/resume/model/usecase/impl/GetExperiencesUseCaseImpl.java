@@ -1,7 +1,7 @@
 package com.jesuslcorominas.resume.model.usecase.impl;
 
-import com.jesuslcorominas.resume.data.entity.Experience;
-import com.jesuslcorominas.resume.data.repository.ExperienceRepository;
+import com.jesuslcorominas.resume.commons.model.Experience;
+import com.jesuslcorominas.resume.model.repository.ExperienceRepository;
 
 import javax.inject.Inject;
 

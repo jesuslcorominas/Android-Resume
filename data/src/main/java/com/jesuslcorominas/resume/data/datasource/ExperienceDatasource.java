@@ -1,6 +1,6 @@
 package com.jesuslcorominas.resume.data.datasource;
 
-import com.jesuslcorominas.resume.data.entity.Experience;
+import com.jesuslcorominas.resume.commons.model.Experience;
 
 /**
  * @author Jesús López Corominas

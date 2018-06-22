@@ -1,6 +1,6 @@
 package com.jesuslcorominas.resume.data.database.converter;
 
-import com.jesuslcorominas.resume.data.entity.Platform;
+import com.jesuslcorominas.resume.commons.model.Platform;
 
 import io.objectbox.converter.PropertyConverter;
 

@@ -1,8 +1,8 @@
 package com.jesuslcorominas.resume.data.datasource.impl.remote;
 
+import com.jesuslcorominas.resume.commons.model.Training;
 import com.jesuslcorominas.resume.data.datasource.TrainingDatasource;
-import com.jesuslcorominas.resume.data.entity.Training;
-import com.jesuslcorominas.resume.data.net.TrainingRestClient;
+import com.jesuslcorominas.resume.data.net.client.TrainingRestClient;
 
 import javax.inject.Inject;
 

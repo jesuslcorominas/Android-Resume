@@ -9,11 +9,11 @@ import com.google.gson.JsonParseException;
 import com.google.gson.JsonPrimitive;
 import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
+import com.jesuslcorominas.resume.commons.model.KnowledgeLevel;
+import com.jesuslcorominas.resume.commons.model.KnowledgeType;
+import com.jesuslcorominas.resume.commons.model.Platform;
+import com.jesuslcorominas.resume.commons.model.Position;
 import com.jesuslcorominas.resume.commons.util.Keys;
-import com.jesuslcorominas.resume.data.entity.KnowledgeLevel;
-import com.jesuslcorominas.resume.data.entity.KnowledgeType;
-import com.jesuslcorominas.resume.data.entity.Platform;
-import com.jesuslcorominas.resume.data.entity.Position;
 
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;

@@ -3,7 +3,9 @@ package com.jesuslcorominas.resume.app.presenter.impl;
 import com.jesuslcorominas.resume.app.presenter.MainPresenter;
 import com.jesuslcorominas.resume.app.view.callbackview.MainView;
 import com.jesuslcorominas.resume.commons.ErrorInfo;
-import com.jesuslcorominas.resume.data.entity.PersonalData;
+import com.jesuslcorominas.resume.commons.GetCallback;
+import com.jesuslcorominas.resume.commons.model.PersonalData;
+import com.jesuslcorominas.resume.data.entity.PersonalDataObjectBoxEntity;
 import com.jesuslcorominas.resume.model.usecase.PersonalDataDetailUseCase;
 import com.jesuslcorominas.resume.model.usecase.UseCase;
 
@@ -26,7 +28,7 @@ public class MainPresenterImpl extends AbstractPresenter<MainView> implements Ma
             showProgressAndHideOthers();
         }
 
-        personalDataDetailUseCase.execute(null, new UseCase.Callback<PersonalData>() {
+        personalDataDetailUseCase.execute(null, new GetCallback<PersonalData>() {
             @Override
             public void onSuccess(PersonalData data) {
                 MainPresenterImpl.this.personalData = data;
