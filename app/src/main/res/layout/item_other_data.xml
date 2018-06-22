@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="@dimen/margin">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/item_otherData_textView_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/text_xlarge"
+            tools:text="Gran facilidad de aprendizaje y adaptación" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="@dimen/margin"
+            android:layout_marginTop="@dimen/margin"
+            android:background="@color/colorPrimaryDark" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/item_otherData_textView_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/dark_gray"
+            android:textSize="@dimen/text_large"
+            tools:text="Los dispositivos móviles tal vez sea lo que más rápido está evolucionando en el ámbito de la programación, por lo que considero fundamental saber adaptarse a los cambios con rapidez." />
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>

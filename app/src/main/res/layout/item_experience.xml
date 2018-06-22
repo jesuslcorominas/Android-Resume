@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:foreground="?android:attr/selectableItemBackground">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/item_experience_imageView_logo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:contentDescription="@string/experience_image_description"
+            app:srcCompat="@drawable/ic_no_image"  />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@color/translucent_white_dark"
+            android:orientation="vertical"
+            android:padding="@dimen/margin">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/item_experience_textView_name"
+                style="@style/TextView.Header.4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lines="2"
+                tools:text="Informática y Gestión de Asturias (IGA) Informática y Gestión de Asturias (IGA)" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/item_experience_textView_position"
+                style="@style/TextView.Body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text"
+                tools:text="Experiencia" />
+        </LinearLayout>
+    </FrameLayout>
+</android.support.v7.widget.CardView>

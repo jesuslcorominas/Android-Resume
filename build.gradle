@@ -1,0 +1,41 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+ext {
+    AAVersion = '4.3.1'
+    daggerVersion = '2.11'
+    minVersion = 21
+    targetSDK = 27
+    jodatimeVersion = '2.9.9'
+    gsonVersion = '2.2.10'
+    objectboxVersion = '1.4.3'
+    modelMapperVersion = '1.1.2'
+}
+
+allprojects {
+    buildscript {
+
+        repositories {
+            maven { url "http://objectbox.net/beta-repo/" }
+            jcenter()
+            mavenCentral()
+            google()
+        }
+
+        dependencies {
+            classpath 'com.android.tools.build:gradle:3.0.1'
+
+            classpath "io.objectbox:objectbox-gradle-plugin:$objectboxVersion"
+        }
+    }
+
+    repositories {
+        maven { url "http://objectbox.net/beta-repo/" }
+        jcenter()
+        mavenCentral()
+        google()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

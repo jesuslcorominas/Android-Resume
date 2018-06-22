@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="@dimen/margin">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/item_training_textView_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/text_xlarge"
+            tools:text="Técnico Superior en Desarrollo de Aplicaciones Informáticas" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="@dimen/margin"
+            android:layout_marginTop="@dimen/margin"
+            android:background="@color/colorPrimaryDark" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/item_training_textView_school"
+                style="@style/TextView.Body"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/dark_gray"
+                tools:text="IES Monte Naranco (2005/2007)" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/item_training_textView_hours"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/margin"
+                android:textAlignment="textEnd"
+                tools:text="Duración: 270h" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/item_training_textView_mark"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="end"
+                android:layout_marginTop="@dimen/margin"
+                android:textAlignment="textEnd"
+                tools:text="Calificación: 8.9" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>

@@ -1,3 +1,58 @@
 <resources>
     <string name="app_name">Resume</string>
+
+    <string name="splash_icon_description">Icono de la aplicación</string>
+
+    <string name="side_menu_training">Formación</string>
+    <string name="side_menu_knowledge">Conocimientos</string>
+    <string name="side_menu_experience">Experiencia</string>
+    <string name="side_menu_other_data">Otros</string>
+    <string name="side_menu_button_github">Enlace a Github de la aplicación</string>
+    <string name="side_menu_button_google_play">Enlace a la ficha de la aplicación de Google Play</string>
+    <string name="side_menu_button_linkedin">Enlace a linkedIn de Jesús López Corominas</string>
+
+    <string name="side_menu_name">%1$s %2$s</string>
+    <string name="navigation_drawer_open"></string>
+    <string name="navigation_drawer_close"></string>
+
+    <string name="main_image_description">Imagen del usuario</string>
+
+    <string name="error_getting_personal_data">No se han podido obtener los datos personales.</string>
+    <string name="retry">Reintentar</string>
+
+    <string name="personal_data_no_data">datos personales</string>
+
+    <string name="experiences_title">Experiencia</string>
+    <string name="experiences_no_data">experiencia profesional</string>
+    <string name="experience_image_description">Logotipo de la empresa</string>
+
+    <string name="other_data_title">Otros datos de interés</string>
+    <string name="other_data_no_data">datos de interés</string>
+
+    <string name="knowledges_title">Conocimientos</string>
+    <string name="knowledges_no_data">conocimientos</string>
+    <string name="knowledge_image_description">Imagen representativa del conocimiento</string>
+
+    <string name="trainings_title">Formación</string>
+    <string name="academic_training_title">Formación académica</string>
+    <string name="other_training_title">Formación complementaria</string>
+    <string name="trainings_no_data">formación</string>
+
+    <string name="no_data">No hay %1$s que mostrar.</string>
+    <string name="value_undefined">Desconocido</string>
+
+    <string name="position_developer">Programador</string>
+    <string name="position_trainer">Formador</string>
+    <string name="position_learner">Prácticas</string>
+    <string name="position_analyst_programmer">Analísta-Programador</string>
+    <string name="position_sennior_developer">Programador Senior</string>
+
+
+    <string name="training_duration">Duración: %1$dh.</string>
+    <string name="training_mark">Calificación: %1$s</string>
+
+    <string name="training_in_progress">%1$s (%2$d - Actualmente)</string>
+    <string name="training_start_and_end">%1$s (%2$d/%3$d)</string>
+    <string name="training_in_year">%1$s (%2$d)</string>
+
 </resources>
