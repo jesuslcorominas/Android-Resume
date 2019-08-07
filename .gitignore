@@ -65,5 +65,5 @@ gradlew
 .idea/modules.xml
 settings.gradle
 app/.gitignore
-gradle/wrapper/gradle-wrapper.properties
 gradle/wrapper/gradle-wrapper.jar
+.idea/
