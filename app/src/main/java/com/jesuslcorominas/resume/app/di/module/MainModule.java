@@ -6,6 +6,8 @@ import com.jesuslcorominas.resume.data.di.module.RepositoryModule;
 import com.jesuslcorominas.resume.model.di.module.UseCaseModule;
 import com.jesuslcorominas.resume.model.usecase.PersonalDataDetailUseCase;
 
+import java.util.ArrayList;
+
 import dagger.Module;
 import dagger.Provides;
 
@@ -19,4 +21,5 @@ public class MainModule {
     MainPresenter provideMainPresenter(PersonalDataDetailUseCase personalDataDetailUseCase) {
         return new MainPresenterImpl(personalDataDetailUseCase);
     }
+
 }
